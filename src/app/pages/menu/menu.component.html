@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <app-logo></app-logo>
+    <app-navbar></app-navbar>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Menu is used like Login -->
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Login <div *ngIf="spinner" class="fa fa-spinner fa-spin spinner" align="center"></div></h3>
+                </div>
+                <div class="card-body" i18n>
+                    <h6 align="center" style="color: rgb(233, 250, 2); background-color: rgb(255, 0, 0);" *ngIf="user_error">Error. Los datos son incorrectos o el usuario no existe.</h6>
+                    <h6 align="center" style="color: rgb(233, 250, 2); background-color: rgb(255, 0, 0);" *ngIf="!email_verified">Usted aún No ha verificado su email. Active su cuenta mediante el enlace que recibió en su correo electrónico.</h6>
+                    <h6 align="center" style="color: rgb(233, 250, 2); background-color: rgb(255, 0, 0);" *ngIf="activado == false">Su cuenta todavía no fué aprobada !</h6>
+                    <form [formGroup]="formTemplate" >
+                        <div class="form-group">
+                            <input type="email" class="form-control" formControlName="email" placeholder="Email">
+                            <div class="text-danger" *ngIf="isSubmitted && formControls.email.errors?.required">No ha ingresado email.</div>
+                            <div class="text-danger" *ngIf="isSubmitted && formControls.email.errors?.pattern">Email tiene un formato inválido.</div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" formControlName="password" placeholder="Clave">
+                            <div class="text-danger" *ngIf="isSubmitted && formControls.password.errors?.required">No ha ingresado la clave.</div>
+                        </div>
+                    
+                        <button class="btn btn-success" type="submit" (click)="onSubmit(formTemplate.value)" align="center"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;Enter</button>
+                        <button class="btn btn-danger" type="button" (click)="Login('yoyodanyo@gmail.com','123456')" align="center"><i class="fa fa-user-secret" aria-hidden="true"></i>&nbsp;Adm</button>
+                        <button class="btn btn-warning" type="button" (click)="Login('nuevoprofesional@nuevoprof.com','123456')" align="center"><i class="fa fa-user-md" aria-hidden="true"></i>&nbsp;Esp</button>
+                        <button class="btn btn-info" type="button" (click)="Login('user1@gmajs.net','123456')" align="center"><i class="fa fa-street-view" aria-hidden="true"></i>&nbsp;User</button>
+                        <h5 *ngIf="userfound">Bienvenido!</h5>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

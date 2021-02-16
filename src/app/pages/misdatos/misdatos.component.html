@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <app-logo></app-logo>
+    <app-navbar></app-navbar>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Mis datos</title>
+</head>
+<body class="container">
+    <div class="content">
+        <div class="row" id="content">
+            <!-- Middle area content -->
+            <div class="col-8 col-xs-8 col-sm-8 col-md-10 article" align="center">
+
+                <!-- USER -->
+                <div class="card-body" *ngIf = "this.userService.getTipo() == 'Usuario' && enviado == false" i18n>
+                    <div align="center"><button class="btn btn-warning" routerLink="/home" routerLinkActive="active"><i class="fa fa-arrow-circle-left">&nbsp;A la Sala</i></button></div>
+                    <br>
+                    <div id="spinner" class="fa fa-spinner fa-spin " *ngIf="spinner"></div>
+                    <br>
+                    <div align="center"><button class="btn btn-success download" (click)="genPDF()"><i class="fa fa-download"></i>&nbsp;PDF</button >&nbsp;&nbsp;<button class="btn btn-success download" (click)="genCSV()"><i class="fa fa-download"></i>&nbsp;CSV</button ></div>
+                    <div class="info" style="color: rgb(252, 93, 132); background-color: rgb(4, 0, 41);" *ngIf="this.userService.getTipo() == 'Usuario'">* Atencion!: Para ocultar un turno, debe comentarlo. NO podrá volver a ver un turno ocultado!</div>
+                    <div class="info" style="color: rgb(252, 93, 132); background-color: rgb(4, 0, 41);" *ngIf="cant_turnos == 0 && this.userService.getTipo() == 'Usuario'">No hay turnos!</div>
+                    
+                    <form class="registro"  id="registro">
+                        <table class = "table table-responsive table-hover" style="width: 100%;" id="miTabla">
+                            <thead>
+                                <tr>
+                                    <th>Fecha turno</th>
+                                    <th>Horario</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Especialista</th>
+                                    <th>Codigo sala</th>
+                                    <th>Estado turno</th>
+                                    <th>Accion</th>
+                                    <th>Reseña</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor = "let item of turnos" class="table">
+                                    <td>{{item.fechaturno | mypipe2}}</td>
+                                    <td>{{item.horario}}</td>
+                                    <td>{{item.nombre | titlecase}}</td>
+                                    <td>{{item.apellido | titlecase}}</td>
+                                    <td>{{item.especialista}}</td>
+                                    <td>{{item.codigosala}}</td>
+                                    <td  class="{{item.estado | mypipe3}}">{{item.estado}}</td>
+                                    <td *ngIf="(item.estado !== 'activo') && this.userService.getTipo() !== 'Recepcionista'"><button type="button" class="btn btn-success" (click)="Comentar(item)">Comentar</button></td>
+                                    <td *ngIf="item.estado !== 'activo'"><button type="button" data-toggle="modal" data-target="#myModal2" class="btn btn-primary" (click)="Resenia(item)">Ver reseña</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                    </form>
+                </div>
+                <div class="card" id="card2" *ngIf = "this.userService.getTipo() == 'Usuario' && comentar" i18n>
+                    <div class="alert-success" *ngIf="enviado"><h6>Comentario registrado. Muchas gracias!</h6></div>
+                    <h5>Encuesta</h5>
+                    <!-- Comentario -->
+                    <div class="card-body comentarios" *ngIf="enviado === false">
+                        <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+                            <div class="form-group">
+                                <label>*Valore la clinica</label>
+                                <input type="number" class="form-control" formControlName="clinica" placeholder="Del 1 al 10">
+                                <div class="text-danger" *ngIf="isSubmitted && formControls.clinica.errors?.required">Requerido.</div>
+                                <div class="text-danger" *ngIf="isSubmitted && formControls.clinica.invalid">Error, ingrese valor entre 1 y 10.</div>
+                            </div>
+                            <div class="form-group">
+                                <label>*Valore el especialista</label>
+                                <input type="number" class="form-control" formControlName="especialista" placeholder="Del 1 al 10">
+                                <div class="text-danger" *ngIf="isSubmitted && formControls.especialista.errors?.required">Requerido.</div>
+                                <div class="text-danger" *ngIf="isSubmitted && formControls.especialista.invalid">Error, ingrese valor entre 1 y 10.</div>
+                            </div>
+                            <div class="form-group">
+                                <label>*Experiencia en atencion</label>
+                                <textarea name="comment" id="comment" cols="24" rows="4" formControlName="mensaje" placeholder="Cómo fué su visita con el especialista?"></textarea>
+                                <div class="text-danger" *ngIf="isSubmitted && formControls.mensaje.errors?.required">Requerido.</div>
+                                <div class="text-danger" *ngIf="isSubmitted && formControls.mensaje.invalid">Máximo de 66 caracteres alcanzado</div>
+                            </div>
+                            <p>* Campos obligatorios</p>
+                            <button type="submit" class="btn btn-warning">Enviar</button>
+                        </form>
+                    </div>
+                    <button *ngIf="enviado" type="button" class="btn btn-success" routerLink="/home" routerLinkActive="active"><i class="fa fa-arrow-circle-left">&nbsp;Cerrar</i></button>
+                </div>
+
+                <!-- Recepcionista -->
+                <div class="card-body" *ngIf = "this.userService.getTipo() == 'Recepcionista' && cancelado == false" i18n>
+                    <div align="center"><button class="btn btn-warning" routerLink="/home" routerLinkActive="active"><i class="fa fa-arrow-circle-left">&nbsp;A la Sala</i></button></div>
+                    <br>
+                    <div align="center"><button class="btn btn-success download" (click)="genPDF()"><i class="fa fa-download"></i>&nbsp;PDF</button >&nbsp;&nbsp;<button class="btn btn-success download" (click)="genCSV()"><i class="fa fa-download"></i>&nbsp;CSV</button ></div>
+                    <div align="center"><input type="email" name="email" placeholder="Buscar por email" [(ngModel)]="email"></div>
+                    <button type="button" class="btn btn-primary" (click)="BuscarTurno()">Buscar</button>
+                    <br>
+                    <div id="spinner" class="fa fa-spinner fa-spin spinner" *ngIf="spinner"></div>
+                    <br>
+                    <div class="info" style="color: rgb(252, 93, 132); background-color: rgb(4, 0, 41);" *ngIf="cant_turnos_activos == false">No hay turnos!</div>
+                    <form class="registro"  id="registro">
+                        <table class = "table table-responsive table-hover" style="width: 100%;" id="miTabla">
+                            <thead>
+                                <tr>
+                                    <th>Fecha turno</th>
+                                    <th>Horario</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Especialista</th>
+                                    <th>Codigo sala</th>
+                                    <th>Estado turno</th>
+                                    <th>Accion</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor = "let item of turnos_a_cancelar" class="table">
+                                    <td>{{item.fechaturno | mypipe2}}</td>
+                                    <td>{{item.horario}}</td>
+                                    <td>{{item.nombre | titlecase}}</td>
+                                    <td>{{item.apellido | titlecase}}</td>
+                                    <td>{{item.especialista}}</td>
+                                    <td>{{item.codigosala}}</td>
+                                    <td>{{item.estado}}</td>
+                                    <td><button type="button" class="btn btn-danger" (click)="Cancelar(item)">Cancelar</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+                <div class="alert-success" *ngIf="cancelado" i18n><h5>Se canceló un turno!</h5></div>
+                <button *ngIf="cancelado" type="button" class="btn btn-success" style="border-radius: 10px; border: 2px solid black;" routerLink="/home" routerLinkActive="active"><i class="fa fa-check" aria-hidden="true" i18n>&nbsp;Aceptar</i></button>
+
+                <!-- Modal for resenia -->
+
+                <div class="modal fade" id="myModal2" role="dialog">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <h3 align="center" style="color: crimson;" i18n>Reseña</h3>
+                                <form>
+                                    
+                                    <p>{{resenia}}</p>
+                                    
+                                    <button type="button" class="btn btn-danger"  data-dismiss="modal" id="modalclose">OK</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

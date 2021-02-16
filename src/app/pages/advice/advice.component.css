@@ -1,0 +1,10 @@
+/* Advice */
+.advice {
+    text-align: center;
+    color: rgb(43, 255, 0);
+    background-color: black;
+    font-size: 20px;
+}
+.advice_bold {
+    color: red;
+}

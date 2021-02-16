@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <app-logo></app-logo>
+    <app-navbar></app-navbar>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Listado de Pacientes</title>
+</head>
+<body class="container">
+    <div class="content">
+        <div class="row" id="content">
+            <!-- Middle area content -->
+            <div class="col-8 col-xs-8 col-sm-8 col-md-10 article" align="center">
+
+                <!-- ESPECIALISTA -->
+                <div class="card-body" i18n>
+                    <div align="center"><button class="btn btn-warning" routerLink="/home" routerLinkActive="active"><i class="fa fa-arrow-circle-left">&nbsp;A la Sala</i></button></div>
+                    <br>
+                    <div id="spinner" class="fa fa-spinner fa-spin spinner" *ngIf="spinner"></div>
+                    <br>
+                    <div align="center"><button class="btn btn-success download" (click)="genPDF()"><i class="fa fa-download"></i>&nbsp;PDF</button >&nbsp;&nbsp;<button class="btn btn-success download" (click)="genCSV()"><i class="fa fa-download"></i>&nbsp;CSV</button ></div>
+                        <div class="info" style="color: rgb(252, 93, 132); background-color: rgb(4, 0, 41);" *ngIf="cant_turnos_activos == false">No hay mas turnos para hoy!</div>
+                    <form class="registro"  id="registro">
+                        <table class = "table table-responsive table-hover" style="width: 100%;" id="miTabla">
+                            <thead>
+                                <tr>
+                                    <th>Fecha turno</th>
+                                    <th>Horario</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Codigo sala</th>
+                                    <th>Asistencia</th>
+                                    <th>Accion</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor = "let item of turnos | orderby: 'horario'" class="table">
+                                    <td>{{item.fechaturno}}</td>
+                                    <td>{{item.horario}}</td>
+                                    <td>{{item.nombre}}</td>
+                                    <td>{{item.apellido}}</td>
+                                    <td>{{item.codigosala}}</td>
+                                    <td><select name="asistencia" [(ngModel)]="asistencia"><option value="">-select-</option><option value="presente">presente</option><option value="ausente">ausente</option></select></td>
+                                    <td><button *ngIf="atendiendo === false" type="button" class="btn btn-success" (click)="Atender(item)">Atender</button><button type="button" class="btn btn-warning" (click)="CancelarTurno(item)">Cancelar</button><button type="button" class="btn btn-danger" (click)="RechazarTurno(item)">Rechazar</button><button type="button" class="btn btn-danger" (click)="Comentar(item)">Terminar</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                    </form>
+                </div>
+                <!-- Reseña -->
+                <div class="card" id="card2" *ngIf="terminado" i18n>
+                    <h5>Reseña</h5>
+                    <div class="card-body comentarios">
+                        <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+                            
+                            <div class="form-group">
+                                <textarea name="comment" id="comment" cols="24" rows="4" formControlName="mensaje" placeholder="Escriba una reseña"></textarea>
+                                <div class="text-danger" *ngIf="isSubmitted && formControls.mensaje.errors?.required">Requerido.</div>
+                            </div>
+                            <p>* Campos obligatorios</p>
+                            <button type="submit" class="btn btn-danger"><i class="fa fa-check-circle-o" aria-hidden="true">&nbsp;Terminar</i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

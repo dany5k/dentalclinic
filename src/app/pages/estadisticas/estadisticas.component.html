@@ -1,0 +1,267 @@
+<div align="center" *ngIf="spinner"><b>Cargando datos ... </b><i class="fa fa-spinner fa-spin spinner"></i></div>
+<div align="center" class="turno"><i class="fa fa-cog" aria-hidden="true" style="color: rgb(252, 110, 27); font-size: 16px; float: left;" (click)="CloseSite()" i18n></i>Estadisticas Empleados<i class="fa fa-download download" (click)="genPDF()"></i></div>
+
+<div align="center" class="table-responsive table-hover users">
+    <table id="miTabla">
+        <thead>
+            <tr i18n>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Accesos</th>
+                <th>Especialidad</th>
+                <th>Cantidad turnos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of empleados">
+                <td>{{item.nombre}}</td>
+                <td>{{item.apellido}}</td>
+                <td>
+                    <button type="button" data-toggle="modal" data-target="#myModal2" class="btn btn-primary" (click)="Estadisticas(item)" i18n>Ver</button>
+                </td>
+                <td>{{item.especialidad}}</td>
+                <td *ngIf="item.especialidad[0] === 'Ortodoncista'">{{ortodoncista}}</td>
+                <td *ngIf="item.especialidad[0] === 'Endodoncista'">{{endodoncista}}</td>
+                <td *ngIf="item.especialidad[0] === 'Cirujano oral'">{{cirujanooral}}</td>
+                <td *ngIf="item.especialidad[0] === 'Imagenologia'">{{imagenologia}}</td>
+                <td *ngIf="item.especialidad[0] === 'Implantologo'">{{implantologo}}</td>
+                <td *ngIf="item.especialidad[0] === 'Odontopediatra'">{{odontopediatra}}</td>
+                <td *ngIf="item.especialidad[0] === 'Protesis'">{{protesis}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br>
+<div i18n align="center" *ngIf="spinner"><b>Cargando datos ... </b><i class="fa fa-spinner fa-spin spinner"></i></div>
+<div i18n align="center" class="turno">Estadisticas Turnos
+    <div>
+        <button>Probar</button>
+    </div>
+</div>
+<div align="center" class="table-responsive table-hover users" i18n>
+    <table>
+        <thead>
+            <tr>
+                <th>Especialidad</th>
+                <th>Realizados</th>
+                <th>Cancelados</th>
+                <th>x Cliente</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Ortodoncista -->
+            <tr>
+                <td>Ortodoncista</td>
+                <td>
+                    <select name="realizados" size="3">
+                        <option *ngFor="let item2 of real_ortodoncista">{{item2.fechaturno}}&nbsp;:&nbsp;{{item2.apellido}}&nbsp;{{item2.nombre}}</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="cancelados" size="3">
+                        <option *ngFor="let item3 of cancel_ortodoncista">{{item3.fechaturno}}&nbsp;:&nbsp;{{item3.apellido}}&nbsp;{{item3.nombre}}</option>
+                    </select>
+                </td>
+                <!-- Realizados por clientes -->
+                <td>
+                    <select name="x_clientes" size="10">
+                        <option *ngFor="let i of por_clientes">{{i.fechaturno}}&nbsp;:&nbsp;{{i.apellido}}&nbsp;{{i.nombre}}</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- Endodoncista -->
+            <tr>
+                <td>Endodoncista</td>
+                <td>
+                    <select name="realizados" size="3">
+                        <option *ngFor="let item2 of real_endodoncista">{{item2.fechaturno}}&nbsp;:&nbsp;{{item2.apellido}}&nbsp;{{item2.nombre}}</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="cancelados" size="3">
+                        <option *ngFor="let item3 of cancel_endodoncista">{{item3.fechaturno}}&nbsp;:&nbsp;{{item3.apellido}}&nbsp;{{item3.nombre}}</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- Cirujano oral -->
+            <tr>
+                <td>Cirujano oral</td>
+                <td>
+                    <select name="realizados" size="3">
+                        <option *ngFor="let item2 of real_cirujanooral">{{item2.fechaturno}}&nbsp;:&nbsp;{{item2.apellido}}&nbsp;{{item2.nombre}}</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="cancelados" size="3">
+                        <option *ngFor="let item3 of cancel_cirujanooral">{{item3.fechaturno}}&nbsp;:&nbsp;{{item3.apellido}}&nbsp;{{item3.nombre}}</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- Imagenologia -->
+            <tr>
+                <td>Imagenologia</td>
+                <td>
+                    <select name="realizados" size="3">
+                        <option *ngFor="let item2 of real_imagenologia">{{item2.fechaturno}}&nbsp;:&nbsp;{{item2.apellido}}&nbsp;{{item2.nombre}}</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="cancelados" size="3">
+                        <option *ngFor="let item3 of cancel_imagenologia">{{item3.fechaturno}}&nbsp;:&nbsp;{{item3.apellido}}&nbsp;{{item3.nombre}}</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- Implantologo -->
+            <tr>
+                <td>Implantologo</td>
+                <td>
+                    <select name="realizados" size="3">
+                        <option *ngFor="let item2 of real_implantologo">{{item2.fechaturno}}&nbsp;:&nbsp;{{item2.apellido}}&nbsp;{{item2.nombre}}</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="cancelados" size="3">
+                        <option *ngFor="let item3 of cancel_implantologo">{{item3.fechaturno}}&nbsp;:&nbsp;{{item3.apellido}}&nbsp;{{item3.nombre}}</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- Odontopediatra -->
+            <tr>
+                <td>Odontopediatra</td>
+                <td>
+                    <select name="realizados" size="3">
+                        <option *ngFor="let item2 of real_odontopediatra">{{item2.fechaturno}}&nbsp;:&nbsp;{{item2.apellido}}&nbsp;{{item2.nombre}}</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="cancelados" size="3">
+                        <option *ngFor="let item3 of cancel_odontopediatra">{{item3.fechaturno}}&nbsp;:&nbsp;{{item3.apellido}}&nbsp;{{item3.nombre}}</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- Protesis -->
+            <tr>
+                <td>Protesis</td>
+                <td>
+                    <select name="realizados" size="3">
+                        <option *ngFor="let item2 of real_protesis">{{item2.fechaturno}}&nbsp;:&nbsp;{{item2.apellido}}&nbsp;{{item2.nombre}}</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="cancelados" size="3">
+                        <option *ngFor="let item3 of cancel_protesis">{{item3.fechaturno}}&nbsp;:&nbsp;{{item3.apellido}}&nbsp;{{item3.nombre}}</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br>
+<!-- Turnos entre fechas -->
+<div i18n align="center" *ngIf="spinner"><b>Cargando datos ... </b><i class="fa fa-spinner fa-spin spinner"></i></div>
+<div i18n align="center" class="turno">Turnos entre fechas</div>
+<div align="center" class="table-responsive users" i18n>
+    <input type="date" name="fecha_uno" [(ngModel)]="fecha_uno">&nbsp;
+    <input type="date" name="fecha_dos" [(ngModel)]="fecha_dos">
+    <br>
+    <button style="margin-top: 14px;" type="button" class="btn btn-success" (click)="Turnos_fecha()">Buscar</button>
+    <br>
+    <br>
+    <b align="center">Cant. turnos:  {{cant_turnos_entre}}</b>
+    <br>
+    <br>
+</div>
+<br>
+<div align="center" class="turno" i18n>Especialidades</div>
+<div align="center" class="table-responsive table-hover users" i18n>
+    <table>
+        <thead>
+            <tr>
+                <th>La más usada</th>
+                <th>La menos usada</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{MasUsada}}</td>
+                <td>{{MenosUsada}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br>
+<div align="center" class="turno" i18n>Cantidad de turnos por dia de la semana</div>
+<div align="center" class="table-responsive table-hover users" i18n>
+    <table>
+        <thead>
+            <tr>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miercoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+                <th>Sabado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{TurnosLunes}}</td>
+                <td>{{TurnosMartes}}</td>
+                <td>{{TurnosMiercoles}}</td>
+                <td>{{TurnosJueves}}</td>
+                <td>{{TurnosViernes}}</td>
+                <td>{{TurnosSabado}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br>
+<!-- Comentarios -->
+<div i18n>
+    <div>
+        <div class="row users" align="center" style="overflow: auto; height: 140px;" scroll="true">
+            <div class="col-6">
+                <h6 class="turno">Mejores comentarios</h6>
+                <div *ngFor="let item of mejores">
+                    {{item.fechaturno}}&nbsp;<i class="fa fa-eye" aria-hidden="true" data-toggle="modal" data-target="#myModal2" (click)="Mostrar(item)"></i>
+                </div>
+            </div>
+            <div class="col-6">
+                <h6 class="turno">Peores comentarios</h6>
+                <div *ngFor="let item of peores">
+                    {{item.fechaturno}}&nbsp;<i class="fa fa-eye" aria-hidden="true" data-toggle="modal" data-target="#myModal2" (click)="Mostrar(item)"></i>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<!-- Modal for Access -->
+
+<div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-body" i18n>
+                <h3 align="center" style="color: crimson;">Datos</h3>
+                <div style="height: 210px; overflow: auto; background-color:rgba(0, 48, 66, 0.938);" scroll="true">
+                <table>
+                    <tbody>
+                        <tr *ngFor="let item of estadisticas">
+                            <td>{{item | mypipe | titlecase}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <br>
+                <div align="center"><button type="button" class="btn btn-danger"  data-dismiss="modal" id="modalclose">Cerrar</button></div>
+            </div>
+        </div>
+    </div>
+</div>

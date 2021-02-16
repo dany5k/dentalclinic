@@ -1,0 +1,1619 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="5cec1389f5d9e43ac3f8cf371fad4bb325fa37a4" datatype="html">
+        <source>
+                    Bienvenido a la Clinica dental &quot;La Buena Sonriza&quot; ! <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                    Somos expertos profesionales en odontología con más de 80 años en el servicio. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                    Contamos con expertos más calificados y laboratorios con la más alta tecnología. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                    Con nosotros usted no solo tendrá una hermosa sonriza, sino que tambien unos dientes sanos y saludables.
+                </source>
+        <target>
+                    Welcome to dental clinic &quot;The Awesome Smile&quot; ! <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                    We are professional experts in dentistry with more than 80 years in service. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                    We have the most qualified experts and laboratories with the highest technology. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                    With us you will not only have a beautiful smile, but also healthy teeth.
+                </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/sala/sala.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="80138767a7baac4fa767606b6db2dcc53c9ce62e" datatype="html">
+        <source>Clinica dental &quot;La Buena Sonriza&quot;</source>
+        <target>Dental clinic &quot;The Awesome Smile&quot;</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/logo/logo.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">Logo</note>
+      </trans-unit>
+      <trans-unit id="0988f71a15ef79d546e13a3d207ac2da3e1007b9" datatype="html">
+        <source>Especialista en odontología</source>
+        <target>Specialist in dentistry</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/logo/logo.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1394b7c1443a680f979dc0aebae5e2674bdc12a5" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{siteinfo}}"/> <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>No es un sitio de verdad!<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{siteinfo}}"/> <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>This is no a real site!<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/advice/advice.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="83d883110823fe24fb18f04783f2daf49dd1ceac" datatype="html">
+        <source>Cerrado<x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/></source>
+        <target>Closed<x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/site-status/site-status.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8b14631c8d4969deac7be3a416a9cb3d911ebafc" datatype="html">
+        <source>Vuelva mas tarde</source>
+        <target>Come back later</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/site-status/site-status.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="49faf009d0dead2669f77184ab01b769f24f6cb6" datatype="html">
+        <source>
+                    <x id="START_HEADING_LEVEL6" ctype="x-h6" equiv-text="&lt;h6&gt;"/>Error. Los datos son incorrectos o el usuario no existe.<x id="CLOSE_HEADING_LEVEL6" ctype="x-h6" equiv-text="&lt;/h6&gt;"/>
+                    <x id="START_HEADING_LEVEL6_1" ctype="x-h6" equiv-text="&lt;h6&gt;"/>Usted aún No ha verificado su email. Active su cuenta mediante el enlace que recibió en su correo electrónico.<x id="CLOSE_HEADING_LEVEL6" ctype="x-h6" equiv-text="&lt;/h6&gt;"/>
+                    <x id="START_HEADING_LEVEL6_2" ctype="x-h6" equiv-text="&lt;h6&gt;"/>Su cuenta todavía no fué aprobada !<x id="CLOSE_HEADING_LEVEL6" ctype="x-h6" equiv-text="&lt;/h6&gt;"/>
+                    <x id="START_TAG_FORM" ctype="x-form" equiv-text="&lt;form&gt;"/>
+                        <x id="START_TAG_DIV_2" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                            <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+                            <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/>No ha ingresado email.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/>Email tiene un formato inválido.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                        <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                        <x id="START_TAG_DIV_2" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                            <x id="TAG_INPUT_1" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+                            <x id="START_TAG_DIV_3" ctype="x-div" equiv-text="&lt;div&gt;"/>No ha ingresado la clave.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                        <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    
+                        <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Enter<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                        <x id="START_TAG_BUTTON_1" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT_1" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Adm<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                        <x id="START_TAG_BUTTON_2" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT_2" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Esp<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                        <x id="START_TAG_BUTTON_3" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT_3" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> User<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                        <x id="START_HEADING_LEVEL5" ctype="x-h5" equiv-text="&lt;h5&gt;"/>Bienvenido!<x id="CLOSE_HEADING_LEVEL5" ctype="x-h5" equiv-text="&lt;/h5&gt;"/>
+                    <x id="CLOSE_TAG_FORM" ctype="x-form" equiv-text="&lt;/form&gt;"/>
+                </source>
+        <target>
+                    <x id="START_HEADING_LEVEL6" ctype="x-h6" equiv-text="&lt;h6&gt;"/>Error. Incorrect data or user does not exist.<x id="CLOSE_HEADING_LEVEL6" ctype="x-h6" equiv-text="&lt;/h6&gt;"/>
+                    <x id="START_HEADING_LEVEL6_1" ctype="x-h6" equiv-text="&lt;h6&gt;"/>You have not yet verified your email. Activate your account using the link you received in your email.<x id="CLOSE_HEADING_LEVEL6" ctype="x-h6" equiv-text="&lt;/h6&gt;"/>
+                    <x id="START_HEADING_LEVEL6_2" ctype="x-h6" equiv-text="&lt;h6&gt;"/>Your account has not yet been approved!<x id="CLOSE_HEADING_LEVEL6" ctype="x-h6" equiv-text="&lt;/h6&gt;"/>
+                    <x id="START_TAG_FORM" ctype="x-form" equiv-text="&lt;form&gt;"/>
+                        <x id="START_TAG_DIV_2" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                            <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+                            <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/>You did not provide an email<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/>Invalid email format.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                        <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                        <x id="START_TAG_DIV_2" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                            <x id="TAG_INPUT_1" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+                            <x id="START_TAG_DIV_3" ctype="x-div" equiv-text="&lt;div&gt;"/>Password not provided<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                        <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    
+                        <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Enter<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                        <x id="START_TAG_BUTTON_1" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT_1" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Adm<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                        <x id="START_TAG_BUTTON_2" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT_2" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Spec<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                        <x id="START_TAG_BUTTON_3" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT_3" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> User<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                        <x id="START_HEADING_LEVEL5" ctype="x-h5" equiv-text="&lt;h5&gt;"/>Welcome!<x id="CLOSE_HEADING_LEVEL5" ctype="x-h5" equiv-text="&lt;/h5&gt;"/>
+                    <x id="CLOSE_TAG_FORM" ctype="x-form" equiv-text="&lt;/form&gt;"/>
+                </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/menu/menu.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1e50be6175903f13f63900b5e841aa3d4bbc6b72" datatype="html">
+        <source>El usuario con este email ya existe !</source>
+        <target>User with this email already exists !</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/registro/registro.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1f783587d2d938e84055246271e641d32361fbd4" datatype="html">
+        <source>
+                            <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="TAG_IMG" ctype="image" equiv-text="&lt;img/&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                            <x id="START_TAG_DIV_4" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+                                <x id="START_TAG_DIV_2" ctype="x-div" equiv-text="&lt;div&gt;"/>Requerido.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="START_TAG_DIV_3" ctype="x-div" equiv-text="&lt;div&gt;"/>Formato invalido.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_4" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="TAG_INPUT_1" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+                                <x id="START_TAG_DIV_5" ctype="x-div" equiv-text="&lt;div&gt;"/>Requerido.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="START_TAG_DIV_6" ctype="x-div" equiv-text="&lt;div&gt;"/>Formato invalido.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_4" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="TAG_INPUT_2" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+                                <x id="START_TAG_DIV_7" ctype="x-div" equiv-text="&lt;div&gt;"/>Requerido.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="START_TAG_DIV_8" ctype="x-div" equiv-text="&lt;div&gt;"/>Formato invalido.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="START_TAG_DIV_9" ctype="x-div" equiv-text="&lt;div&gt;"/>Error. Ingrese un valor entre 1 y 100<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_4" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="START_TAG_LABEL" ctype="x-label" equiv-text="&lt;label&gt;"/>Sexo<x id="CLOSE_TAG_LABEL" ctype="x-label" equiv-text="&lt;/label&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                                <x id="START_TAG_SELECT" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                                    <x id="START_TAG_OPTION" ctype="x-option" equiv-text="&lt;option&gt;"/>M<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                    <x id="START_TAG_OPTION_1" ctype="x-option" equiv-text="&lt;option&gt;"/>F<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                                <x id="START_TAG_DIV_10" ctype="x-div" equiv-text="&lt;div&gt;"/>Requerido.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_4" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="TAG_INPUT_3" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+                                <x id="START_TAG_DIV_11" ctype="x-div" equiv-text="&lt;div&gt;"/>Requerido.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="START_TAG_DIV_12" ctype="x-div" equiv-text="&lt;div&gt;"/>Formato invalido.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_4" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="TAG_INPUT_4" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+                                <x id="START_TAG_DIV_13" ctype="x-div" equiv-text="&lt;div&gt;"/>Requerido.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="START_TAG_DIV_14" ctype="x-div" equiv-text="&lt;div&gt;"/>Ingrese no menos de 6 caracteres.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            
+                            <x id="START_TAG_DIV_4" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="START_TAG_LABEL" ctype="x-label" equiv-text="&lt;label&gt;"/>Foto de perfil<x id="CLOSE_TAG_LABEL" ctype="x-label" equiv-text="&lt;/label&gt;"/>
+                                <x id="TAG_INPUT_5" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+                                <x id="START_TAG_DIV_15" ctype="x-div" equiv-text="&lt;div&gt;"/>Requerido.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="START_TAG_DIV_16" ctype="x-div" equiv-text="&lt;div&gt;"/>Error. No es una imagen. No tiene que exceder los 38780 bites. Formatos soportados: jpg, jpeg, gif<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_18" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="START_TAG_LABEL" ctype="x-label" equiv-text="&lt;label&gt;"/>Especialidad<x id="CLOSE_TAG_LABEL" ctype="x-label" equiv-text="&lt;/label&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                                <x id="START_TAG_SELECT_1" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                                    <x id="START_TAG_OPTION_2" ctype="x-option" equiv-text="&lt;option&gt;"/>NA<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                    <x id="START_TAG_OPTION_3" ctype="x-option" equiv-text="&lt;option&gt;"/>Ortodoncista<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                    <x id="START_TAG_OPTION_4" ctype="x-option" equiv-text="&lt;option&gt;"/>Endodoncista<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                    <x id="START_TAG_OPTION_5" ctype="x-option" equiv-text="&lt;option&gt;"/>Cirujano oral<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                    <x id="START_TAG_OPTION_6" ctype="x-option" equiv-text="&lt;option&gt;"/>Imagenologia<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                    <x id="START_TAG_OPTION_7" ctype="x-option" equiv-text="&lt;option&gt;"/>Implantologo<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                    <x id="START_TAG_OPTION_8" ctype="x-option" equiv-text="&lt;option&gt;"/>Odontopediatra<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                    <x id="START_TAG_OPTION_9" ctype="x-option" equiv-text="&lt;option&gt;"/>Protesis<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                                <x id="START_TAG_DIV_17" ctype="x-div" equiv-text="&lt;div&gt;"/>Requerido.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_4" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="START_TAG_LABEL" ctype="x-label" equiv-text="&lt;label&gt;"/>Tipo<x id="CLOSE_TAG_LABEL" ctype="x-label" equiv-text="&lt;/label&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                                <x id="START_TAG_SELECT_2" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                                    <x id="START_TAG_OPTION_10" ctype="x-option" equiv-text="&lt;option&gt;"/>Usuario<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                    <x id="START_TAG_OPTION_11" ctype="x-option" equiv-text="&lt;option&gt;"/>Especialista<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                    
+                                <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                                <x id="START_TAG_DIV_19" ctype="x-div" equiv-text="&lt;div&gt;"/>Requerido.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_23" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="START_TAG_DIV_20" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                    <x id="START_TAG_RE-CAPTCHA" ctype="x-re-captcha" equiv-text="&lt;re-captcha&gt;"/><x id="CLOSE_TAG_RE-CAPTCHA" ctype="x-re-captcha" equiv-text="&lt;/re-captcha&gt;"/>
+                                <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                                <x id="START_TAG_DIV_22" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                                    <x id="START_TAG_DIV_21" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>Por favor espere...<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                                    <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Submit<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                                <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                        </source>
+        <target>
+                            <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="TAG_IMG" ctype="image" equiv-text="&lt;img/&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                            <x id="START_TAG_DIV_4" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+                                <x id="START_TAG_DIV_2" ctype="x-div" equiv-text="&lt;div&gt;"/>Required.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="START_TAG_DIV_3" ctype="x-div" equiv-text="&lt;div&gt;"/>Invalid format.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_4" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="TAG_INPUT_1" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+                                <x id="START_TAG_DIV_5" ctype="x-div" equiv-text="&lt;div&gt;"/>Required.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="START_TAG_DIV_6" ctype="x-div" equiv-text="&lt;div&gt;"/>Invalid format.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_4" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="TAG_INPUT_2" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+                                <x id="START_TAG_DIV_7" ctype="x-div" equiv-text="&lt;div&gt;"/>Required.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="START_TAG_DIV_8" ctype="x-div" equiv-text="&lt;div&gt;"/>Invalid format.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="START_TAG_DIV_9" ctype="x-div" equiv-text="&lt;div&gt;"/>Error. Enter a value between 1 and 100<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_4" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="START_TAG_LABEL" ctype="x-label" equiv-text="&lt;label&gt;"/>Gender<x id="CLOSE_TAG_LABEL" ctype="x-label" equiv-text="&lt;/label&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                                <x id="START_TAG_SELECT" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                                    <x id="START_TAG_OPTION" ctype="x-option" equiv-text="&lt;option&gt;"/>M<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                    <x id="START_TAG_OPTION_1" ctype="x-option" equiv-text="&lt;option&gt;"/>F<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                                <x id="START_TAG_DIV_10" ctype="x-div" equiv-text="&lt;div&gt;"/>Required.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_4" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="TAG_INPUT_3" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+                                <x id="START_TAG_DIV_11" ctype="x-div" equiv-text="&lt;div&gt;"/>Required.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="START_TAG_DIV_12" ctype="x-div" equiv-text="&lt;div&gt;"/>Invalid format.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_4" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="TAG_INPUT_4" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+                                <x id="START_TAG_DIV_13" ctype="x-div" equiv-text="&lt;div&gt;"/>Required.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="START_TAG_DIV_14" ctype="x-div" equiv-text="&lt;div&gt;"/>Insert at least 6 characters.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            
+                            <x id="START_TAG_DIV_4" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="START_TAG_LABEL" ctype="x-label" equiv-text="&lt;label&gt;"/>User photo<x id="CLOSE_TAG_LABEL" ctype="x-label" equiv-text="&lt;/label&gt;"/>
+                                <x id="TAG_INPUT_5" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+                                <x id="START_TAG_DIV_15" ctype="x-div" equiv-text="&lt;div&gt;"/>Required.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="START_TAG_DIV_16" ctype="x-div" equiv-text="&lt;div&gt;"/>Error. It is no an image. Have to be less or equal to 38780 bites. Supported formats: jpg, jpeg, gif<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_18" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="START_TAG_LABEL" ctype="x-label" equiv-text="&lt;label&gt;"/>Specialty<x id="CLOSE_TAG_LABEL" ctype="x-label" equiv-text="&lt;/label&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                                <x id="START_TAG_SELECT_1" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                                    <x id="START_TAG_OPTION_2" ctype="x-option" equiv-text="&lt;option&gt;"/>NA<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                    <x id="START_TAG_OPTION_3" ctype="x-option" equiv-text="&lt;option&gt;"/>Orthodontist<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                    <x id="START_TAG_OPTION_4" ctype="x-option" equiv-text="&lt;option&gt;"/>Endodontist<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                    <x id="START_TAG_OPTION_5" ctype="x-option" equiv-text="&lt;option&gt;"/>Oral surgeon<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                    <x id="START_TAG_OPTION_6" ctype="x-option" equiv-text="&lt;option&gt;"/>Imaging<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                    <x id="START_TAG_OPTION_7" ctype="x-option" equiv-text="&lt;option&gt;"/>Implantologist<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                    <x id="START_TAG_OPTION_8" ctype="x-option" equiv-text="&lt;option&gt;"/>Pediatric dentist<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                    <x id="START_TAG_OPTION_9" ctype="x-option" equiv-text="&lt;option&gt;"/>Prothesis<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                                <x id="START_TAG_DIV_17" ctype="x-div" equiv-text="&lt;div&gt;"/>Required.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_4" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="START_TAG_LABEL" ctype="x-label" equiv-text="&lt;label&gt;"/>Type<x id="CLOSE_TAG_LABEL" ctype="x-label" equiv-text="&lt;/label&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                                <x id="START_TAG_SELECT_2" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                                    <x id="START_TAG_OPTION_10" ctype="x-option" equiv-text="&lt;option&gt;"/>User<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                    <x id="START_TAG_OPTION_11" ctype="x-option" equiv-text="&lt;option&gt;"/>Specialist<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                                    
+                                <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                                <x id="START_TAG_DIV_19" ctype="x-div" equiv-text="&lt;div&gt;"/>Required.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_23" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="START_TAG_DIV_20" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                    <x id="START_TAG_RE-CAPTCHA" ctype="x-re-captcha" equiv-text="&lt;re-captcha&gt;"/><x id="CLOSE_TAG_RE-CAPTCHA" ctype="x-re-captcha" equiv-text="&lt;/re-captcha&gt;"/>
+                                <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                                <x id="START_TAG_DIV_22" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                                    <x id="START_TAG_DIV_21" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>Please wait...<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                                    <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Submit<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                                <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/registro/registro.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9d3efc4e820be08dda8433e7ff44199454273f37" datatype="html">
+        <source>
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/> A la Sala<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/><x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                    <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="START_TAG_BUTTON_1" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT_1" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> PDF<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>  <x id="START_TAG_BUTTON_2" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT_1" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> CSV<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="START_TAG_DIV_2" ctype="x-div" equiv-text="&lt;div&gt;"/>* Atencion!: Para ocultar un turno, debe comentarlo. NO podrá volver a ver un turno ocultado!<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="START_TAG_DIV_3" ctype="x-div" equiv-text="&lt;div&gt;"/>No hay turnos!<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    
+                    <x id="START_TAG_FORM" ctype="x-form" equiv-text="&lt;form&gt;"/>
+                        <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+                            <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+                                <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Fecha turno<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Horario<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Nombre<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Apellido<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Especialista<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Codigo sala<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Estado turno<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Accion<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Reseña<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+                            <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                                <x id="START_TABLE_ROW_1" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{item.fechaturno | mypipe2}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_1" equiv-text="{{item.horario}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_2" equiv-text="{{item.nombre | titlecase}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item.apellido | titlecase}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_4" equiv-text="{{item.especialista}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_5" equiv-text="{{item.codigosala}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL_1" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_6" equiv-text="{{item.estado}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL_2" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="START_TAG_BUTTON_3" ctype="x-button" equiv-text="&lt;button&gt;"/>Comentar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL_3" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="START_TAG_BUTTON_4" ctype="x-button" equiv-text="&lt;button&gt;"/>Ver reseña<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+                        <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+                        
+                    <x id="CLOSE_TAG_FORM" ctype="x-form" equiv-text="&lt;/form&gt;"/>
+                </source>
+        <target>
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/> To waiting room<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/><x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                    <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="START_TAG_BUTTON_1" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT_1" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> PDF<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>  <x id="START_TAG_BUTTON_2" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT_1" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> CSV<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="START_TAG_DIV_2" ctype="x-div" equiv-text="&lt;div&gt;"/>* Attention !: To hide a turn, you must comment. You will NOT be able to see a hidden turn again!<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="START_TAG_DIV_3" ctype="x-div" equiv-text="&lt;div&gt;"/>No turns available<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    
+                    <x id="START_TAG_FORM" ctype="x-form" equiv-text="&lt;form&gt;"/>
+                        <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+                            <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+                                <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Date of turn<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Schedule<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Name<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Surname<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Specialist<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Room code<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Turn status<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Action<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Review<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+                            <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                                <x id="START_TABLE_ROW_1" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{item.fechaturno | mypipe2}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_1" equiv-text="{{item.horario}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_2" equiv-text="{{item.nombre | titlecase}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item.apellido | titlecase}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_4" equiv-text="{{item.especialista}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_5" equiv-text="{{item.codigosala}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL_1" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_6" equiv-text="{{item.estado}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL_2" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="START_TAG_BUTTON_3" ctype="x-button" equiv-text="&lt;button&gt;"/>Comment<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL_3" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="START_TAG_BUTTON_4" ctype="x-button" equiv-text="&lt;button&gt;"/>See review<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+                        <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+                        
+                    <x id="CLOSE_TAG_FORM" ctype="x-form" equiv-text="&lt;/form&gt;"/>
+                </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/misdatos/misdatos.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3b413c24f90835753ff0b73fdff385c66ad29b94" datatype="html">
+        <source>
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="START_HEADING_LEVEL6" ctype="x-h6" equiv-text="&lt;h6&gt;"/>Comentario registrado. Muchas gracias!<x id="CLOSE_HEADING_LEVEL6" ctype="x-h6" equiv-text="&lt;/h6&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="START_HEADING_LEVEL5" ctype="x-h5" equiv-text="&lt;h5&gt;"/>Encuesta<x id="CLOSE_HEADING_LEVEL5" ctype="x-h5" equiv-text="&lt;/h5&gt;"/>
+                    
+                    <x id="START_TAG_DIV_8" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                        <x id="START_TAG_FORM" ctype="x-form" equiv-text="&lt;form&gt;"/>
+                            <x id="START_TAG_DIV_3" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="START_TAG_LABEL" ctype="x-label" equiv-text="&lt;label&gt;"/>*Valore la clinica<x id="CLOSE_TAG_LABEL" ctype="x-label" equiv-text="&lt;/label&gt;"/>
+                                <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+                                <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/>Requerido.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="START_TAG_DIV_2" ctype="x-div" equiv-text="&lt;div&gt;"/>Error, ingrese valor entre 1 y 10.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_3" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="START_TAG_LABEL" ctype="x-label" equiv-text="&lt;label&gt;"/>*Valore el especialista<x id="CLOSE_TAG_LABEL" ctype="x-label" equiv-text="&lt;/label&gt;"/>
+                                <x id="TAG_INPUT_1" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+                                <x id="START_TAG_DIV_4" ctype="x-div" equiv-text="&lt;div&gt;"/>Requerido.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="START_TAG_DIV_5" ctype="x-div" equiv-text="&lt;div&gt;"/>Error, ingrese valor entre 1 y 10.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_3" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="START_TAG_LABEL" ctype="x-label" equiv-text="&lt;label&gt;"/>*Experiencia en atencion<x id="CLOSE_TAG_LABEL" ctype="x-label" equiv-text="&lt;/label&gt;"/>
+                                <x id="START_TAG_TEXTAREA" ctype="x-textarea" equiv-text="&lt;textarea&gt;"/><x id="CLOSE_TAG_TEXTAREA" ctype="x-textarea" equiv-text="&lt;/textarea&gt;"/>
+                                <x id="START_TAG_DIV_6" ctype="x-div" equiv-text="&lt;div&gt;"/>Requerido.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="START_TAG_DIV_7" ctype="x-div" equiv-text="&lt;div&gt;"/>Máximo de 66 caracteres alcanzado<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>* Campos obligatorios<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/>
+                            <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Enviar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                        <x id="CLOSE_TAG_FORM" ctype="x-form" equiv-text="&lt;/form&gt;"/>
+                    <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="START_TAG_BUTTON_1" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/> Cerrar<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/><x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                </source>
+        <target>
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="START_HEADING_LEVEL6" ctype="x-h6" equiv-text="&lt;h6&gt;"/>Comment was registered. Thank you!<x id="CLOSE_HEADING_LEVEL6" ctype="x-h6" equiv-text="&lt;/h6&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="START_HEADING_LEVEL5" ctype="x-h5" equiv-text="&lt;h5&gt;"/>Survey<x id="CLOSE_HEADING_LEVEL5" ctype="x-h5" equiv-text="&lt;/h5&gt;"/>
+                    
+                    <x id="START_TAG_DIV_8" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                        <x id="START_TAG_FORM" ctype="x-form" equiv-text="&lt;form&gt;"/>
+                            <x id="START_TAG_DIV_3" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="START_TAG_LABEL" ctype="x-label" equiv-text="&lt;label&gt;"/>*Rate the clinic<x id="CLOSE_TAG_LABEL" ctype="x-label" equiv-text="&lt;/label&gt;"/>
+                                <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+                                <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/>Required.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="START_TAG_DIV_2" ctype="x-div" equiv-text="&lt;div&gt;"/>Error, insert a value between 1 and 10.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_3" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="START_TAG_LABEL" ctype="x-label" equiv-text="&lt;label&gt;"/>*Rate the specialist<x id="CLOSE_TAG_LABEL" ctype="x-label" equiv-text="&lt;/label&gt;"/>
+                                <x id="TAG_INPUT_1" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+                                <x id="START_TAG_DIV_4" ctype="x-div" equiv-text="&lt;div&gt;"/>Required.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="START_TAG_DIV_5" ctype="x-div" equiv-text="&lt;div&gt;"/>Error, insert a value between 1 and 10.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_TAG_DIV_3" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="START_TAG_LABEL" ctype="x-label" equiv-text="&lt;label&gt;"/>*Experience in care<x id="CLOSE_TAG_LABEL" ctype="x-label" equiv-text="&lt;/label&gt;"/>
+                                <x id="START_TAG_TEXTAREA" ctype="x-textarea" equiv-text="&lt;textarea&gt;"/><x id="CLOSE_TAG_TEXTAREA" ctype="x-textarea" equiv-text="&lt;/textarea&gt;"/>
+                                <x id="START_TAG_DIV_6" ctype="x-div" equiv-text="&lt;div&gt;"/>Required.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                                <x id="START_TAG_DIV_7" ctype="x-div" equiv-text="&lt;div&gt;"/>Maximum of 66 characters reached<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>* Required fields<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/>
+                            <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Send<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                        <x id="CLOSE_TAG_FORM" ctype="x-form" equiv-text="&lt;/form&gt;"/>
+                    <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="START_TAG_BUTTON_1" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/> Close<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/><x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/misdatos/misdatos.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f0d0a1947c4aec9dd8ff2781a0f1dfb7f8a1429a" datatype="html">
+        <source>
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/> A la Sala<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/><x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="START_TAG_BUTTON_1" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT_1" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> PDF<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>  <x id="START_TAG_BUTTON_2" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT_1" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> CSV<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input/&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="START_TAG_BUTTON_3" ctype="x-button" equiv-text="&lt;button&gt;"/>Buscar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                    <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                    <x id="START_TAG_DIV_2" ctype="x-div" equiv-text="&lt;div&gt;"/>No hay turnos!<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="START_TAG_FORM" ctype="x-form" equiv-text="&lt;form&gt;"/>
+                        <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+                            <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+                                <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Fecha turno<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Horario<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Nombre<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Apellido<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Especialista<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Codigo sala<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Estado turno<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Accion<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+                            <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                                <x id="START_TABLE_ROW_1" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{item.fechaturno | mypipe2}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_1" equiv-text="{{item.horario}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_2" equiv-text="{{item.nombre | titlecase}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item.apellido | titlecase}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_4" equiv-text="{{item.especialista}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_5" equiv-text="{{item.codigosala}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_6" equiv-text="{{item.estado}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="START_TAG_BUTTON_4" ctype="x-button" equiv-text="&lt;button&gt;"/>Cancelar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+                        <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+                    <x id="CLOSE_TAG_FORM" ctype="x-form" equiv-text="&lt;/form&gt;"/>
+                </source>
+        <target>
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/> To waiting room<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/><x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="START_TAG_BUTTON_1" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT_1" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> PDF<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>  <x id="START_TAG_BUTTON_2" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT_1" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> CSV<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input/&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="START_TAG_BUTTON_3" ctype="x-button" equiv-text="&lt;button&gt;"/>Buscar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                    <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                    <x id="START_TAG_DIV_2" ctype="x-div" equiv-text="&lt;div&gt;"/>No turns available!<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="START_TAG_FORM" ctype="x-form" equiv-text="&lt;form&gt;"/>
+                        <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+                            <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+                                <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Date of turns<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Schedule<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Name<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Surname<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Specialist<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Room code<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Turn status<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Action<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+                            <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                                <x id="START_TABLE_ROW_1" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{item.fechaturno | mypipe2}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_1" equiv-text="{{item.horario}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_2" equiv-text="{{item.nombre | titlecase}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item.apellido | titlecase}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_4" equiv-text="{{item.especialista}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_5" equiv-text="{{item.codigosala}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_6" equiv-text="{{item.estado}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="START_TAG_BUTTON_4" ctype="x-button" equiv-text="&lt;button&gt;"/>Cancel<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+                        <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+                    <x id="CLOSE_TAG_FORM" ctype="x-form" equiv-text="&lt;/form&gt;"/>
+                </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/misdatos/misdatos.component.html</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e240826022cd3356f31601dea2104fa8cf4c7662" datatype="html">
+        <source><x id="START_HEADING_LEVEL5" ctype="x-h5" equiv-text="&lt;h5&gt;"/>Se canceló un turno!<x id="CLOSE_HEADING_LEVEL5" ctype="x-h5" equiv-text="&lt;/h5&gt;"/></source>
+        <target><x id="START_HEADING_LEVEL5" ctype="x-h5" equiv-text="&lt;h5&gt;"/>One turn was cancelled!<x id="CLOSE_HEADING_LEVEL5" ctype="x-h5" equiv-text="&lt;/h5&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/misdatos/misdatos.component.html</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="812923d11f168f71ac201a5170fe3bbea1a540c0" datatype="html">
+        <source> Aceptar</source>
+        <target> Accept</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/misdatos/misdatos.component.html</context>
+          <context context-type="linenumber">132</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ed1e258113a9111f9b9103913598d12ca2833831" datatype="html">
+        <source>Reseña</source>
+        <target>Review</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/misdatos/misdatos.component.html</context>
+          <context context-type="linenumber">140</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="62ab098e1463dc6d71de3ed21b6e415ac332d100" datatype="html">
+        <source>
+                <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+                    <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                        <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Especialidad<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                        <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Acción<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                    <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+                <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                    <x id="START_TABLE_ROW_1" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                        <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{esp}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                        <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                            <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Ver<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                        <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                    <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+            </source>
+        <target>
+                <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+                    <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                        <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Specialty<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                        <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Action<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                    <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+                <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                    <x id="START_TABLE_ROW_1" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                        <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{esp}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                        <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                            <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>See<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                        <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                    <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+            </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/tabla-especialidades/tabla-especialidades.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d0f69adcf5269202b9388066849723e4127c4dde" datatype="html">
+        <source>NO HAY TURNOS PARA EL DÍA ELEGIDO !</source>
+        <target>NO TURNS FOR THE CHOOSEN DAY !</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/tabla-especialidades/tabla-especialidades.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="572ee5e9b4228cc52d645d6df3453c4d55dffa9b" datatype="html">
+        <source>
+            <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+                <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+                    <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                        <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Turnos<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                        <x id="START_TABLE_HEADER_CELL_1" ctype="x-th" equiv-text="&lt;th&gt;"/><x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                    <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+                <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                    <x id="START_TABLE_ROW_1" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                        <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{turno}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                        <x id="START_TABLE_CELL_1" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                            <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Tomar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                        <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                    <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+            <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+        </source>
+        <target>
+            <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+                <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+                    <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                        <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Turns<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                        <x id="START_TABLE_HEADER_CELL_1" ctype="x-th" equiv-text="&lt;th&gt;"/><x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                    <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+                <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                    <x id="START_TABLE_ROW_1" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                        <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{turno}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                        <x id="START_TABLE_CELL_1" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                            <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Take<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                        <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                    <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+            <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/tabla-especialidades/tabla-especialidades.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="53a58f785a128800064e97df487c2eaaac0dd1fe" datatype="html">
+        <source>Sala</source>
+        <target>Waiting room</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/navbar/navbar.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">waiting room</note>
+      </trans-unit>
+      <trans-unit id="408cb6073e60c5d966296a3207fc596adca75e01" datatype="html">
+        <source>Admin</source>
+        <target>Admin</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/navbar/navbar.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cf04f7c4d68523426a322308a940acf7a2d09b29" datatype="html">
+        <source>Registro</source>
+        <target>Registry</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/navbar/navbar.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b587006961531faf9696d0b1f826910977e4c75d" datatype="html">
+        <source>Pacientes</source>
+        <target>Patients</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/navbar/navbar.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="eef012246f1048a52239ba8b7e9ce39e205e8a9a" datatype="html">
+        <source>Mi Cuenta</source>
+        <target>My account</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/navbar/navbar.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c5bb9f8936cb33db2ca351a1b87a984fdf11917c" datatype="html">
+        <source>Comments</source>
+        <target>Comments</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/navbar/navbar.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="03da46dc9fbccdae47f337ead1f78b3087c176d3" datatype="html">
+        <source>Tomar Turno</source>
+        <target>Take a turn</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/navbar/navbar.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="33e13be79447f87cfb00dc0e6f52edae1bef6f8c" datatype="html">
+        <source>Mis turnos</source>
+        <target>My turns</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/navbar/navbar.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="57d23af03b2a61c04f88a89ed1598727a8efdfda" datatype="html">
+        <source>Salir <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/></source>
+        <target>Exit <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/navbar/navbar.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3545a6d53cd7d440c0752f169281b8bafbb80234" datatype="html">
+        <source>
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/> A la Sala<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/><x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                    <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="START_TAG_BUTTON_1" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT_1" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> PDF<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>  <x id="START_TAG_BUTTON_2" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT_1" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> CSV<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                        <x id="START_TAG_DIV_2" ctype="x-div" equiv-text="&lt;div&gt;"/>No hay mas turnos para hoy!<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="START_TAG_FORM" ctype="x-form" equiv-text="&lt;form&gt;"/>
+                        <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+                            <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+                                <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Fecha turno<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Horario<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Nombre<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Apellido<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Codigo sala<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Asistencia<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Accion<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+                            <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                                <x id="START_TABLE_ROW_1" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{item.fechaturno}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_1" equiv-text="{{item.horario}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_2" equiv-text="{{item.nombre}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item.apellido}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_4" equiv-text="{{item.codigosala}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="START_TAG_SELECT" ctype="x-select" equiv-text="&lt;select&gt;"/><x id="START_TAG_OPTION" ctype="x-option" equiv-text="&lt;option&gt;"/>-select-<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/><x id="START_TAG_OPTION_1" ctype="x-option" equiv-text="&lt;option&gt;"/>presente<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/><x id="START_TAG_OPTION_2" ctype="x-option" equiv-text="&lt;option&gt;"/>ausente<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/><x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="START_TAG_BUTTON_3" ctype="x-button" equiv-text="&lt;button&gt;"/>Atender<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_BUTTON_4" ctype="x-button" equiv-text="&lt;button&gt;"/>Cancelar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_BUTTON_5" ctype="x-button" equiv-text="&lt;button&gt;"/>Rechazar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_BUTTON_6" ctype="x-button" equiv-text="&lt;button&gt;"/>Terminar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+                        <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+                        
+                    <x id="CLOSE_TAG_FORM" ctype="x-form" equiv-text="&lt;/form&gt;"/>
+                </source>
+        <target>
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/> To waiting room<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/><x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                    <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="START_TAG_BUTTON_1" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT_1" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> PDF<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>  <x id="START_TAG_BUTTON_2" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT_1" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> CSV<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                        <x id="START_TAG_DIV_2" ctype="x-div" equiv-text="&lt;div&gt;"/>No more turns for today!<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="START_TAG_FORM" ctype="x-form" equiv-text="&lt;form&gt;"/>
+                        <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+                            <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+                                <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Date of turn<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Time<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Name<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Surname<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Room code<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Assistance<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Action<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+                            <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                                <x id="START_TABLE_ROW_1" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{item.fechaturno}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_1" equiv-text="{{item.horario}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_2" equiv-text="{{item.nombre}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item.apellido}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_4" equiv-text="{{item.codigosala}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="START_TAG_SELECT" ctype="x-select" equiv-text="&lt;select&gt;"/><x id="START_TAG_OPTION" ctype="x-option" equiv-text="&lt;option&gt;"/>-select-<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/><x id="START_TAG_OPTION_1" ctype="x-option" equiv-text="&lt;option&gt;"/>present<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/><x id="START_TAG_OPTION_2" ctype="x-option" equiv-text="&lt;option&gt;"/>absent<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/><x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="START_TAG_BUTTON_3" ctype="x-button" equiv-text="&lt;button&gt;"/>Serve<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_BUTTON_4" ctype="x-button" equiv-text="&lt;button&gt;"/>Cancel<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_BUTTON_5" ctype="x-button" equiv-text="&lt;button&gt;"/>Reject<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_BUTTON_6" ctype="x-button" equiv-text="&lt;button&gt;"/>Finish<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+                        <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+                        
+                    <x id="CLOSE_TAG_FORM" ctype="x-form" equiv-text="&lt;/form&gt;"/>
+                </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/pacientes/pacientes.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="366cd0848873f7ce64c37f3506321e48f5b36fe8" datatype="html">
+        <source>
+                    <x id="START_HEADING_LEVEL5" ctype="x-h5" equiv-text="&lt;h5&gt;"/>Reseña<x id="CLOSE_HEADING_LEVEL5" ctype="x-h5" equiv-text="&lt;/h5&gt;"/>
+                    <x id="START_TAG_DIV_2" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                        <x id="START_TAG_FORM" ctype="x-form" equiv-text="&lt;form&gt;"/>
+                            
+                            <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="START_TAG_TEXTAREA" ctype="x-textarea" equiv-text="&lt;textarea&gt;"/><x id="CLOSE_TAG_TEXTAREA" ctype="x-textarea" equiv-text="&lt;/textarea&gt;"/>
+                                <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/>Requerido.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>* Campos obligatorios<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/>
+                            <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/> Terminar<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/><x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                        <x id="CLOSE_TAG_FORM" ctype="x-form" equiv-text="&lt;/form&gt;"/>
+                    <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                </source>
+        <target>
+                    <x id="START_HEADING_LEVEL5" ctype="x-h5" equiv-text="&lt;h5&gt;"/>Review<x id="CLOSE_HEADING_LEVEL5" ctype="x-h5" equiv-text="&lt;/h5&gt;"/>
+                    <x id="START_TAG_DIV_2" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                        <x id="START_TAG_FORM" ctype="x-form" equiv-text="&lt;form&gt;"/>
+                            
+                            <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                                <x id="START_TAG_TEXTAREA" ctype="x-textarea" equiv-text="&lt;textarea&gt;"/><x id="CLOSE_TAG_TEXTAREA" ctype="x-textarea" equiv-text="&lt;/textarea&gt;"/>
+                                <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/>Required.<x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                            <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>* Required fields<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/>
+                            <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/> Finish<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/><x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                        <x id="CLOSE_TAG_FORM" ctype="x-form" equiv-text="&lt;/form&gt;"/>
+                    <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/pacientes/pacientes.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f4f8ba3b13c86e85515ded15fe05d84cd6de7fe2" datatype="html">
+        <source>
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                        <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+                            <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+                                <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Dia<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Acción<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+                            <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                                <x id="START_TABLE_ROW_1" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{item}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                                        <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Select<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                                    <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+                        <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+                    <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    
+                    
+
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                        <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+                            <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+                                <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Sus días<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Acción<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+                            <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                                <x id="START_TABLE_ROW_2" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_CELL_1" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{item}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL_1" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                                        <x id="START_TAG_BUTTON_1" ctype="x-button" equiv-text="&lt;button&gt;"/>Delete<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                                    <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+                        <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+                    <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+
+                    
+
+                    <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                        <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+                            <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+                                <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Dia<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Acción<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+                            <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                                <x id="START_TABLE_ROW_3" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{item}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                                        <x id="START_TAG_BUTTON_2" ctype="x-button" equiv-text="&lt;button&gt;"/>Select<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                                    <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+                        <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+                    <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+
+                    
+
+                    <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                        <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+                            <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+                                <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Sus horas<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Acción<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+                            <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                                <x id="START_TABLE_ROW_4" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_CELL_1" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{item}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL_1" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                                        <x id="START_TAG_BUTTON_3" ctype="x-button" equiv-text="&lt;button&gt;"/>Delete<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                                    <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+                        <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+                    <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+
+                </source>
+        <target>
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                        <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+                            <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+                                <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Day<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Action<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+                            <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                                <x id="START_TABLE_ROW_1" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{item}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                                        <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Select<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                                    <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+                        <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+                    <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    
+                    
+
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                        <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+                            <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+                                <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Your days<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Action<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+                            <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                                <x id="START_TABLE_ROW_2" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_CELL_1" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{item}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL_1" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                                        <x id="START_TAG_BUTTON_1" ctype="x-button" equiv-text="&lt;button&gt;"/>Delete<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                                    <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+                        <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+                    <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+
+                    
+
+                    <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                        <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+                            <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+                                <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Day<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Action<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+                            <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                                <x id="START_TABLE_ROW_3" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{item}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                                        <x id="START_TAG_BUTTON_2" ctype="x-button" equiv-text="&lt;button&gt;"/>Select<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                                    <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+                        <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+                    <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+
+                    
+
+                    <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                        <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+                            <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+                                <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Your hours<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Action<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+                            <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                                <x id="START_TABLE_ROW_4" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_CELL_1" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{item}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL_1" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                                        <x id="START_TAG_BUTTON_3" ctype="x-button" equiv-text="&lt;button&gt;"/>Delete<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                                    <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+                        <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+                    <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+
+                </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/perfil/perfil.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a5cf1d9296c085220eb312e9a55f405c320553e7" datatype="html">
+        <source>
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                        <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+                            <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+                                <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Dia<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Hora<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Nombre<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Apellido<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Comentario<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Accion<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+                            <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                                <x id="START_TABLE_ROW_1" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{item.fechaturno | mypipe2}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_1" equiv-text="{{item.horario}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_2" equiv-text="{{item.nombre | titlecase}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item.apellido | titlecase}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_4" equiv-text="{{item.texto}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                                        <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Ocultar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                                    <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+                        <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+                    <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                </source>
+        <target>
+                    <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                        <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+                            <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+                                <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Day<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Hour<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Name<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Surname<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Comment<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                    <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Action<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+                            <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                                <x id="START_TABLE_ROW_1" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{item.fechaturno | mypipe2}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_1" equiv-text="{{item.horario}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_2" equiv-text="{{item.nombre | titlecase}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item.apellido | titlecase}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_4" equiv-text="{{item.texto}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                    <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                                        <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Hide<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+                                    <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                                <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                            <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+                        <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+                    <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                    <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/comentarios/comentarios.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="99bd023051c4d7054848b32f4e8fbe1be84d02f5" datatype="html">
+        <source> Alta User</source>
+        <target> New User</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/admin/admin.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="274e631b31f4dc045d2a4245f548e066ec8ea2da" datatype="html">
+        <source> A la Sala</source>
+        <target> To waiting room</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/admin/admin.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a9efcee5983d221ea5ba3f9dd6528981f03c5bfd" datatype="html">
+        <source>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Nombre<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Apellido<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Accesos<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Especialidad<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Cantidad turnos<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+            </source>
+        <target>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Name<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Surname<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Access<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Specialty<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Quantity of turns<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+            </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/estadisticas/estadisticas.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dd76629c5f867387b97feb6b151a211c1bb8d425" datatype="html">
+        <source>Ver</source>
+        <target>See</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/estadisticas/estadisticas.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="71a966169baafff433062ccf0be281fbabcf9fe9" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Cargando datos ... <x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/></source>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Loading data ... <x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/estadisticas/estadisticas.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/estadisticas/estadisticas.component.html</context>
+          <context context-type="linenumber">170</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="62cfc0f05624b2a7c236812da779b680e492bb8e" datatype="html">
+        <source>Estadisticas Turnos</source>
+        <target>Turns Statistics</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/estadisticas/estadisticas.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0cc1b42286f44c8b73704a49490a3b658c2d98f4" datatype="html">
+        <source>
+    <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+        <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Especialidad<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Realizados<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Cancelados<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>x Cliente<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>x Recepcionista<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+        <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+        <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+            
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>Ortodoncista<x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION" equiv-text="{{item2.fechaturno}}"/> : <x id="INTERPOLATION_1" equiv-text="{{item2.apellido}}"/> <x id="INTERPOLATION_2" equiv-text="{{item2.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT_1" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_1" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item3.fechaturno}}"/> : <x id="INTERPOLATION_4" equiv-text="{{item3.apellido}}"/> <x id="INTERPOLATION_5" equiv-text="{{item3.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT_2" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_2" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION_6" equiv-text="{{i.fechaturno}}"/> : <x id="INTERPOLATION_7" equiv-text="{{i.apellido}}"/> <x id="INTERPOLATION_8" equiv-text="{{i.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT_3" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_3" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION_9" equiv-text="{{i2.fechaturno}}"/> : <x id="INTERPOLATION_10" equiv-text="{{i2.apellido}}"/> <x id="INTERPOLATION_11" equiv-text="{{i2.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+
+            
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>Endodoncista<x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_4" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION" equiv-text="{{item2.fechaturno}}"/> : <x id="INTERPOLATION_1" equiv-text="{{item2.apellido}}"/> <x id="INTERPOLATION_2" equiv-text="{{item2.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT_1" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_5" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item3.fechaturno}}"/> : <x id="INTERPOLATION_4" equiv-text="{{item3.apellido}}"/> <x id="INTERPOLATION_5" equiv-text="{{item3.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+
+            
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>Cirujano oral<x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_6" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION" equiv-text="{{item2.fechaturno}}"/> : <x id="INTERPOLATION_1" equiv-text="{{item2.apellido}}"/> <x id="INTERPOLATION_2" equiv-text="{{item2.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT_1" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_7" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item3.fechaturno}}"/> : <x id="INTERPOLATION_4" equiv-text="{{item3.apellido}}"/> <x id="INTERPOLATION_5" equiv-text="{{item3.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+
+            
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>Imagenologia<x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_8" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION" equiv-text="{{item2.fechaturno}}"/> : <x id="INTERPOLATION_1" equiv-text="{{item2.apellido}}"/> <x id="INTERPOLATION_2" equiv-text="{{item2.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT_1" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_9" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item3.fechaturno}}"/> : <x id="INTERPOLATION_4" equiv-text="{{item3.apellido}}"/> <x id="INTERPOLATION_5" equiv-text="{{item3.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+
+            
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>Implantologo<x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_10" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION" equiv-text="{{item2.fechaturno}}"/> : <x id="INTERPOLATION_1" equiv-text="{{item2.apellido}}"/> <x id="INTERPOLATION_2" equiv-text="{{item2.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT_1" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_11" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item3.fechaturno}}"/> : <x id="INTERPOLATION_4" equiv-text="{{item3.apellido}}"/> <x id="INTERPOLATION_5" equiv-text="{{item3.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+
+            
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>Odontopediatra<x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_12" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION" equiv-text="{{item2.fechaturno}}"/> : <x id="INTERPOLATION_1" equiv-text="{{item2.apellido}}"/> <x id="INTERPOLATION_2" equiv-text="{{item2.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT_1" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_13" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item3.fechaturno}}"/> : <x id="INTERPOLATION_4" equiv-text="{{item3.apellido}}"/> <x id="INTERPOLATION_5" equiv-text="{{item3.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+
+            
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>Protesis<x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_14" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION" equiv-text="{{item2.fechaturno}}"/> : <x id="INTERPOLATION_1" equiv-text="{{item2.apellido}}"/> <x id="INTERPOLATION_2" equiv-text="{{item2.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT_1" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_15" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item3.fechaturno}}"/> : <x id="INTERPOLATION_4" equiv-text="{{item3.apellido}}"/> <x id="INTERPOLATION_5" equiv-text="{{item3.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+        <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+    <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+</source>
+<target>
+    <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+        <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Speciality<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Realized<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Canceled<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>by Client<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>by Receptionist<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+        <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+        <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+            
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>Orthodontist<x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION" equiv-text="{{item2.fechaturno}}"/> : <x id="INTERPOLATION_1" equiv-text="{{item2.apellido}}"/> <x id="INTERPOLATION_2" equiv-text="{{item2.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT_1" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_1" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item3.fechaturno}}"/> : <x id="INTERPOLATION_4" equiv-text="{{item3.apellido}}"/> <x id="INTERPOLATION_5" equiv-text="{{item3.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT_2" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_2" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION_6" equiv-text="{{i.fechaturno}}"/> : <x id="INTERPOLATION_7" equiv-text="{{i.apellido}}"/> <x id="INTERPOLATION_8" equiv-text="{{i.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT_3" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_3" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION_9" equiv-text="{{i2.fechaturno}}"/> : <x id="INTERPOLATION_10" equiv-text="{{i2.apellido}}"/> <x id="INTERPOLATION_11" equiv-text="{{i2.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+
+            
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>Endodontist<x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_4" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION" equiv-text="{{item2.fechaturno}}"/> : <x id="INTERPOLATION_1" equiv-text="{{item2.apellido}}"/> <x id="INTERPOLATION_2" equiv-text="{{item2.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT_1" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_5" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item3.fechaturno}}"/> : <x id="INTERPOLATION_4" equiv-text="{{item3.apellido}}"/> <x id="INTERPOLATION_5" equiv-text="{{item3.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+
+            
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>Oral surgeon<x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_6" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION" equiv-text="{{item2.fechaturno}}"/> : <x id="INTERPOLATION_1" equiv-text="{{item2.apellido}}"/> <x id="INTERPOLATION_2" equiv-text="{{item2.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT_1" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_7" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item3.fechaturno}}"/> : <x id="INTERPOLATION_4" equiv-text="{{item3.apellido}}"/> <x id="INTERPOLATION_5" equiv-text="{{item3.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+
+            
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>Imaging<x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_8" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION" equiv-text="{{item2.fechaturno}}"/> : <x id="INTERPOLATION_1" equiv-text="{{item2.apellido}}"/> <x id="INTERPOLATION_2" equiv-text="{{item2.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT_1" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_9" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item3.fechaturno}}"/> : <x id="INTERPOLATION_4" equiv-text="{{item3.apellido}}"/> <x id="INTERPOLATION_5" equiv-text="{{item3.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+
+            
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>Implantologist<x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_10" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION" equiv-text="{{item2.fechaturno}}"/> : <x id="INTERPOLATION_1" equiv-text="{{item2.apellido}}"/> <x id="INTERPOLATION_2" equiv-text="{{item2.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT_1" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_11" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item3.fechaturno}}"/> : <x id="INTERPOLATION_4" equiv-text="{{item3.apellido}}"/> <x id="INTERPOLATION_5" equiv-text="{{item3.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+
+            
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>Pediatric dentist<x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_12" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION" equiv-text="{{item2.fechaturno}}"/> : <x id="INTERPOLATION_1" equiv-text="{{item2.apellido}}"/> <x id="INTERPOLATION_2" equiv-text="{{item2.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT_1" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_13" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item3.fechaturno}}"/> : <x id="INTERPOLATION_4" equiv-text="{{item3.apellido}}"/> <x id="INTERPOLATION_5" equiv-text="{{item3.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+
+            
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>Prosthesis<x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_14" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION" equiv-text="{{item2.fechaturno}}"/> : <x id="INTERPOLATION_1" equiv-text="{{item2.apellido}}"/> <x id="INTERPOLATION_2" equiv-text="{{item2.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/>
+                    <x id="START_TAG_SELECT_1" ctype="x-select" equiv-text="&lt;select&gt;"/>
+                        <x id="START_TAG_OPTION_15" ctype="x-option" equiv-text="&lt;option&gt;"/><x id="INTERPOLATION_3" equiv-text="{{item3.fechaturno}}"/> : <x id="INTERPOLATION_4" equiv-text="{{item3.apellido}}"/> <x id="INTERPOLATION_5" equiv-text="{{item3.nombre}}"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/>
+                    <x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/>
+                <x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+        <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+    <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/estadisticas/estadisticas.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="38e588a451d40855a9440097f6e0b88c9f9a73a7" datatype="html">
+        <source>Turnos entre fechas</source>
+        <target>Turns between dates</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/estadisticas/estadisticas.component.html</context>
+          <context context-type="linenumber">171</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4b46dc6226b26e53237009410ddd28d7069753ab" datatype="html">
+        <source>
+    <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input/&gt;"/> 
+    <x id="TAG_INPUT_1" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+    <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Buscar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Cant. turnos:  <x id="INTERPOLATION" equiv-text="{{cant_turnos_entre}}"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+</source>
+<target>
+    <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input/&gt;"/> 
+    <x id="TAG_INPUT_1" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+    <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Search<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Quant of turns:  <x id="INTERPOLATION" equiv-text="{{cant_turnos_entre}}"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/estadisticas/estadisticas.component.html</context>
+          <context context-type="linenumber">172</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0b00eb56084ca9b7922d001dddd581cc6d4d5503" datatype="html">
+        <source>Especialidades</source>
+        <target>Specialities</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/estadisticas/estadisticas.component.html</context>
+          <context context-type="linenumber">184</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="be0f50a8c300a6baa46fb232366d5a218598e52b" datatype="html">
+        <source>
+    <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+        <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>La más usada<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>La menos usada<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+        <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+        <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{MasUsada}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_1" equiv-text="{{MenosUsada}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+        <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+    <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+</source>
+<target>
+    <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+        <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>The most used<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>The least used<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+        <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+        <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{MasUsada}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_1" equiv-text="{{MenosUsada}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+        <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+    <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/estadisticas/estadisticas.component.html</context>
+          <context context-type="linenumber">185</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="68256a186d0b895c73950f83876095aa381f1c64" datatype="html">
+        <source>Cantidad de turnos por dia de la semana</source>
+        <target>Number of turns per day of the week</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/estadisticas/estadisticas.component.html</context>
+          <context context-type="linenumber">202</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7c57b57343c518f76dd58720e23395599ffeef46" datatype="html">
+        <source>
+    <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+        <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Lunes<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Martes<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Miercoles<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Jueves<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Viernes<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Sabado<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+        <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+        <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{TurnosLunes}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_1" equiv-text="{{TurnosMartes}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_2" equiv-text="{{TurnosMiercoles}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_3" equiv-text="{{TurnosJueves}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_4" equiv-text="{{TurnosViernes}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_5" equiv-text="{{TurnosSabado}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+        <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+    <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+</source>
+<target>
+    <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+        <x id="START_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;thead&gt;"/>
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Monday<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Tuesday<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Wednesday<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Thursday<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Friday<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+                <x id="START_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;th&gt;"/>Saturday<x id="CLOSE_TABLE_HEADER_CELL" ctype="x-th" equiv-text="&lt;/th&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+        <x id="CLOSE_TABLE_HEADER" ctype="x-thead" equiv-text="&lt;/thead&gt;"/>
+        <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+            <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{TurnosLunes}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_1" equiv-text="{{TurnosMartes}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_2" equiv-text="{{TurnosMiercoles}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_3" equiv-text="{{TurnosJueves}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_4" equiv-text="{{TurnosViernes}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION_5" equiv-text="{{TurnosSabado}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+            <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+        <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+    <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/estadisticas/estadisticas.component.html</context>
+          <context context-type="linenumber">203</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="94b310c302a7739338ec46b266601892c6aa07ca" datatype="html">
+        <source>
+    <x id="START_TAG_DIV_4" ctype="x-div" equiv-text="&lt;div&gt;"/>
+        <x id="START_TAG_DIV_3" ctype="x-div" equiv-text="&lt;div&gt;"/>
+            <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                <x id="START_HEADING_LEVEL6" ctype="x-h6" equiv-text="&lt;h6&gt;"/>Mejores comentarios<x id="CLOSE_HEADING_LEVEL6" ctype="x-h6" equiv-text="&lt;/h6&gt;"/>
+                <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                    <x id="INTERPOLATION" equiv-text="{{item.fechaturno}}"/> <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>
+                <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+            <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                <x id="START_HEADING_LEVEL6" ctype="x-h6" equiv-text="&lt;h6&gt;"/>Peores comentarios<x id="CLOSE_HEADING_LEVEL6" ctype="x-h6" equiv-text="&lt;/h6&gt;"/>
+                <x id="START_TAG_DIV_2" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                    <x id="INTERPOLATION" equiv-text="{{item.fechaturno}}"/> <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>
+                <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+        <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+        
+    <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+</source>
+<target>
+    <x id="START_TAG_DIV_4" ctype="x-div" equiv-text="&lt;div&gt;"/>
+        <x id="START_TAG_DIV_3" ctype="x-div" equiv-text="&lt;div&gt;"/>
+            <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                <x id="START_HEADING_LEVEL6" ctype="x-h6" equiv-text="&lt;h6&gt;"/>Best comments<x id="CLOSE_HEADING_LEVEL6" ctype="x-h6" equiv-text="&lt;/h6&gt;"/>
+                <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                    <x id="INTERPOLATION" equiv-text="{{item.fechaturno}}"/> <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>
+                <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+            <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                <x id="START_HEADING_LEVEL6" ctype="x-h6" equiv-text="&lt;h6&gt;"/>Worst comments<x id="CLOSE_HEADING_LEVEL6" ctype="x-h6" equiv-text="&lt;/h6&gt;"/>
+                <x id="START_TAG_DIV_2" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                    <x id="INTERPOLATION" equiv-text="{{item.fechaturno}}"/> <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>
+                <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+            <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+        <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+        
+    <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/estadisticas/estadisticas.component.html</context>
+          <context context-type="linenumber">229</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9009652ae67aabf895d310358748857d9bd891e7" datatype="html">
+        <source>
+                <x id="START_HEADING_LEVEL3" ctype="x-h3" equiv-text="&lt;h3&gt;"/>Datos<x id="CLOSE_HEADING_LEVEL3" ctype="x-h3" equiv-text="&lt;/h3&gt;"/>
+                <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+                    <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                        <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                            <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{item | mypipe | titlecase}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                        <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                    <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+                <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+                <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Cerrar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+            </source>
+        <target>
+                <x id="START_HEADING_LEVEL3" ctype="x-h3" equiv-text="&lt;h3&gt;"/>Data<x id="CLOSE_HEADING_LEVEL3" ctype="x-h3" equiv-text="&lt;/h3&gt;"/>
+                <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/>
+                <x id="START_TAG_TABLE" ctype="x-table" equiv-text="&lt;table&gt;"/>
+                    <x id="START_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;tbody&gt;"/>
+                        <x id="START_TABLE_ROW" ctype="x-tr" equiv-text="&lt;tr&gt;"/>
+                            <x id="START_TABLE_CELL" ctype="x-td" equiv-text="&lt;td&gt;"/><x id="INTERPOLATION" equiv-text="{{item | mypipe | titlecase}}"/><x id="CLOSE_TABLE_CELL" ctype="x-td" equiv-text="&lt;/td&gt;"/>
+                        <x id="CLOSE_TABLE_ROW" ctype="x-tr" equiv-text="&lt;/tr&gt;"/>
+                    <x id="CLOSE_TABLE_BODY" ctype="x-tbody" equiv-text="&lt;/tbody&gt;"/>
+                <x id="CLOSE_TAG_TABLE" ctype="x-table" equiv-text="&lt;/table&gt;"/>
+                <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+                <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                <x id="START_TAG_DIV_1" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Close<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+            </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/estadisticas/estadisticas.component.html</context>
+          <context context-type="linenumber">254</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

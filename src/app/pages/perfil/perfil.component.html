@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <app-logo></app-logo>
+    <app-navbar></app-navbar>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Mi cuenta</title>
+</head>
+<body class="container">
+    <div class="content">
+        <div class="row" id="content">
+            <!-- Days to select -->
+            <div class="container-fluid">
+                <div class="row" i18n>
+                    <div class="col-xs-3 col-sm-6 col-md-3">
+                        <table class="table">
+                            <thead class="bg-danger table-dark">
+                                <tr>
+                                    <th>Dia</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor = "let item of diasArray" class="table">
+                                    <td>{{item}}</td>
+                                    <td>
+                                        <button class="btn btn-success" (click)="Select(item)">Select</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Working days in account -->
+
+                    <div class="col-xs-3 col-sm-6 col-md-3">
+                        <table class="table">
+                            <thead class="bg-danger table-dark">
+                                <tr>
+                                    <th>Sus días</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor = "let item of disponibilidad[0]" class="table">
+                                    <td *ngIf = "item !== 'NA'">{{item}}</td>
+                                    <td *ngIf = "item !== 'NA'">
+                                        <button class="btn btn-danger" (click)="DeleteDay(item)">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Hours to choose -->
+
+                    <div class="col-xs-3 col-sm-6 col-md-3 hours">
+                        <table class="table">
+                            <thead class="bg-danger table-dark">
+                                <tr>
+                                    <th>Dia</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor = "let item of horarioElegir" class="table">
+                                    <td>{{item}}</td>
+                                    <td>
+                                        <button class="btn btn-success" (click)="AddHours(item)">Select</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Time in account -->
+
+                    <div class="col-xs-3 col-sm-6 col-md-3 hours">
+                        <table class="table">
+                            <thead class="bg-danger table-dark">
+                                <tr>
+                                    <th>Sus horas</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor = "let item of horarioArray[0]" class="table">
+                                    <td *ngIf = "item !== 'NA'">{{item}}</td>
+                                    <td *ngIf = "item !== 'NA'">
+                                        <button class="btn btn-danger" (click)="DeleteHours(item)">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

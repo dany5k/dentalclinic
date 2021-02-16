@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <app-logo></app-logo>
+    <app-navbar></app-navbar>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Registracion</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body class="container">
+    <div class="content">
+        <div class="row" id="content">
+            <!-- Middle area content -->
+            <div class="col-8 col-xs-8 col-sm-8 col-md-10 article" align="center">
+
+                <div class="card" id="card">
+                    <div class="card-body">
+                        <br>
+                        <div class="alert-danger" *ngIf="!accaunt_created" i18n>El usuario con este email ya existe !</div>
+                        <form class="registro" [formGroup]="formTemplate" id="registro" (submit)="onSubmit(formTemplate.value)" i18n>
+                            <div id="spinner" class="fa fa-spinner fa-spin spinner" *ngIf="spinner"></div>
+                            <div class="text-center" align="center">
+                                <img [src]="imgSrc" id="user_img">
+                            </div><br>
+                            <div class="form-group">
+                                <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
+                                <div class="text-danger" *ngIf="isSubmitted && formControls.nombre.errors?.required">Requerido.</div>
+                                <div class="text-danger" *ngIf="isSubmitted && formControls.nombre.errors?.pattern">Formato invalido.</div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" formControlName="apellido" placeholder="Apellido">
+                                <div class="text-danger" *ngIf="isSubmitted && formControls.apellido.errors?.required">Requerido.</div>
+                                <div class="text-danger" *ngIf="isSubmitted && formControls.apellido.errors?.pattern">Formato invalido.</div>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" formControlName="edad" placeholder="Edad">
+                                <div class="text-danger" *ngIf="isSubmitted && formControls.edad.errors?.required">Requerido.</div>
+                                <div class="text-danger" *ngIf="isSubmitted && formControls.edad.errors?.pattern">Formato invalido.</div>
+                                <div class="text-danger" *ngIf="isSubmitted && formControls.edad.invalid">Error. Ingrese un valor entre 1 y 100</div>
+                            </div>
+                            <div class="form-group">
+                                <label>Sexo</label><br>
+                                <select name="sexo" id="sexo" formControlName="sexo">
+                                    <option value="M" selected>M</option>
+                                    <option value="F">F</option>
+                                </select>
+                                <div class="text-danger" *ngIf="isSubmitted && formControls.sexo.errors?.required">Requerido.</div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" formControlName="email" placeholder="Email">
+                                <div class="text-danger" *ngIf="isSubmitted && formControls.email.errors?.required">Requerido.</div>
+                                <div class="text-danger" *ngIf="isSubmitted && formControls.email.errors?.pattern">Formato invalido.</div>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="password" class="form-control" formControlName="password" placeholder="Clave">
+                                <div class="text-danger" *ngIf="isSubmitted && formControls.password.errors?.required">Requerido.</div>
+                                <div class="text-danger" *ngIf="isSubmitted && formControls.password.invalid">Ingrese no menos de 6 caracteres.</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Foto de perfil</label>
+                                <input type="file" class="form-control" formControlName="imageUrl" (change)="showPreview($event)">
+                                <div class="text-danger" *ngIf="isSubmitted && formControls.imageUrl.errors?.required">Requerido.</div>
+                                <div class="text-danger" *ngIf="esImagen === false">Error. No es una imagen. No tiene que exceder los 38780 bites. Formatos soportados: jpg, jpeg, gif</div>
+                            </div>
+                            <div class="form-group" *ngIf="this.userService.isAdmin()">
+                                <label>Especialidad</label><br>
+                                <select name="especialidad" id="especialidad" formControlName="especialidad">
+                                    <option value="NA" selected>NA</option>
+                                    <option value="Ortodoncista">Ortodoncista</option>
+                                    <option value="Endodoncista">Endodoncista</option>
+                                    <option value="Cirujano oral">Cirujano oral</option>
+                                    <option value="Imagenologia">Imagenologia</option>
+                                    <option value="Implantologo">Implantologo</option>
+                                    <option value="Odontopediatra">Odontopediatra</option>
+                                    <option value="Protesis">Protesis</option>
+                                </select>
+                                <div class="text-danger" *ngIf="e">Requerido.</div>
+                            </div>
+                            <div class="form-group">
+                                <label>Tipo</label><br>
+                                <select name="tipo" id="tipo" formControlName="tipo">
+                                    <option value="Usuario" selected>Usuario</option>
+                                    <option value="Especialista">Especialista</option>
+                                    <!-- <option value="Recepcionista">Recepcionista</option> -->
+                                </select>
+                                <div class="text-danger" *ngIf="t">Requerido.</div>
+                            </div>
+                            <div class="form-row col-xs-2">
+                                <div *ngIf="!res">
+                                    <re-captcha id="recaptcha" (resolved)="resolved($event)" siteKey="6LfONtgZAAAAAD1UilLdILV3qFm1T3APOG9bRFai"></re-captcha>
+                                </div>
+                                <br><br>
+                                <div class="form-group col-md-12">
+                                    <br>
+                                    <div align="center" *ngIf="spinner"><i class="fa fa-spinner fa-spin spinner"></i>Por favor espere...</div>
+                                    <br>
+                                    <input type="checkbox" name="disablecaptcha" id="nocaptcha" (change)="noCaptcha()"> No captcha
+                                    <button *ngIf="res" type="submit" class="btn btn-success btn-block float-right">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

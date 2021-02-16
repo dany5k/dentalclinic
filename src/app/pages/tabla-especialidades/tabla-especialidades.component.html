@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table" i18n>
+                <thead class="bg-danger table-dark">
+                    <tr>
+                        <th>Especialidad</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let esp of listadoEspecialidades">
+                        <td>{{esp}}</td>
+                        <td>
+                            <button class="btn btn-info" (click)="VerEspecialidad(esp)">Ver</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- List of specialists -->
+        <div class="col-md-4 listado-especialista" align="center">
+            <table class="table-dark table-striped" align="center">
+                <tbody>
+                    <tr *ngFor="let es of listadoEspecialistas">
+                        <td class="txt-bg">
+                            {{es.apellido}}&nbsp;{{es.nombre}}
+                            <tr *ngFor="let disp of es.disponible">
+                                <td><button class="btn btn-xs btn-success" (click)="mostrarTurnos(es,disp)">{{disp}}</button></td>
+                            </tr>
+                        </td>
+                        <td>
+                            <img [src]="es.foto" alt="">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h5 *ngIf="no_turnos" style="color: red;" i18n>NO HAY TURNOS PARA EL DÍA ELEGIDO !</h5>
+        <!-- List of turnos -->
+        <div class="col-md-8 listado-turnos" align="center" i18n>
+            <table class="table-dark table-striped" align="center">
+                <thead class="bg-danger table-dark">
+                    <tr>
+                        <th *ngIf="turnosDisponibles.length != 0">Turnos</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let turno of turnosDisponibles">
+                        <td class="txt-bg">{{turno}}</td>
+                        <td>
+                            <button class="btn btn-info" (click)="guardarTurno(turno)">Tomar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

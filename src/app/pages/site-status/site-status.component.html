@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <app-logo (advice)='Info($event)'></app-logo>
+    <app-advice [siteinfo]='site_info'></app-advice>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Cerrado</title>
+</head>
+<body class="container">
+    <div class="content">
+        <div class="row" id="content">
+            <div class="col-xs-1 col-sm-3 col-md-4"></div>
+            <!-- Middle area content -->
+            <div class="col-xs-10 col-sm-6 col-md-4 article" align="center">
+
+                <div class="card" id="card">
+                    <div class="card-body" align="center">
+                        <h1 style="color: red;" i18n>Cerrado<i class="fa fa-cog" aria-hidden="true" style="color: rgb(0, 0, 0); font-size: 16px;" (click)="OpenSite()"></i></h1>
+                        <img src="/assets/imagenes/cerrado.png" alt="locker" width="120px" height="120px">
+                        <h3 style="color: rgb(255, 115, 0);" i18n>Vuelva mas tarde</h3>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-xs-1 col-sm-3 col-md-4"></div>
+        </div>
+    </div>
+</body>
+</html>

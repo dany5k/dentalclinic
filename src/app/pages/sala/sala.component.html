@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" *ngIf="this.UserService.sitestatus === 'open'">
+    <app-logo (advice)='Info($event)'></app-logo>
+    <app-navbar></app-navbar>
+    <app-advice [siteinfo]='site_info'></app-advice>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Sala de Espera</title>
+</head>
+<body class="container">
+
+
+    <div class="content">
+        <div class="row" id="content">
+            <!-- Menu aside area content -->
+            <!-- <div class="menu col-4 col-xs-4 col-sm-4 col-md-2">
+                <app-menu></app-menu>
+            </div> -->
+            <div class="col-8 col-xs-8 col-sm-8 col-md-10 article">
+                <br><!-- Aplico mi directiva -->
+                <p i18n appCustomone>
+                    Bienvenido a la Clinica dental "La Buena Sonriza" ! <br>
+                    Somos expertos profesionales en odontología con más de 80 años en el servicio. <br>
+                    Contamos con expertos más calificados y laboratorios con la más alta tecnología. <br>
+                    Con nosotros usted no solo tendrá una hermosa sonriza, sino que tambien unos dientes sanos y saludables.
+                </p>
+                <br>
+                <div align ="center" class="turno">TABLERO DE TURNOS</div>
+                <br>
+                <div align="center">
+                    <div align="center">
+                        <div class="turnos">
+                            <table class = "table table-responsive table-condensed table-hover" id="miTabla">
+                                <thead>
+                                    <tr class="turno">
+                                        <th>Consultorio №</th>
+                                        <th>Especialista</th>
+                                        <th>Turno</th>
+                                        <th>Codigo sala</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor = "let item of turnos" class="table">
+                                        <td *ngIf= "item.especialista[0] === 'Ortodoncista'">1</td><td *ngIf= "item.especialista[0] === 'Ortodoncista'">{{item.especialista}}</td><td *ngIf= "item.especialista[0] === 'Ortodoncista'">{{item.apellido}}&nbsp;{{item.nombre}}</td><td *ngIf= "item.especialista[0] === 'Ortodoncista'">{{item.codigosala}}</td>
+                                        <td *ngIf= "item.especialista[0] === 'Endodoncista'">2</td><td *ngIf= "item.especialista[0] === 'Endodoncista'">{{item.especialista}}</td><td *ngIf= "item.especialista[0] === 'Endodoncista'">{{item.apellido}}&nbsp;{{item.nombre}}</td><td *ngIf= "item.especialista[0] === 'Endodoncista'">{{item.codigosala}}</td>
+                                        <td *ngIf= "item.especialista[0] === 'Cirujano oral'">3</td><td *ngIf= "item.especialista[0] === 'Cirujano oral'">{{item.especialista}}</td><td *ngIf= "item.especialista[0] === 'Cirujano oral'">{{item.apellido}}&nbsp;{{item.nombre}}</td><td *ngIf= "item.especialista[0] === 'Cirujano oral'">{{item.codigosala}}</td>
+                                        <td *ngIf= "item.especialista[0] === 'Imagenologia'">4</td><td *ngIf= "item.especialista[0] === 'Imagenologia'">{{item.especialista}}</td><td *ngIf= "item.especialista[0] === 'Imagenologia'">{{item.apellido}}&nbsp;{{item.nombre}}</td><td *ngIf= "item.especialista[0] === 'Imagenologia'">{{item.codigosala}}</td>
+                                        <td *ngIf= "item.especialista[0] === 'Implantologo'">5</td><td *ngIf= "item.especialista[0] === 'Implantologo'">{{item.especialista}}</td><td *ngIf= "item.especialista[0] === 'Implantologo'">{{item.apellido}}&nbsp;{{item.nombre}}</td><td *ngIf= "item.especialista[0] === 'Implantologo'">{{item.codigosala}}</td>
+                                        <td *ngIf= "item.especialista[0] === 'Odontopediatra'">6</td><td *ngIf= "item.especialista[0] === 'Odontopediatra'">{{item.especialista}}</td><td *ngIf= "item.especialista[0] === 'Odontopediatra'">{{item.apellido}}&nbsp;{{item.nombre}}</td><td *ngIf= "item.especialista[0] === 'Odontopediatra'">{{item.codigosala}}</td>
+                                        <td *ngIf= "item.especialista[0] === 'Protesis'">7</td><td *ngIf= "item.especialista[0] === 'Protesis'">{{item.especialista}}</td><td *ngIf= "item.especialista[0] === 'Protesis'">{{item.apellido}}&nbsp;{{item.nombre}}</td><td *ngIf= "item.especialista[0] === 'Protesis'">{{item.codigosala}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

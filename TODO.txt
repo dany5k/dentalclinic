@@ -1,0 +1,8 @@
+Modificar la p�gina de Estad�sticas de Admin creando botones que muestrann datos en otras p�ginas (componentes).  
+validar edad 
+el mail carga automatico 
+los botones de ingreso 
+sin jquery 
+3 pipes 
+3 directivas 
+input y output 

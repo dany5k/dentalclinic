@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <app-logo></app-logo>
+    <app-navbar></app-navbar>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Administración</title>
+</head>
+<body class="container">
+    <div class="content">
+        <div class="row" id="content">
+            <div class="col-8 col-xs-8 col-sm-8 col-md-10 article">
+                <div align="center"><button type="button" class="btn btn-danger"  routerLink="/registro" routerLinkActive="active"><i class="fa fa-user" i18n>&nbsp;Alta User</i></button></div>
+                <br>
+                <div align="center"><button class="btn btn-warning" routerLink="/home" routerLinkActive="active"><i class="fa fa-arrow-circle-left" i18n>&nbsp;A la Sala</i></button></div>
+                <br>
+                <app-estadisticas></app-estadisticas>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

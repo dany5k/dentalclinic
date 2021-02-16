@@ -1,0 +1,173 @@
+body {
+    background-image: url('src/assets/imagenes/sala.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 2000px;
+    min-width: 100%;
+    box-shadow: 0px 0px 10px 10px #01243583;
+-webkit-box-shadow: 0px 0px 13px 12px #020022ab;
+}
+#menu .aside, .row {
+    background-size: cover;
+    box-shadow: 0px 0px 10px 10px #01243583;
+-webkit-box-shadow: 0px 0px 10px 12px #096d00af;
+}
+.content {
+    margin-top: 8px;
+}
+.menu, .article {
+    min-height: 2000px;
+}
+.left {
+    background-color: rgba(4, 174, 241, 0.678); width:auto; box-shadow: 0px 0px 10px 10px #01243583;
+    -webkit-box-shadow: 0px 0px 5px 11px #000000a9;
+}
+.turno {
+    font-family: fantasy;
+    color: rgb(1, 0, 61);
+    background-color: rgb(252, 110, 27);
+    text-shadow: 1px 1px 1px rgba(182, 66, 4, 0.979), 2px 2px 4px rgba(20, 7, 0, 0.979);
+}
+.users {
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(255, 183, 170);
+    background-color: rgb(6, 9, 36);
+    text-shadow: 1px 1px 1px rgb(19, 0, 0), 1px 1px 2px rgba(236, 95, 0, 0.979);
+}
+.form-control {
+    background-color: rgba(185, 241, 248, 0.753);
+    color: rgb(22, 3, 131);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.575);
+    margin: 0px 0px -8px 0px;
+}
+.text-danger {
+    font-weight: bold;
+    margin-top: 18px;
+}
+.spinner {
+    color: red;
+    font-size: 28px;
+}
+.fa-eye {
+    font-size: 14px;
+    border: 1px double rgb(255, 3, 3);
+    text-shadow: 2px 2px 4px black;
+    box-shadow: 2px 2px 2px black;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.download {
+    float: right;
+    margin: 4px 4px 4px 4px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+p {
+    text-align: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 1px 1px 2px black;
+}
+button {
+    padding: 2px;
+    margin: 2px;
+    font-size: 20px;
+}
+.btn-warning {
+    box-shadow: 2px 2px 14px 8px rgba(109, 3, 3, 0.726);
+}
+#contacto {
+    background-color: rgba(245, 220, 1, 0.233);
+}
+
+table {
+    width: 100%; 
+    text-align: center;
+}
+
+
+
+tbody tr{
+    background: rgba(0, 48, 66, 0.938);
+}
+
+tbody td {
+    color: rgb(230, 255, 4);
+}
+
+tbody tr:hover {
+    background-color: rgba(1, 84, 109, 0.932);
+    cursor: pointer;
+}
+
+/* MODAL DESSIGN */
+.modal {
+    margin-top: 80px;
+    padding-top: 80px;
+}
+.modal-body {
+    background-color: rgba(8, 54, 44, 0.658);
+    box-shadow: 2px 2px 4px black;
+    text-shadow: 1px 1px 2px black;
+    border: 1px double black;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 944px) {
+    button {
+        font-size: 14px;
+    }
+    
+}
+/* Tablet */
+@media screen and (max-width: 1024px) {
+    button {
+        font-size: 20px;
+    }
+    
+}
+
+@media screen and (max-width: 830px) {
+    button {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    button {
+        font-size: 16px;
+    }
+}
+/* Smartphone */
+@media screen and (max-width: 470px) {
+    .left {
+        font-size: 10px;
+    }
+    p {
+        font-size: 12px;
+    }
+    button {
+        font-size: 11px;
+    }
+    h5, h6 {
+        font-size: 14px;
+    }
+    body {
+        min-height: 1080px;
+    }
+    .turno {
+        font-size: 14px;
+    }
+}
+  /* Special */
+@media screen and (max-width: 280px) {
+    button {
+        font-size: 12px;
+    }
+    h5, h6 {
+        max-width: 13px;
+    }
+}
+

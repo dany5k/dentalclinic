@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <app-logo></app-logo>
+    <app-navbar></app-navbar>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Busqueda turnos</title>
+</head>
+<body class="container">
+    <div class="content">
+        <div class="row" id="content">
+            <div class="col-8 col-xs-8 col-sm-8 col-md-10 article" align="center">
+                <div class="card" id="card">
+                    <div class="card-body">
+                        Eliga uno de los campos para buscar (no todo junto)
+                        <br>
+                        <form class="registro" [formGroup]="formTemplate" id="registro" (click)="search(formTemplate.value)">
+                            <br>
+                            <div class="form-group">
+                                <input type="text" class="form-control" formControlName="nombrepaciente" placeholder="Nombre paciente">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" formControlName="nombremedico" placeholder="Nombre medico">
+                            </div>
+                            <div class="form-group">
+                                <label>Especialidad</label><br>
+                                <select name="especialidad" id="especialidad" formControlName="especialidad">
+                                    <option value="" selected>---</option>
+                                    <option value="Ortodoncista">Ortodoncista</option>
+                                    <option value="Endodoncista">Endodoncista</option>
+                                    <option value="Cirujano oral">Cirujano oral</option>
+                                    <option value="Imagenologia">Imagenologia</option>
+                                    <option value="Implantologo">Implantologo</option>
+                                    <option value="Odontopediatra">Odontopediatra</option>
+                                    <option value="Protesis">Protesis</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Estado turno</label><br>
+                                <select name="estado" id="estado" formControlName="estado">
+                                    <option value="" selected>---</option>
+                                    <option value="terminado">Terminado</option>
+                                    <option value="cancelado">Cancelado</option>
+                                    <option value="rechazado">Rechazado</option>
+                                </select>
+                            </div>
+                            <div class="form-row col-xs-2">
+                                <div class="form-group col-md-12">
+                                    <br>
+                                    <div align="center" *ngIf="spiner"><i class="fa fa-spinner fa-spin spinner"></i>Por favor espere...</div>
+                                    <div *ngIf="!flag_encontrado" align="center" style="color: red;">NO SE ENCONTRÓ NADA !</div>
+                                    <br>
+                                    <button type="submit" class="btn btn-success btn-block float-right">Buscar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <br>
+                <div class="table table-responsive">
+                    <div style="overflow: auto; height: 410px;" scroll="true">
+                        <table>
+                            <thead class="bg-danger table-dark">
+                                <tr>
+                                    <th>Fecha turno</th>
+                                    <th>Nombre paciente</th>
+                                    <th>Apellido paciente</th>
+                                    <th>Edad</th>
+                                    <th>Sexo</th>
+                                    <th>Email</th>
+                                    <th>Reseña</th>
+                                    <th>Foto</th>
+                                    <th>Nombre medico</th>
+                                    <th>Especialidad</th>
+                                    <th>Edad</th>
+                                    <th>Sexo</th>
+                                    <th>Email</th>
+                                    <th>Foto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of datos">
+                                    <td>{{item.fechaturno}}</td>
+                                    <td>{{item.nombrepaciente}}</td>
+                                    <td>{{item.apellidopaciente}}</td>
+                                    <td>{{item.edad}}</td>
+                                    <td>{{item.sexo}}</td>
+                                    <td>{{item.email}}</td>
+                                    <td>{{item.resenia}}</td>
+                                    <td><img src="{{item.fotopaciente}}" alt="fotopaciente" class="img"></td>
+                                    <td>{{item.nombremedico}}</td>
+                                    <td>{{item.especialidad}}</td>
+                                    <td>{{item.edadprofesional}}</td>
+                                    <td>{{item.sexoprofesional}}</td>
+                                    <td>{{item.emailprofesional}}</td>
+                                    <td><img src="{{item.fotoprofesional}}" alt="fotoprofesional" class="img"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

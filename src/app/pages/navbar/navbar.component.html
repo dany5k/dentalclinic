@@ -1,0 +1,16 @@
+<div class="topnav" id="myTopnav">
+    <a routerLink="/home" routerLinkActive="active" i18n="waiting room">Sala</a>
+    <a *ngIf="this.user.isAuthenticated() && this.user.tipo == 'Admin'" routerLink="/admin" routerLinkActive="active" i18n>Estadisticas</a>
+    <a *ngIf="this.user.isAuthenticated() && this.user.tipo == 'Admin'" routerLink="/charts" routerLinkActive="active" >Graficos</a>
+    <a *ngIf="this.user.isAuthenticated() && this.user.tipo == 'Admin'" routerLink="/busquedas" routerLinkActive="active" >Busqueda</a>
+    <a *ngIf="!this.user.user || this.user.tipo == 'Admin'" routerLink="/registro" routerLinkActive="active" i18n>Registro</a>
+    <a *ngIf="this.user.isAuthenticated() && this.user.isSpecialist()" routerLink="/pacientes" routerLinkActive="active" i18n>Pacientes</a>
+    <a *ngIf="this.user.isAuthenticated() && this.user.isSpecialist()" routerLink="/perfil" routerLinkActive="active" i18n>Mi Cuenta</a>
+    <a *ngIf="this.user.isAuthenticated() && this.user.isSpecialist()" routerLink="/comentarios" routerLinkActive="active" i18n>Comments</a>
+    <a *ngIf="this.user.isAuthenticated() && this.user.tipo !== 'Admin' && this.user.tipo !== 'Especialista'" routerLink="/turno" routerLinkActive="active" i18n>Tomar Turno</a>
+    <a *ngIf="this.user.isAuthenticated() && this.user.tipo !== 'Admin' && this.user.tipo !== 'Especialista'" routerLink="/misdatos" routerLinkActive="active" i18n>Mis turnos</a>
+    <a id="i" *ngIf="!this.user.user" routerLink="/login" routerLinkActive="active">Login&nbsp;<i class="fa fa-power-off" aria-hidden="true"></i></a><a id="i" *ngIf="this.user.user" (click)="Logout()" i18n>Salir&nbsp;<i class="fa fa-power-off" aria-hidden="true"></i></a>
+    <a href="javascript:void(0);" class="icon" (click)="myFunction()">
+    <i class="fa fa-bars"></i>
+    </a>
+</div>

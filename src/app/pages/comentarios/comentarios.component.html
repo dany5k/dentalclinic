@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <app-logo></app-logo>
+    <app-navbar></app-navbar>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Comentarios</title>
+</head>
+<body class="container">
+    <div class="content">
+        <div class="row" id="content">
+            <!-- Comments -->
+            <div class="container-fluid">
+                <div class="row" i18n>
+                    <div class="col-xs-12 col-sm-10 col-md-10">
+                        <table class="table-condensed table table-responsive">
+                            <thead class="bg-danger table-dark">
+                                <tr>
+                                    <th>Dia</th>
+                                    <th>Hora</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Comentario</th>
+                                    <th>Accion</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor = "let item of comentarios" class="table">
+                                    <td>{{item.fechaturno | mypipe2}}</td>
+                                    <td>{{item.horario}}</td>
+                                    <td>{{item.nombre | titlecase}}</td>
+                                    <td>{{item.apellido | titlecase}}</td>
+                                    <td>{{item.texto}}</td>
+                                    <td>
+                                        <button class="btn btn-danger" (click)="Visto(item)">Ocultar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-sm-2 col-md-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

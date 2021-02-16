@@ -1,0 +1,196 @@
+body {
+    background-image: url('src/assets/imagenes/sala.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 1040px;
+    min-width: 100%;
+    box-shadow: 0px 0px 10px 10px #01243583;
+-webkit-box-shadow: 0px 0px 10px 10px #033258a9;
+}
+.row {
+    background-size: cover;
+    box-shadow: 0px 0px 10px 10px #01243583;
+-webkit-box-shadow: 0px 0px 10px 10px #033258a9;
+}
+.aside {
+    background-size: cover;
+    box-shadow: 0px 0px 10px 10px #01243583;
+-webkit-box-shadow: 0px 0px 10px 10px #033258a9;
+}
+.content {
+    margin-top: 8px;
+}
+.menu, .article {
+    min-height: 750px;
+}
+.turno {
+    font-family: fantasy;
+    background-color: rgba(240, 87, 87, 0.418);
+    
+}
+.left {
+    background-color: rgba(4, 174, 241, 0.678); width:auto; box-shadow: 0px 0px 10px 10px #01243583;
+    -webkit-box-shadow: 0px 0px 10px 10px #000000a9;
+}
+.turno {
+    color: rgb(1, 0, 61);
+    background-color: rgb(245, 167, 94);
+    text-shadow: 1px 1px 1px rgba(182, 66, 4, 0.979), 2px 2px 4px rgba(20, 7, 0, 0.979);
+}
+.form-control {
+    background-color: rgba(185, 241, 248, 0.753);
+    color: rgb(22, 3, 131);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.575);
+    margin: 0px 0px -8px 0px;
+}
+.text-danger {
+    padding-top: 4px;
+}
+input {
+    margin-bottom: 2px;
+}
+.user-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 2px rgb(0, 0, 0),
+    2px 2px 4px rgb(0, 0, 0),
+    -2px -2px 4px rgba(0, 0, 0, 0.575),
+    4px 4px 2px rgba(0, 0, 0, 0.459);
+    float: unset;
+}
+.spinner {
+    color: red;
+    font-size: 28px;
+}
+
+p {
+    text-align: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 1px 1px 2px black;
+}
+button {
+    padding: 2px;
+    margin: 2px;
+    font-size: 20px;
+    box-shadow: 1px 1px 4px black;
+}
+#contacto {
+    background-color: rgba(245, 220, 1, 0.233);
+}
+
+
+.consult {
+    color: black;
+    text-shadow: 1px 1px 2px rgba(196, 230, 8, 0.959);
+    font-size: 22px;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 944px) {
+    button {
+        font-size: 14px;
+    }
+    .user-img {
+        width: 80px;
+        height: 80px;
+        
+    }
+}
+/* Tablet */
+@media screen and (max-width: 1024px) {
+    button {
+        font-size: 20px;
+    }
+    .user-img {
+        width: 72px;
+        height: 72px;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    button {
+        font-size: 16px;
+    }
+    .user-img {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    button {
+        font-size: 16px;
+    }
+    .user-img {
+        width: 42px;
+        height: 42px;
+    }
+}
+/* Smartphone */
+@media screen and (max-width: 470px) {
+    .left {
+        font-size: 10px;
+    }
+    p {
+        font-size: 12px;
+    }
+    button {
+        font-size: 11px;
+    }
+    h5, h6 {
+        font-size: 14px;
+    }
+    body {
+        min-height: 1080px;
+    }
+    .infomail {
+        font-size: 12px;
+    }
+    .user-img {
+        width: 40px;
+        height: 40px;
+    }
+}
+  /* Special */
+@media screen and (max-width: 280px) {
+    button {
+        font-size: 12px;
+    }
+    h5, h6 {
+        max-width: 13px;
+    }
+    .infomail {
+        max-width: 1px;
+    }
+    .user-img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+
+/* MODAL DESSIGN */
+.modal {
+    margin-top: 80px;
+    padding-top: 80px;
+}
+.modal-body {
+    background-color: rgba(2, 33, 39, 0.795);
+    box-shadow: 2px 2px 4px black;
+    text-shadow: 1px 1px 2px black;
+    border: 1px double black;
+}
+.btn-success {
+    
+    text-shadow: 2px 2px 3px black;
+    box-shadow: 2px 2px 4px black;
+    border: 1px solid rgba(0, 0, 0, 0.685);
+}
+.spiner {
+    float: right;
+}
+.text-danger {
+    margin-top: 4px;
+}
