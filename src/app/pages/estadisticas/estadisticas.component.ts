@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
 
 /* PDF */
-import * as jsPDF from "jspdf";
+import * as jsPDF from "../../../assets/jspdf";
 import 'jspdf-autotable';
 
 @Component({
