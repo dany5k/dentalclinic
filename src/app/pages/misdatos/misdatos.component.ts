@@ -8,7 +8,7 @@ import { AngularCsv } from 'angular-csv-ext/dist/Angular-csv';
 
 /* PDF */
 import * as jsPDF from "../../../assets/jspdf";
-import 'jspdf-autotable';
+import '../../../assets/jspdf-autotable';
 
 
 @Component({

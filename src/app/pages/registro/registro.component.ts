@@ -96,23 +96,41 @@ export class RegistroComponent implements OnInit {
   registrar(nombre, apellido, edad, sexo, email, clave, especialidad, tipo, fecha_ingreso, foto) {
 
     this.spinner = true;
+    if(tipo == "Especialista"){
+      this.firebaseService.createDBUsuarios2(apellido, clave, edad, email, especialidad, fecha_ingreso, foto, nombre, sexo, tipo, this.disponibilidad, "false").then(() => {
+
+        this.resetForm();
   
-    this.firebaseService.createDBUsuarios(apellido, clave, edad, email, especialidad, fecha_ingreso, foto, nombre, sexo, tipo, this.disponibilidad).then(() => {
+        this.spinner = false;
+  
+        
+        
+        this.router.navigate(['/emailnv']);
+        this.referencia.unsubscribe();
+  
+        this.router.navigate(['/emailnv']);
+  
+      }).catch(e => {
+        console.log(e);
+      });
+    } else {
+      this.firebaseService.createDBUsuarios(apellido, clave, edad, email, especialidad, fecha_ingreso, foto, nombre, sexo, tipo, this.disponibilidad).then(() => {
 
-      this.resetForm();
-
-      this.spinner = false;
-
-      
-      
-      this.router.navigate(['/emailnv']);
-      this.referencia.unsubscribe();
-
-      this.router.navigate(['/emailnv']);
-
-    }).catch(e => {
-      console.log(e);
-    });
+        this.resetForm();
+  
+        this.spinner = false;
+  
+        
+        
+        this.router.navigate(['/emailnv']);
+        this.referencia.unsubscribe();
+  
+        this.router.navigate(['/emailnv']);
+  
+      }).catch(e => {
+        console.log(e);
+      });
+    }
     
   }
 

@@ -10,7 +10,10 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(public user:UserService, private router: Router) { }
+  clu;
+  constructor(public user:UserService, private router: Router) {
+    this.clu = localStorage.getItem("clu");
+  }
 
   ngOnInit(): void {
     

@@ -36,6 +36,24 @@ export class FirebaseService {
     return this.db.collection('users').doc("users/usuarios/"+ email_).set(objUsuario);
   }
 
+  createDBUsuarios2(apell, pass, edad_, email_, espec, fecha_ing, imagen, nom, sexo_, tipo_, dispon, activo_) {
+
+    var objUsuario;
+    var Fechas = Array();
+    var horas = [];
+    Fechas.push(fecha_ing);
+
+    if(tipo_ == 'Usuario') {
+      
+      objUsuario = {apellido:apell, clave:pass, edad:edad_, email:email_, especialidad:espec, fecha_ingreso:Fechas, foto:imagen, nombre:nom, sexo:sexo_, tipo:tipo_};
+    }
+    else {
+      objUsuario = {apellido:apell, clave:pass, edad:edad_, email:email_, especialidad:espec, fecha_ingreso:Fechas, foto:imagen, nombre:nom, sexo:sexo_, tipo:tipo_, disponible:dispon, horario:horas, activo:activo_};
+    }
+    
+    return this.db.collection('users').doc("users/usuarios/"+ email_).set(objUsuario);
+  }
+
   createTurno(nom, apell, edad_, sexo_, email_, especialista_, horario_, fecha_, fechaturno_, semana_, registro, cod_sala,email_espec) {
     var objUsuario = {apellido:apell, edad:edad_, email:email_, emailprofesional:email_espec, especialista:especialista_, horario:horario_, fecha:fecha_, nombre:nom, sexo:sexo_, fechaturno:fechaturno_, semana:semana_, registrado:registro, estado:"activo", codigosala:cod_sala, comentado:'no', resenia:'NA', asistencia:'NA', flag:'false'};
     return this.db.collection('turnos').doc(fechaturno_+"_"+horario_+"_"+email_).set(objUsuario);

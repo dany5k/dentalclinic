@@ -88,5 +88,6 @@ export class UserService {
     this.specialist = false;
     this.reception = false;
     this.email_verified = false;
+    localStorage.clear();
   }
 }

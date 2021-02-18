@@ -93,7 +93,7 @@ export class MenuComponent implements OnInit {
                     
                     this.activado = false;
                   } 
-                  else if(aux_val[index].activado == 'true') {
+                  else if(aux_val[index].activo == 'true') {
                     console.clear();
 
                     /* Is Authenticated */
