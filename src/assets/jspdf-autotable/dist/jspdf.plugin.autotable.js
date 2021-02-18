@@ -1,24 +1,22 @@
 /*!
  * 
- *             jsPDF AutoTable plugin v3.2.11
+ *             jsPDF AutoTable plugin v3.5.13
  *             
- *             Copyright (c) 2014 Simon Bengtsson, https://github.com/simonbengtsson/jsPDF-AutoTable
+ *             Copyright (c) 2020 Simon Bengtsson, https://github.com/simonbengtsson/jsPDF-AutoTable
  *             Licensed under the MIT License.
  *             http://opensource.org/licenses/mit-license
- *             
- *             * /if (typeof window === 'object') window.jspdfAutoTableVersion = '" + newVersion + "';/*"
  *         
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("jspdf"));
+		module.exports = factory((function webpackLoadOptionalExternalModule() { try { return require("jspdf"); } catch(e) {} }()));
 	else if(typeof define === 'function' && define.amd)
 		define(["jspdf"], factory);
 	else {
-		var a = typeof exports === 'object' ? factory(require("jspdf")) : factory(root["jsPDF"]);
+		var a = typeof exports === 'object' ? factory((function webpackLoadOptionalExternalModule() { try { return require("jspdf"); } catch(e) {} }())) : factory(root["jspdf"]);
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
-})(window, function(__WEBPACK_EXTERNAL_MODULE__7__) {
+})(typeof this !== 'undefined' ? this : window, function(__WEBPACK_EXTERNAL_MODULE__16__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -102,7 +100,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -112,155 +110,29 @@ return /******/ (function(modules) { // webpackBootstrap
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var defaultsDocument = null;
-var previousTableState;
-var tableState = null;
-exports.globalDefaults = {};
-exports.documentDefaults = {};
-function default_1() {
-    return tableState;
-}
-exports.default = default_1;
-function getGlobalOptions() {
-    return exports.globalDefaults;
-}
-exports.getGlobalOptions = getGlobalOptions;
-function getDocumentOptions() {
-    return exports.documentDefaults;
-}
-exports.getDocumentOptions = getDocumentOptions;
-var TableState = /** @class */ (function () {
-    function TableState(doc) {
-        this.doc = doc;
-    }
-    TableState.prototype.pageHeight = function () {
-        return this.pageSize().height;
-    };
-    ;
-    TableState.prototype.pageWidth = function () {
-        return this.pageSize().width;
-    };
-    ;
-    TableState.prototype.pageSize = function () {
-        var pageSize = this.doc.internal.pageSize;
-        // JSPDF 1.4 uses get functions instead of properties on pageSize
-        if (pageSize.width == null) {
-            pageSize = {
-                width: pageSize.getWidth(),
-                height: pageSize.getHeight()
-            };
-        }
-        return pageSize;
-    };
-    ;
-    TableState.prototype.scaleFactor = function () {
-        return this.doc.internal.scaleFactor;
-    };
-    ;
-    TableState.prototype.pageNumber = function () {
-        var pageInfo = this.doc.internal.getCurrentPageInfo();
-        if (!pageInfo) {
-            // Only recent versions of jspdf has pageInfo
-            return this.doc.internal.getNumberOfPages();
-        }
-        return pageInfo.pageNumber;
-    };
-    return TableState;
-}());
-function setupState(doc) {
-    previousTableState = tableState;
-    tableState = new TableState(doc);
-    if (doc !== defaultsDocument) {
-        defaultsDocument = doc;
-        exports.documentDefaults = {};
-    }
-}
-exports.setupState = setupState;
-function resetState() {
-    tableState = previousTableState;
-}
-exports.resetState = resetState;
-function setDefaults(defaults, doc) {
-    if (doc === void 0) { doc = null; }
-    if (doc) {
-        exports.documentDefaults = defaults || {};
-        defaultsDocument = doc;
-    }
-    else {
-        exports.globalDefaults = defaults || {};
-    }
-}
-exports.setDefaults = setDefaults;
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var config_1 = __webpack_require__(2);
-var state_1 = __webpack_require__(0);
-var polyfills_1 = __webpack_require__(3);
-function getStringWidth(text, styles) {
-    applyStyles(styles);
+exports.parseSpacing = exports.getFillStyle = exports.addTableBorder = exports.getStringWidth = void 0;
+function getStringWidth(text, styles, doc) {
+    doc.applyStyles(styles, true);
     var textArr = Array.isArray(text) ? text : [text];
     var widestLineWidth = textArr
-        .map(function (text) { return state_1.default().doc.getTextWidth(text); })
-        // Shave off a few digits for potential improvement in width calculation
-        .map(function (val) { return Math.floor(val * 10000) / 10000; })
+        .map(function (text) { return doc.getTextWidth(text); })
         .reduce(function (a, b) { return Math.max(a, b); }, 0);
-    var fontSize = styles.fontSize / state_1.default().scaleFactor();
     return widestLineWidth;
 }
 exports.getStringWidth = getStringWidth;
-/**
- * Ellipsize the text to fit in the width
- */
-function ellipsize(text, width, styles, ellipsizeStr) {
-    if (ellipsizeStr === void 0) { ellipsizeStr = '...'; }
-    if (Array.isArray(text)) {
-        var value_1 = [];
-        text.forEach(function (str, i) {
-            value_1[i] = ellipsize(str, width, styles, ellipsizeStr);
-        });
-        return value_1;
-    }
-    var precision = 10000 * state_1.default().scaleFactor();
-    width = Math.ceil(width * precision) / precision;
-    if (width >= getStringWidth(text, styles)) {
-        return text;
-    }
-    while (width < getStringWidth(text + ellipsizeStr, styles)) {
-        if (text.length <= 1) {
-            break;
-        }
-        text = text.substring(0, text.length - 1);
-    }
-    return text.trim() + ellipsizeStr;
-}
-exports.ellipsize = ellipsize;
-function addTableBorder() {
-    var table = state_1.default().table;
-    var styles = { lineWidth: table.settings.tableLineWidth, lineColor: table.settings.tableLineColor };
-    applyStyles(styles);
-    var fs = getFillStyle(styles);
-    if (fs) {
-        state_1.default().doc.rect(table.pageStartX, table.pageStartY, table.width, table.cursor.y - table.pageStartY, fs);
+function addTableBorder(doc, table, startPos, cursor) {
+    var lineWidth = table.settings.tableLineWidth;
+    var lineColor = table.settings.tableLineColor;
+    doc.applyStyles({ lineWidth: lineWidth, lineColor: lineColor });
+    var fillStyle = getFillStyle(lineWidth, false);
+    if (fillStyle) {
+        doc.rect(startPos.x, startPos.y, table.getWidth(doc.pageSize().width), cursor.y - startPos.y, fillStyle);
     }
 }
 exports.addTableBorder = addTableBorder;
-function getFillStyle(styles) {
-    var drawLine = styles.lineWidth > 0;
-    var drawBackground = styles.fillColor || styles.fillColor === 0;
+function getFillStyle(lineWidth, fillColor) {
+    var drawLine = lineWidth > 0;
+    var drawBackground = fillColor || fillColor === 0;
     if (drawLine && drawBackground) {
         return 'DF'; // Fill then stroke
     }
@@ -271,51 +143,37 @@ function getFillStyle(styles) {
         return 'F'; // Only fill, no stroke
     }
     else {
-        return false;
+        return null;
     }
 }
 exports.getFillStyle = getFillStyle;
-function applyUserStyles() {
-    applyStyles(state_1.default().table.userStyles);
-}
-exports.applyUserStyles = applyUserStyles;
-function applyStyles(styles) {
-    var doc = state_1.default().doc;
-    var styleModifiers = {
-        fillColor: doc.setFillColor,
-        textColor: doc.setTextColor,
-        fontStyle: doc.setFontStyle,
-        lineColor: doc.setDrawColor,
-        lineWidth: doc.setLineWidth,
-        font: doc.setFont,
-        fontSize: doc.setFontSize
-    };
-    Object.keys(styleModifiers).forEach(function (name) {
-        var style = styles[name];
-        var modifier = styleModifiers[name];
-        if (typeof style !== 'undefined') {
-            if (Array.isArray(style)) {
-                modifier.apply(this, style);
-            }
-            else {
-                modifier(style);
-            }
-        }
-    });
-}
-exports.applyStyles = applyStyles;
-// This is messy, only keep array and number format the next major version
-function marginOrPadding(value, defaultValue) {
-    var newValue = {};
+function parseSpacing(value, defaultValue) {
+    var _a, _b, _c, _d;
+    value = value || defaultValue;
     if (Array.isArray(value)) {
         if (value.length >= 4) {
-            newValue = { 'top': value[0], 'right': value[1], 'bottom': value[2], 'left': value[3] };
+            return {
+                top: value[0],
+                right: value[1],
+                bottom: value[2],
+                left: value[3],
+            };
         }
         else if (value.length === 3) {
-            newValue = { 'top': value[0], 'right': value[1], 'bottom': value[2], 'left': value[1] };
+            return {
+                top: value[0],
+                right: value[1],
+                bottom: value[2],
+                left: value[1],
+            };
         }
         else if (value.length === 2) {
-            newValue = { 'top': value[0], 'right': value[1], 'bottom': value[0], 'left': value[1] };
+            return {
+                top: value[0],
+                right: value[1],
+                bottom: value[0],
+                left: value[1],
+            };
         }
         else if (value.length === 1) {
             value = value[0];
@@ -324,31 +182,124 @@ function marginOrPadding(value, defaultValue) {
             value = defaultValue;
         }
     }
-    else if (typeof value === 'object') {
-        if (value['vertical']) {
-            value['top'] = value['vertical'];
-            value['bottom'] = value['vertical'];
+    if (typeof value === 'object') {
+        if (typeof value.vertical === 'number') {
+            value.top = value.vertical;
+            value.bottom = value.vertical;
         }
-        if (value['horizontal']) {
-            value['right'] = value['horizontal'];
-            value['left'] = value['horizontal'];
+        if (typeof value.horizontal === 'number') {
+            value.right = value.horizontal;
+            value.left = value.horizontal;
         }
-        for (var _i = 0, _a = ['top', 'right', 'bottom', 'left']; _i < _a.length; _i++) {
-            var side = _a[_i];
-            newValue[side] = (value[side] || value[side] === 0) ? value[side] : defaultValue;
-        }
+        return {
+            left: (_a = value.left) !== null && _a !== void 0 ? _a : defaultValue,
+            top: (_b = value.top) !== null && _b !== void 0 ? _b : defaultValue,
+            right: (_c = value.right) !== null && _c !== void 0 ? _c : defaultValue,
+            bottom: (_d = value.bottom) !== null && _d !== void 0 ? _d : defaultValue,
+        };
     }
-    if (typeof value === 'number') {
-        newValue = { 'top': value, 'right': value, 'bottom': value, 'left': value };
+    if (typeof value !== 'number') {
+        value = defaultValue;
     }
-    return newValue;
+    return { top: value, right: value, bottom: value, left: value };
 }
-exports.marginOrPadding = marginOrPadding;
-function styles(styles) {
-    styles = Array.isArray(styles) ? styles : [styles];
-    return polyfills_1.assign.apply(void 0, __spreadArrays([config_1.defaultStyles()], styles));
+exports.parseSpacing = parseSpacing;
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getTheme = exports.defaultStyles = exports.HtmlRowInput = exports.FONT_ROW_RATIO = void 0;
+/**
+ * Ratio between font size and font height. The number comes from jspdf's source code
+ */
+exports.FONT_ROW_RATIO = 1.15;
+var HtmlRowInput = /** @class */ (function (_super) {
+    __extends(HtmlRowInput, _super);
+    function HtmlRowInput(element) {
+        var _this = _super.call(this) || this;
+        _this._element = element;
+        return _this;
+    }
+    return HtmlRowInput;
+}(Array));
+exports.HtmlRowInput = HtmlRowInput;
+// Base style for all themes
+function defaultStyles(scaleFactor) {
+    return {
+        font: 'helvetica',
+        fontStyle: 'normal',
+        overflow: 'linebreak',
+        fillColor: false,
+        textColor: 20,
+        halign: 'left',
+        valign: 'top',
+        fontSize: 10,
+        cellPadding: 5 / scaleFactor,
+        lineColor: 200,
+        lineWidth: 0,
+        cellWidth: 'auto',
+        minCellHeight: 0,
+        minCellWidth: 0,
+    };
 }
-exports.styles = styles;
+exports.defaultStyles = defaultStyles;
+function getTheme(name) {
+    var themes = {
+        striped: {
+            table: { fillColor: 255, textColor: 80, fontStyle: 'normal' },
+            head: { textColor: 255, fillColor: [41, 128, 185], fontStyle: 'bold' },
+            body: {},
+            foot: { textColor: 255, fillColor: [41, 128, 185], fontStyle: 'bold' },
+            alternateRow: { fillColor: 245 },
+        },
+        grid: {
+            table: {
+                fillColor: 255,
+                textColor: 80,
+                fontStyle: 'normal',
+                lineWidth: 0.1,
+            },
+            head: {
+                textColor: 255,
+                fillColor: [26, 188, 156],
+                fontStyle: 'bold',
+                lineWidth: 0,
+            },
+            body: {},
+            foot: {
+                textColor: 255,
+                fillColor: [26, 188, 156],
+                fontStyle: 'bold',
+                lineWidth: 0,
+            },
+            alternateRow: {},
+        },
+        plain: {
+            head: { fontStyle: 'bold' },
+            foot: { fontStyle: 'bold' },
+        },
+    };
+    return themes[name];
+}
+exports.getTheme = getTheme;
 
 
 /***/ }),
@@ -358,101 +309,139 @@ exports.styles = styles;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-/**
- * Ratio between font size and font height. The number comes from jspdf's source code
- */
-exports.FONT_ROW_RATIO = 1.15;
-var state_1 = __webpack_require__(0);
-function defaultConfig() {
-    return {
-        // Html content
-        html: null,
-        // Custom content
-        head: null,
-        body: null,
-        foot: null,
-        // Properties
-        includeHiddenHtml: false,
-        startY: null,
-        margin: 40 / state_1.default().scaleFactor(),
-        pageBreak: 'auto',
-        rowPageBreak: 'auto',
-        tableWidth: 'auto',
-        showHead: 'everyPage',
-        showFoot: 'everyPage',
-        tableLineWidth: 0,
-        tableLineColor: 200,
-        tableId: null,
-        // Styling
-        theme: 'striped',
-        useCss: false,
-        styles: {},
-        headStyles: {},
-        bodyStyles: {},
-        footStyles: {},
-        alternateRowStyles: {},
-        columnStyles: {},
-        // Hooks
-        // Use to change the content of the cell before width calculations etc are performed
-        didParseCell: function (data) {
-        },
-        willDrawCell: function (data) {
-        },
-        // Use to draw additional content such as images in table cells
-        didDrawCell: function (data) {
-        },
-        // Use to draw additional content to each page such as headers and footers
-        didDrawPage: function (data) {
-        },
-    };
-}
-exports.defaultConfig = defaultConfig;
-// Base style for all themes
-function defaultStyles() {
-    return {
-        font: "helvetica",
-        fontStyle: 'normal',
-        overflow: 'linebreak',
-        fillColor: false,
-        textColor: 20,
-        halign: 'left',
-        valign: 'top',
-        fontSize: 10,
-        cellPadding: 5 / state_1.default().scaleFactor(),
-        lineColor: 200,
-        lineWidth: 0 / state_1.default().scaleFactor(),
-        cellWidth: 'auto',
-        minCellHeight: 0
-    };
-}
-exports.defaultStyles = defaultStyles;
-/**
- * Styles for the themes (overriding the default styles)
- */
-function getTheme(name) {
-    var themes = {
-        'striped': {
-            table: { fillColor: 255, textColor: 80, fontStyle: 'normal' },
-            head: { textColor: 255, fillColor: [41, 128, 185], fontStyle: 'bold' },
-            body: {},
-            foot: { textColor: 255, fillColor: [41, 128, 185], fontStyle: 'bold' },
-            alternateRow: { fillColor: 245 }
-        },
-        'grid': {
-            table: { fillColor: 255, textColor: 80, fontStyle: 'normal', lineWidth: 0.1 },
-            head: { textColor: 255, fillColor: [26, 188, 156], fontStyle: 'bold', lineWidth: 0 },
-            body: {},
-            foot: { textColor: 255, fillColor: [26, 188, 156], fontStyle: 'bold', lineWidth: 0 },
-            alternateRow: {}
-        },
-        'plain': {
-            head: { fontStyle: 'bold' },
-            foot: { fontStyle: 'bold' }
+exports.DocHandler = void 0;
+var globalDefaults = {};
+var DocHandler = /** @class */ (function () {
+    function DocHandler(jsPDFDocument) {
+        this.jsPDFDocument = jsPDFDocument;
+        this.userStyles = {
+            // Black for versions of jspdf without getTextColor
+            textColor: jsPDFDocument.getTextColor
+                ? this.jsPDFDocument.getTextColor()
+                : 0,
+            fontSize: jsPDFDocument.internal.getFontSize(),
+            fontStyle: jsPDFDocument.internal.getFont().fontStyle,
+            font: jsPDFDocument.internal.getFont().fontName,
+        };
+    }
+    DocHandler.setDefaults = function (defaults, doc) {
+        if (doc === void 0) { doc = null; }
+        if (doc) {
+            doc.__autoTableDocumentDefaults = defaults;
+        }
+        else {
+            globalDefaults = defaults;
         }
     };
-    return themes[name];
-}
-exports.getTheme = getTheme;
+    DocHandler.unifyColor = function (c) {
+        if (Array.isArray(c)) {
+            return c;
+        }
+        else if (typeof c === 'number') {
+            return [c, c, c];
+        }
+        else if (typeof c === 'string') {
+            return [c];
+        }
+        else {
+            return null;
+        }
+    };
+    DocHandler.prototype.applyStyles = function (styles, fontOnly) {
+        // Font style needs to be applied before font
+        // https://github.com/simonbengtsson/jsPDF-AutoTable/issues/632
+        var _a, _b, _c;
+        if (fontOnly === void 0) { fontOnly = false; }
+        if (styles.fontStyle)
+            this.jsPDFDocument.setFontStyle && this.jsPDFDocument.setFontStyle(styles.fontStyle);
+        var _d = this.jsPDFDocument.internal.getFont(), fontStyle = _d.fontStyle, fontName = _d.fontName;
+        if (styles.font)
+            fontName = styles.font;
+        if (styles.fontStyle) {
+            fontStyle = styles.fontStyle;
+            var availableFontStyles = this.getFontList()[fontName];
+            if (availableFontStyles && availableFontStyles.indexOf(fontStyle) === -1) {
+                // Common issue was that the default bold in headers
+                // made custom fonts not work. For example:
+                // https://github.com/simonbengtsson/jsPDF-AutoTable/issues/653
+                this.jsPDFDocument.setFontStyle && this.jsPDFDocument.setFontStyle(availableFontStyles[0]);
+                fontStyle = availableFontStyles[0];
+            }
+        }
+        this.jsPDFDocument.setFont(fontName, fontStyle);
+        if (styles.fontSize)
+            this.jsPDFDocument.setFontSize(styles.fontSize);
+        if (fontOnly) {
+            return; // Performance improvement
+        }
+        var color = DocHandler.unifyColor(styles.fillColor);
+        if (color)
+            (_a = this.jsPDFDocument).setFillColor.apply(_a, color);
+        color = DocHandler.unifyColor(styles.textColor);
+        if (color)
+            (_b = this.jsPDFDocument).setTextColor.apply(_b, color);
+        color = DocHandler.unifyColor(styles.lineColor);
+        if (color)
+            (_c = this.jsPDFDocument).setDrawColor.apply(_c, color);
+        if (typeof styles.lineWidth === 'number') {
+            this.jsPDFDocument.setLineWidth(styles.lineWidth);
+        }
+    };
+    DocHandler.prototype.splitTextToSize = function (text, size, opts) {
+        return this.jsPDFDocument.splitTextToSize(text, size, opts);
+    };
+    DocHandler.prototype.rect = function (x, y, width, height, fillStyle) {
+        return this.jsPDFDocument.rect(x, y, width, height, fillStyle);
+    };
+    DocHandler.prototype.getLastAutoTable = function () {
+        return this.jsPDFDocument.lastAutoTable || null;
+    };
+    DocHandler.prototype.getTextWidth = function (text) {
+        return this.jsPDFDocument.getTextWidth(text);
+    };
+    DocHandler.prototype.getDocument = function () {
+        return this.jsPDFDocument;
+    };
+    DocHandler.prototype.setPage = function (page) {
+        this.jsPDFDocument.setPage(page);
+    };
+    DocHandler.prototype.addPage = function () {
+        return this.jsPDFDocument.addPage();
+    };
+    DocHandler.prototype.getFontList = function () {
+        return this.jsPDFDocument.getFontList();
+    };
+    DocHandler.prototype.getGlobalOptions = function () {
+        return globalDefaults || {};
+    };
+    DocHandler.prototype.getDocumentOptions = function () {
+        return this.jsPDFDocument.__autoTableDocumentDefaults || {};
+    };
+    DocHandler.prototype.pageSize = function () {
+        var pageSize = this.jsPDFDocument.internal.pageSize;
+        // JSPDF 1.4 uses get functions instead of properties on pageSize
+        if (pageSize.width == null) {
+            pageSize = {
+                width: pageSize.getWidth(),
+                height: pageSize.getHeight(),
+            };
+        }
+        return pageSize;
+    };
+    DocHandler.prototype.scaleFactor = function () {
+        return this.jsPDFDocument.internal.scaleFactor;
+    };
+    DocHandler.prototype.pageNumber = function () {
+        var pageInfo = this.jsPDFDocument.internal.getCurrentPageInfo();
+        if (!pageInfo) {
+            // Only recent versions of jspdf has pageInfo
+            return this.jsPDFDocument.internal.getNumberOfPages();
+        }
+        return pageInfo.pageNumber;
+    };
+    return DocHandler;
+}());
+exports.DocHandler = DocHandler;
 
 
 /***/ }),
@@ -461,24 +450,20 @@ exports.getTheme = getTheme;
 
 "use strict";
 
-/*
- * Include common small polyfills instead of requiring the user to to do it
- */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.assign = void 0;
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
-function assign(target) {
-    'use strict';
-    var varArgs = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        varArgs[_i - 1] = arguments[_i];
-    }
-    if (target == null) { // TypeError if undefined or null
+function assign(target, s, s1, s2, s3) {
+    if (target == null) {
         throw new TypeError('Cannot convert undefined or null to object');
     }
     var to = Object(target);
     for (var index = 1; index < arguments.length; index++) {
+        // eslint-disable-next-line prefer-rest-params
         var nextSource = arguments[index];
-        if (nextSource != null) { // Skip over if undefined or null
+        if (nextSource != null) {
+            // Skip over if undefined or null
             for (var nextKey in nextSource) {
                 // Avoid bugs when hasOwnProperty is shadowed
                 if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
@@ -499,280 +484,11 @@ exports.assign = assign;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var config_1 = __webpack_require__(2);
-var state_1 = __webpack_require__(0);
-var HookData_1 = __webpack_require__(10);
-var common_1 = __webpack_require__(1);
-var assign = __webpack_require__(5);
-var CellHooks = /** @class */ (function () {
-    function CellHooks() {
-        this.didParseCell = [];
-        this.willDrawCell = [];
-        this.didDrawCell = [];
-        this.didDrawPage = [];
-    }
-    return CellHooks;
-}());
-var Table = /** @class */ (function () {
-    function Table() {
-        this.columns = [];
-        this.head = [];
-        this.body = [];
-        this.foot = [];
-        this.height = 0;
-        this.width = 0;
-        this.preferredWidth = 0;
-        this.wrappedWidth = 0;
-        this.minWidth = 0;
-        this.headHeight = 0;
-        this.footHeight = 0;
-        this.startPageNumber = 1;
-        this.pageNumber = 1;
-        this.styles = {
-            styles: {},
-            headStyles: {},
-            bodyStyles: {},
-            footStyles: {},
-            alternateRowStyles: {},
-            columnStyles: {},
-        };
-        this.cellHooks = new CellHooks();
-    }
-    Object.defineProperty(Table.prototype, "pageCount", {
-        get: function () {
-            return this.pageNumber;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Table.prototype.allRows = function () {
-        return this.head.concat(this.body).concat(this.foot);
-    };
-    Table.prototype.callCellHooks = function (handlers, cell, row, column) {
-        for (var _i = 0, handlers_1 = handlers; _i < handlers_1.length; _i++) {
-            var handler = handlers_1[_i];
-            if (handler(new HookData_1.CellHookData(cell, row, column)) === false) {
-                return false;
-            }
-        }
-        return true;
-    };
-    Table.prototype.callEndPageHooks = function () {
-        common_1.applyUserStyles();
-        for (var _i = 0, _a = this.cellHooks.didDrawPage; _i < _a.length; _i++) {
-            var handler = _a[_i];
-            handler(new HookData_1.HookData());
-        }
-    };
-    Table.prototype.margin = function (side) {
-        return common_1.marginOrPadding(this.settings.margin, config_1.defaultConfig().margin)[side];
-    };
-    return Table;
-}());
-exports.Table = Table;
-var Row = /** @class */ (function () {
-    function Row(raw, index, section) {
-        this.cells = {};
-        this.height = 0;
-        this.maxCellHeight = 0;
-        this.pageNumber = 1;
-        this.spansMultiplePages = false;
-        this.raw = raw;
-        if (raw._element) {
-            this.raw = raw._element;
-        }
-        this.index = index;
-        this.section = section;
-    }
-    Object.defineProperty(Row.prototype, "pageCount", {
-        get: function () {
-            return this.pageNumber;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Row.prototype.canEntireRowFit = function (height) {
-        return this.maxCellHeight <= height;
-    };
-    Row.prototype.getMinimumRowHeight = function () {
-        var _this = this;
-        return state_1.default().table.columns.reduce(function (acc, column) {
-            var cell = _this.cells[column.index];
-            if (!cell)
-                return 0;
-            var fontHeight = cell.styles.fontSize / state_1.default().scaleFactor() * config_1.FONT_ROW_RATIO;
-            var vPadding = cell.padding('vertical');
-            var oneRowHeight = vPadding + fontHeight;
-            return oneRowHeight > acc ? oneRowHeight : acc;
-        }, 0);
-    };
-    return Row;
-}());
-exports.Row = Row;
-var Cell = /** @class */ (function () {
-    function Cell(raw, themeStyles, section) {
-        this.contentHeight = 0;
-        this.contentWidth = 0;
-        this.wrappedWidth = 0;
-        this.minWidth = 0;
-        this.textPos = {};
-        this.height = 0;
-        this.width = 0;
-        this.rowSpan = raw && raw.rowSpan || 1;
-        this.colSpan = raw && raw.colSpan || 1;
-        this.styles = assign(themeStyles, raw && raw.styles || {});
-        this.section = section;
-        var text;
-        var content = raw && raw.content != null ? raw.content : raw;
-        content = content && content.title != null ? content.title : content;
-        this.raw = raw && raw._element ? raw._element : raw;
-        // Stringify 0 and false, but not undefined or null
-        text = content != null ? '' + content : '';
-        var splitRegex = /\r\n|\r|\n/g;
-        this.text = text.split(splitRegex);
-    }
-    Cell.prototype.getContentHeight = function () {
-        var lineCount = Array.isArray(this.text) ? this.text.length : 1;
-        var fontHeight = this.styles.fontSize / state_1.default().scaleFactor() * config_1.FONT_ROW_RATIO;
-        return lineCount * fontHeight + this.padding('vertical');
-    };
-    Cell.prototype.padding = function (name) {
-        var padding = common_1.marginOrPadding(this.styles.cellPadding, common_1.styles([]).cellPadding);
-        if (name === 'vertical') {
-            return padding.top + padding.bottom;
-        }
-        else if (name === 'horizontal') {
-            return padding.left + padding.right;
-        }
-        else {
-            return padding[name];
-        }
-    };
-    return Cell;
-}());
-exports.Cell = Cell;
-var Column = /** @class */ (function () {
-    function Column(dataKey, raw, index) {
-        this.preferredWidth = 0;
-        this.minWidth = 0;
-        this.wrappedWidth = 0;
-        this.width = 0;
-        this.dataKey = dataKey;
-        this.raw = raw;
-        this.index = index;
-    }
-    return Column;
-}());
-exports.Column = Column;
-
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/*
-object-assign
-(c) Sindre Sorhus
-@license MIT
-*/
-
-
-/* eslint-disable no-unused-vars */
-var getOwnPropertySymbols = Object.getOwnPropertySymbols;
-var hasOwnProperty = Object.prototype.hasOwnProperty;
-var propIsEnumerable = Object.prototype.propertyIsEnumerable;
-
-function toObject(val) {
-	if (val === null || val === undefined) {
-		throw new TypeError('Object.assign cannot be called with null or undefined');
-	}
-
-	return Object(val);
-}
-
-function shouldUseNative() {
-	try {
-		if (!Object.assign) {
-			return false;
-		}
-
-		// Detect buggy property enumeration order in older V8 versions.
-
-		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
-		var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
-		test1[5] = 'de';
-		if (Object.getOwnPropertyNames(test1)[0] === '5') {
-			return false;
-		}
-
-		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
-		var test2 = {};
-		for (var i = 0; i < 10; i++) {
-			test2['_' + String.fromCharCode(i)] = i;
-		}
-		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
-			return test2[n];
-		});
-		if (order2.join('') !== '0123456789') {
-			return false;
-		}
-
-		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
-		var test3 = {};
-		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
-			test3[letter] = letter;
-		});
-		if (Object.keys(Object.assign({}, test3)).join('') !==
-				'abcdefghijklmnopqrst') {
-			return false;
-		}
-
-		return true;
-	} catch (err) {
-		// We don't expect any of the above to throw, but better to be safe.
-		return false;
-	}
-}
-
-module.exports = shouldUseNative() ? Object.assign : function (target, source) {
-	var from;
-	var to = toObject(target);
-	var symbols;
-
-	for (var s = 1; s < arguments.length; s++) {
-		from = Object(arguments[s]);
-
-		for (var key in from) {
-			if (hasOwnProperty.call(from, key)) {
-				to[key] = from[key];
-			}
-		}
-
-		if (getOwnPropertySymbols) {
-			symbols = getOwnPropertySymbols(from);
-			for (var i = 0; i < symbols.length; i++) {
-				if (propIsEnumerable.call(from, symbols[i])) {
-					to[symbols[i]] = from[symbols[i]];
-				}
-			}
-		}
-	}
-
-	return to;
-};
-
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var cssParser_1 = __webpack_require__(13);
-var state_1 = __webpack_require__(0);
-function parseHtml(input, includeHiddenHtml, useCss) {
+exports.parseHtml = void 0;
+var cssParser_1 = __webpack_require__(12);
+var config_1 = __webpack_require__(1);
+function parseHtml(doc, input, window, includeHiddenHtml, useCss) {
+    var _a, _b;
     if (includeHiddenHtml === void 0) { includeHiddenHtml = false; }
     if (useCss === void 0) { useCss = false; }
     var tableElement;
@@ -782,57 +498,63 @@ function parseHtml(input, includeHiddenHtml, useCss) {
     else {
         tableElement = input;
     }
+    var supportedFonts = Object.keys(doc.getFontList());
+    var scaleFactor = doc.scaleFactor();
+    var head = [], body = [], foot = [];
     if (!tableElement) {
-        console.error("Html table could not be found with input: ", input);
-        return;
+        console.error('Html table could not be found with input: ', input);
+        return { head: head, body: body, foot: foot };
     }
-    var head = parseTableSection(window, tableElement.tHead, includeHiddenHtml, useCss);
-    var body = [];
-    for (var i = 0; i < tableElement.tBodies.length; i++) {
-        body = body.concat(parseTableSection(window, tableElement.tBodies[i], includeHiddenHtml, useCss));
+    for (var i = 0; i < tableElement.rows.length; i++) {
+        var element = tableElement.rows[i];
+        var tagName = (_b = (_a = element === null || element === void 0 ? void 0 : element.parentElement) === null || _a === void 0 ? void 0 : _a.tagName) === null || _b === void 0 ? void 0 : _b.toLowerCase();
+        var row = parseRowContent(supportedFonts, scaleFactor, window, element, includeHiddenHtml, useCss);
+        if (!row)
+            continue;
+        if (tagName === 'thead') {
+            head.push(row);
+        }
+        else if (tagName === 'tfoot') {
+            foot.push(row);
+        }
+        else {
+            // Add to body both if parent is tbody or table
+            body.push(row);
+        }
     }
-    var foot = parseTableSection(window, tableElement.tFoot, includeHiddenHtml, useCss);
     return { head: head, body: body, foot: foot };
 }
 exports.parseHtml = parseHtml;
-function parseTableSection(window, sectionElement, includeHidden, useCss) {
-    var results = [];
-    if (!sectionElement) {
-        return results;
-    }
-    for (var i = 0; i < sectionElement.rows.length; i++) {
-        var row = sectionElement.rows[i];
-        var resultRow = [];
-        var rowStyles = useCss ? cssParser_1.parseCss(row, state_1.default().scaleFactor(), ['cellPadding', 'lineWidth', 'lineColor']) : {};
-        for (var i_1 = 0; i_1 < row.cells.length; i_1++) {
-            var cell = row.cells[i_1];
-            var style = window.getComputedStyle(cell);
-            if (includeHidden || style.display !== 'none') {
-                var cellStyles = useCss ? cssParser_1.parseCss(cell, state_1.default().scaleFactor()) : {};
-                resultRow.push({
-                    rowSpan: cell.rowSpan,
-                    colSpan: cell.colSpan,
-                    styles: useCss ? cellStyles : null,
-                    _element: cell,
-                    content: parseCellContent(cell)
-                });
+function parseRowContent(supportedFonts, scaleFactor, window, row, includeHidden, useCss) {
+    var resultRow = new config_1.HtmlRowInput(row);
+    for (var i = 0; i < row.cells.length; i++) {
+        var cell = row.cells[i];
+        var style_1 = window.getComputedStyle(cell);
+        if (includeHidden || style_1.display !== 'none') {
+            var cellStyles = void 0;
+            if (useCss) {
+                cellStyles = cssParser_1.parseCss(supportedFonts, cell, scaleFactor, style_1, window);
             }
-        }
-        if (resultRow.length > 0 && (includeHidden || rowStyles.display !== 'none')) {
-            resultRow._element = row;
-            results.push(resultRow);
+            resultRow.push({
+                rowSpan: cell.rowSpan,
+                colSpan: cell.colSpan,
+                styles: cellStyles,
+                _element: cell,
+                content: parseCellContent(cell),
+            });
         }
     }
-    return results;
+    var style = window.getComputedStyle(row);
+    if (resultRow.length > 0 && (includeHidden || style.display !== 'none')) {
+        return resultRow;
+    }
 }
 function parseCellContent(orgCell) {
     // Work on cloned node to make sure no changes are applied to html table
     var cell = orgCell.cloneNode(true);
     // Remove extra space and line breaks in markup to make it more similar to
     // what would be shown in html
-    cell.innerHTML = cell.innerHTML
-        .replace(/\n/g, '')
-        .replace(/ +/g, ' ');
+    cell.innerHTML = cell.innerHTML.replace(/\n/g, '').replace(/ +/g, ' ');
     // Preserve <br> tags as line breaks in the pdf
     cell.innerHTML = cell.innerHTML
         .split('<br>')
@@ -844,161 +566,338 @@ function parseCellContent(orgCell) {
 
 
 /***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__7__;
-
-/***/ }),
-/* 8 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var tableDrawer_1 = __webpack_require__(9);
-var widthCalculator_1 = __webpack_require__(11);
-var inputParser_1 = __webpack_require__(12);
-var state_1 = __webpack_require__(0);
-__webpack_require__(15);
-var common_1 = __webpack_require__(1);
-var htmlParser_1 = __webpack_require__(6);
-var jsPDF = __webpack_require__(7);
-function autoTable() {
-    var args = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        args[_i] = arguments[_i];
-    }
-    state_1.setupState(this);
-    // 1. Parse and unify user input
-    var table = inputParser_1.parseInput(args);
-    // 2. Calculate preliminary table, column, row and cell dimensions
-    widthCalculator_1.calculateWidths(table);
-    // 3. Output table to pdf
-    tableDrawer_1.drawTable(table);
-    table.finalY = table.cursor.y;
-    this.previousAutoTable = table;
-    this.lastAutoTable = table;
-    this.autoTable.previous = table; // Deprecated
-    common_1.applyUserStyles();
-    state_1.resetState();
-    return this;
-}
-jsPDF.API.autoTable = autoTable;
-// Assign false to enable `doc.lastAutoTable.finalY || 40` sugar;
-jsPDF.API.lastAutoTable = false;
-jsPDF.API.previousAutoTable = false; // deprecated in v3
-jsPDF.API.autoTable.previous = false; // deprecated in v3
-jsPDF.API.autoTableSetDefaults = function (defaults) {
-    state_1.setDefaults(defaults, this);
-    return this;
-};
-jsPDF.autoTableSetDefaults = function (defaults, doc) {
-    state_1.setDefaults(defaults, doc);
-    return this;
-};
-jsPDF.API.autoTableHtmlToJson = function (tableElem, includeHiddenElements) {
-    includeHiddenElements = includeHiddenElements || false;
-    if (!tableElem || !(tableElem instanceof HTMLTableElement)) {
-        console.error("A HTMLTableElement has to be sent to autoTableHtmlToJson");
-        return null;
-    }
-    var _a = htmlParser_1.parseHtml(tableElem, includeHiddenElements, false), head = _a.head, body = _a.body, foot = _a.foot;
-    var firstRow = head[0] || body[0] || foot[0];
-    return { columns: firstRow, rows: body, data: body };
-};
 /**
- * @deprecated
+ * Improved text function with halign and valign support
+ * Inspiration from: http://stackoverflow.com/questions/28327510/align-text-right-using-jspdf/28433113#28433113
  */
-jsPDF.API.autoTableEndPosY = function () {
-    console.error("Use of deprecated function: autoTableEndPosY. Use doc.previousAutoTable.finalY instead.");
-    var prev = this.previousAutoTable;
-    if (prev.cursor && typeof prev.cursor.y === 'number') {
-        return prev.cursor.y;
+function default_1(text, x, y, styles, doc) {
+    styles = styles || {};
+    var FONT_ROW_RATIO = 1.15;
+    var k = doc.internal.scaleFactor;
+    var fontSize = doc.internal.getFontSize() / k;
+    var splitRegex = /\r\n|\r|\n/g;
+    var splitText = '';
+    var lineCount = 1;
+    if (styles.valign === 'middle' ||
+        styles.valign === 'bottom' ||
+        styles.halign === 'center' ||
+        styles.halign === 'right') {
+        splitText = typeof text === 'string' ? text.split(splitRegex) : text;
+        lineCount = splitText.length || 1;
+    }
+    // Align the top
+    y += fontSize * (2 - FONT_ROW_RATIO);
+    if (styles.valign === 'middle')
+        y -= (lineCount / 2) * fontSize * FONT_ROW_RATIO;
+    else if (styles.valign === 'bottom')
+        y -= lineCount * fontSize * FONT_ROW_RATIO;
+    if (styles.halign === 'center' || styles.halign === 'right') {
+        var alignSize = fontSize;
+        if (styles.halign === 'center')
+            alignSize *= 0.5;
+        if (splitText && lineCount >= 1) {
+            for (var iLine = 0; iLine < splitText.length; iLine++) {
+                doc.text(splitText[iLine], x - doc.getStringUnitWidth(splitText[iLine]) * alignSize, y);
+                y += fontSize * FONT_ROW_RATIO;
+            }
+            return doc;
+        }
+        x -= doc.getStringUnitWidth(text) * alignSize;
+    }
+    if (styles.halign === 'justify') {
+        doc.text(text, x, y, {
+            maxWidth: styles.maxWidth || 100,
+            align: 'justify',
+        });
     }
     else {
-        return 0;
+        doc.text(text, x, y);
     }
-};
-/**
- * @deprecated
- */
-jsPDF.API.autoTableAddPageContent = function (hook) {
-    console.error("Use of deprecated function: autoTableAddPageContent. Use jsPDF.autoTableSetDefaults({didDrawPage: () => {}}) instead.");
-    if (!jsPDF.API.autoTable.globalDefaults) {
-        jsPDF.API.autoTable.globalDefaults = {};
-    }
-    jsPDF.API.autoTable.globalDefaults.addPageContent = hook;
-    return this;
-};
-/**
- * @deprecated
- */
-jsPDF.API.autoTableAddPage = function () {
-    console.error("Use of deprecated function: autoTableAddPage. Use doc.addPage()");
-    this.addPage();
-    return this;
-};
+    return doc;
+}
+exports.default = default_1;
 
 
 /***/ }),
-/* 9 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var config_1 = __webpack_require__(2);
-var common_1 = __webpack_require__(1);
-var models_1 = __webpack_require__(4);
-var state_1 = __webpack_require__(0);
-var assign = __webpack_require__(5);
-function drawTable(table) {
-    var settings = table.settings;
-    table.cursor = {
-        x: table.margin('left'),
-        y: settings.startY == null ? table.margin('top') : settings.startY
+exports.parseInput = void 0;
+var htmlParser_1 = __webpack_require__(4);
+var polyfills_1 = __webpack_require__(3);
+var common_1 = __webpack_require__(0);
+var documentHandler_1 = __webpack_require__(2);
+var inputValidator_1 = __webpack_require__(13);
+function parseInput(d, current) {
+    var doc = new documentHandler_1.DocHandler(d);
+    var document = doc.getDocumentOptions();
+    var global = doc.getGlobalOptions();
+    inputValidator_1.default(doc, global, document, current);
+    var options = polyfills_1.assign({}, global, document, current);
+    var win;
+    if (typeof window !== 'undefined') {
+        win = window;
+    }
+    var styles = parseStyles(global, document, current);
+    var hooks = parseHooks(global, document, current);
+    var settings = parseSettings(doc, options);
+    var content = parseContent(doc, options, win);
+    return {
+        id: current.tableId,
+        content: content,
+        hooks: hooks,
+        styles: styles,
+        settings: settings,
     };
-    var minTableBottomPos = settings.startY + table.margin('bottom') + table.headHeight + table.footHeight;
-    if (settings.pageBreak === 'avoid') {
-        minTableBottomPos += table.height;
+}
+exports.parseInput = parseInput;
+function parseStyles(gInput, dInput, cInput) {
+    var styleOptions = {
+        styles: {},
+        headStyles: {},
+        bodyStyles: {},
+        footStyles: {},
+        alternateRowStyles: {},
+        columnStyles: {},
+    };
+    var _loop_1 = function (prop) {
+        if (prop === 'columnStyles') {
+            var global_1 = gInput[prop];
+            var document_1 = dInput[prop];
+            var current = cInput[prop];
+            styleOptions.columnStyles = polyfills_1.assign({}, global_1, document_1, current);
+        }
+        else {
+            var allOptions = [gInput, dInput, cInput];
+            var styles = allOptions.map(function (opts) { return opts[prop] || {}; });
+            styleOptions[prop] = polyfills_1.assign({}, styles[0], styles[1], styles[2]);
+        }
+    };
+    for (var _i = 0, _a = Object.keys(styleOptions); _i < _a.length; _i++) {
+        var prop = _a[_i];
+        _loop_1(prop);
     }
-    if (settings.pageBreak === 'always' || settings.startY != null && settings.startY !== false && minTableBottomPos > state_1.default().pageHeight()) {
-        nextPage(state_1.default().doc);
-        table.cursor.y = table.margin('top');
+    return styleOptions;
+}
+function parseHooks(global, document, current) {
+    var allOptions = [global, document, current];
+    var result = {
+        didParseCell: [],
+        willDrawCell: [],
+        didDrawCell: [],
+        didDrawPage: [],
+    };
+    for (var _i = 0, allOptions_1 = allOptions; _i < allOptions_1.length; _i++) {
+        var options = allOptions_1[_i];
+        if (options.didParseCell)
+            result.didParseCell.push(options.didParseCell);
+        if (options.willDrawCell)
+            result.willDrawCell.push(options.willDrawCell);
+        if (options.didDrawCell)
+            result.didDrawCell.push(options.didDrawCell);
+        if (options.didDrawPage)
+            result.didDrawPage.push(options.didDrawPage);
     }
-    table.pageStartX = table.cursor.x;
-    table.pageStartY = table.cursor.y;
-    table.startPageNumber = state_1.default().pageNumber();
-    // An empty row used to cached cells those break through page
-    common_1.applyUserStyles();
-    if (settings.showHead === true || settings.showHead === 'firstPage' || settings.showHead === 'everyPage') {
-        table.head.forEach(function (row) { return printRow(row); });
+    return result;
+}
+function parseSettings(doc, options) {
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+    var margin = common_1.parseSpacing(options.margin, 40 / doc.scaleFactor());
+    var startY = (_a = getStartY(doc, options.startY)) !== null && _a !== void 0 ? _a : margin.top;
+    var showFoot;
+    if (options.showFoot === true) {
+        showFoot = 'everyPage';
     }
-    common_1.applyUserStyles();
-    table.body.forEach(function (row, index) {
-        printFullRow(row, index === table.body.length - 1);
+    else if (options.showFoot === false) {
+        showFoot = 'never';
+    }
+    else {
+        showFoot = (_b = options.showFoot) !== null && _b !== void 0 ? _b : 'everyPage';
+    }
+    var showHead;
+    if (options.showHead === true) {
+        showHead = 'everyPage';
+    }
+    else if (options.showHead === false) {
+        showHead = 'never';
+    }
+    else {
+        showHead = (_c = options.showHead) !== null && _c !== void 0 ? _c : 'everyPage';
+    }
+    var useCss = (_d = options.useCss) !== null && _d !== void 0 ? _d : false;
+    var theme = options.theme || (useCss ? 'plain' : 'striped');
+    return {
+        includeHiddenHtml: (_e = options.includeHiddenHtml) !== null && _e !== void 0 ? _e : false,
+        useCss: useCss,
+        theme: theme,
+        startY: startY,
+        margin: margin,
+        pageBreak: (_f = options.pageBreak) !== null && _f !== void 0 ? _f : 'auto',
+        rowPageBreak: (_g = options.rowPageBreak) !== null && _g !== void 0 ? _g : 'auto',
+        tableWidth: (_h = options.tableWidth) !== null && _h !== void 0 ? _h : 'auto',
+        showHead: showHead,
+        showFoot: showFoot,
+        tableLineWidth: (_j = options.tableLineWidth) !== null && _j !== void 0 ? _j : 0,
+        tableLineColor: (_k = options.tableLineColor) !== null && _k !== void 0 ? _k : 200,
+    };
+}
+function getStartY(doc, userStartY) {
+    var previous = doc.getLastAutoTable();
+    var sf = doc.scaleFactor();
+    var currentPage = doc.pageNumber();
+    var isSamePageAsPreviousTable = false;
+    if (previous && previous.startPageNumber) {
+        var endingPage = previous.startPageNumber + previous.pageNumber - 1;
+        isSamePageAsPreviousTable = endingPage === currentPage;
+    }
+    if (typeof userStartY === 'number') {
+        return userStartY;
+    }
+    else if (userStartY == null || userStartY === false) {
+        if (isSamePageAsPreviousTable && (previous === null || previous === void 0 ? void 0 : previous.finalY) != null) {
+            // Some users had issues with overlapping tables when they used multiple
+            // tables without setting startY so setting it here to a sensible default.
+            return previous.finalY + 20 / sf;
+        }
+    }
+    return null;
+}
+function parseContent(doc, options, window) {
+    var head = options.head || [];
+    var body = options.body || [];
+    var foot = options.foot || [];
+    if (options.html) {
+        var hidden = options.includeHiddenHtml;
+        if (window) {
+            var htmlContent = htmlParser_1.parseHtml(doc, options.html, window, hidden, options.useCss) || {};
+            head = htmlContent.head || head;
+            body = htmlContent.body || head;
+            foot = htmlContent.foot || head;
+        }
+        else {
+            console.error('Cannot parse html in non browser environment');
+        }
+    }
+    var columns = options.columns || parseColumns(head, body, foot);
+    return {
+        columns: columns,
+        head: head,
+        body: body,
+        foot: foot,
+    };
+}
+function parseColumns(head, body, foot) {
+    var firstRow = head[0] || body[0] || foot[0] || [];
+    var result = [];
+    Object.keys(firstRow)
+        .filter(function (key) { return key !== '_element'; })
+        .forEach(function (key) {
+        var colSpan = 1;
+        var input;
+        if (Array.isArray(firstRow)) {
+            input = firstRow[parseInt(key)];
+        }
+        else {
+            input = firstRow[key];
+        }
+        if (typeof input === 'object' && !Array.isArray(input)) {
+            colSpan = (input === null || input === void 0 ? void 0 : input.colSpan) || 1;
+        }
+        for (var i = 0; i < colSpan; i++) {
+            var id = void 0;
+            if (Array.isArray(firstRow)) {
+                id = result.length;
+            }
+            else {
+                id = key + (i > 0 ? "_" + i : '');
+            }
+            var rowResult = { dataKey: id };
+            result.push(rowResult);
+        }
     });
-    common_1.applyUserStyles();
-    if (settings.showFoot === true || settings.showFoot === 'lastPage' || settings.showFoot === 'everyPage') {
-        table.foot.forEach(function (row) { return printRow(row); });
+    return result;
+}
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.addPage = exports.drawTable = void 0;
+var config_1 = __webpack_require__(1);
+var common_1 = __webpack_require__(0);
+var models_1 = __webpack_require__(8);
+var documentHandler_1 = __webpack_require__(2);
+var polyfills_1 = __webpack_require__(3);
+var autoTableText_1 = __webpack_require__(5);
+function drawTable(jsPDFDoc, table) {
+    var settings = table.settings;
+    var startY = settings.startY;
+    var margin = settings.margin;
+    var cursor = {
+        x: margin.left,
+        y: startY,
+    };
+    var sectionsHeight = table.getHeadHeight(table.columns) + table.getFootHeight(table.columns);
+    var minTableBottomPos = startY + margin.bottom + sectionsHeight;
+    if (settings.pageBreak === 'avoid') {
+        var rows = table.allRows();
+        var tableHeight = rows.reduce(function (acc, row) { return acc + row.height; }, 0);
+        minTableBottomPos += tableHeight;
     }
-    common_1.addTableBorder();
-    table.callEndPageHooks();
+    var doc = new documentHandler_1.DocHandler(jsPDFDoc);
+    if (settings.pageBreak === 'always' ||
+        (settings.startY != null && minTableBottomPos > doc.pageSize().height)) {
+        nextPage(doc);
+        cursor.y = margin.top;
+    }
+    var startPos = polyfills_1.assign({}, cursor);
+    table.startPageNumber = doc.pageNumber();
+    doc.applyStyles(doc.userStyles);
+    if (settings.showHead === 'firstPage' || settings.showHead === 'everyPage') {
+        table.head.forEach(function (row) { return printRow(doc, table, row, cursor); });
+    }
+    doc.applyStyles(doc.userStyles);
+    table.body.forEach(function (row, index) {
+        var isLastRow = index === table.body.length - 1;
+        printFullRow(doc, table, row, isLastRow, startPos, cursor);
+    });
+    doc.applyStyles(doc.userStyles);
+    if (settings.showFoot === 'lastPage' || settings.showFoot === 'everyPage') {
+        table.foot.forEach(function (row) { return printRow(doc, table, row, cursor); });
+    }
+    common_1.addTableBorder(doc, table, startPos, cursor);
+    table.callEndPageHooks(doc, cursor);
+    table.finalY = cursor.y;
+    jsPDFDoc.lastAutoTable = table;
+    jsPDFDoc.previousAutoTable = table; // Deprecated
+    if (jsPDFDoc.autoTable)
+        jsPDFDoc.autoTable.previous = table; // Deprecated
+    doc.applyStyles(doc.userStyles);
 }
 exports.drawTable = drawTable;
-function getRemainingLineCount(cell, remainingPageSpace) {
-    var fontHeight = cell.styles.fontSize / state_1.default().scaleFactor() * config_1.FONT_ROW_RATIO;
+function getRemainingLineCount(cell, remainingPageSpace, doc) {
+    var fontHeight = (cell.styles.fontSize / doc.scaleFactor()) * config_1.FONT_ROW_RATIO;
     var vPadding = cell.padding('vertical');
     var remainingLines = Math.floor((remainingPageSpace - vPadding) / fontHeight);
     return Math.max(0, remainingLines);
 }
-function modifyRowToFit(row, remainingPageSpace, table) {
-    var remainderRow = new models_1.Row(row.raw, -1, row.section);
-    remainderRow.spansMultiplePages = true;
+function modifyRowToFit(row, remainingPageSpace, table, doc) {
+    var cells = {};
     row.spansMultiplePages = true;
-    row.height = 0;
-    row.maxCellHeight = 0;
+    var rowHeight = 0;
     for (var _i = 0, _a = table.columns; _i < _a.length; _i++) {
         var column = _a[_i];
         var cell = row.cells[column.index];
@@ -1007,26 +906,30 @@ function modifyRowToFit(row, remainingPageSpace, table) {
         if (!Array.isArray(cell.text)) {
             cell.text = [cell.text];
         }
-        var remainderCell = new models_1.Cell(cell.raw, {}, cell.section);
-        remainderCell = assign(remainderCell, cell);
-        remainderCell.textPos = assign({}, cell.textPos);
+        var remainderCell = new models_1.Cell(cell.raw, cell.styles, cell.section);
+        remainderCell = polyfills_1.assign(remainderCell, cell);
         remainderCell.text = [];
-        var remainingLineCount = getRemainingLineCount(cell, remainingPageSpace);
+        var remainingLineCount = getRemainingLineCount(cell, remainingPageSpace, doc);
         if (cell.text.length > remainingLineCount) {
             remainderCell.text = cell.text.splice(remainingLineCount, cell.text.length);
         }
-        cell.contentHeight = cell.getContentHeight();
+        var scaleFactor = doc.scaleFactor();
+        cell.contentHeight = cell.getContentHeight(scaleFactor);
+        if (cell.contentHeight >= remainingPageSpace) {
+            cell.contentHeight = remainingPageSpace;
+            remainderCell.styles.minCellHeight -= remainingPageSpace;
+        }
         if (cell.contentHeight > row.height) {
             row.height = cell.contentHeight;
-            row.maxCellHeight = cell.contentHeight;
         }
-        remainderCell.contentHeight = remainderCell.getContentHeight();
-        if (remainderCell.contentHeight > remainderRow.height) {
-            remainderRow.height = remainderCell.contentHeight;
-            remainderRow.maxCellHeight = remainderCell.contentHeight;
+        remainderCell.contentHeight = remainderCell.getContentHeight(scaleFactor);
+        if (remainderCell.contentHeight > rowHeight) {
+            rowHeight = remainderCell.contentHeight;
         }
-        remainderRow.cells[column.index] = remainderCell;
+        cells[column.index] = remainderCell;
     }
+    var remainderRow = new models_1.Row(row.raw, -1, row.section, cells, true);
+    remainderRow.height = rowHeight;
     for (var _b = 0, _c = table.columns; _b < _c.length; _b++) {
         var column = _c[_b];
         var remainderCell = remainderRow.cells[column.index];
@@ -1040,25 +943,28 @@ function modifyRowToFit(row, remainingPageSpace, table) {
     }
     return remainderRow;
 }
-function shouldPrintOnCurrentPage(row, remainingPageSpace, table) {
-    var pageHeight = state_1.default().pageHeight();
-    var marginHeight = table.margin('top') - table.margin('bottom');
-    var maxTableHeight = pageHeight - marginHeight;
-    var minRowFits = row.getMinimumRowHeight() < remainingPageSpace;
-    if (row.getMinimumRowHeight() > maxTableHeight) {
+function shouldPrintOnCurrentPage(doc, row, remainingPageSpace, table) {
+    var pageHeight = doc.pageSize().height;
+    var margin = table.settings.margin;
+    var marginHeight = margin.top + margin.bottom;
+    var maxRowHeight = pageHeight - marginHeight;
+    if (row.section === 'body') {
+        // Should also take into account that head and foot is not
+        // on every page with some settings
+        maxRowHeight -=
+            table.getHeadHeight(table.columns) + table.getFootHeight(table.columns);
+    }
+    var minRowHeight = row.getMinimumRowHeight(table.columns, doc);
+    var minRowFits = minRowHeight < remainingPageSpace;
+    if (minRowHeight > maxRowHeight) {
         console.error("Will not be able to print row " + row.index + " correctly since it's minimum height is larger than page height");
         return true;
     }
-    var rowHasRowSpanCell = table.columns.filter(function (column) {
-        var cell = row.cells[column.index];
-        if (!cell)
-            return false;
-        return cell.rowSpan > 1;
-    }).length > 0;
     if (!minRowFits) {
         return false;
     }
-    var rowHigherThanPage = row.maxCellHeight > maxTableHeight;
+    var rowHasRowSpanCell = row.hasRowSpan(table.columns);
+    var rowHigherThanPage = row.getMaxCellHeight(table.columns) > maxRowHeight;
     if (rowHigherThanPage) {
         if (rowHasRowSpanCell) {
             console.error("The content of row " + row.index + " will not be drawn correctly since drawing rows with a height larger than the page height and has cells with rowspans is not supported.");
@@ -1075,113 +981,474 @@ function shouldPrintOnCurrentPage(row, remainingPageSpace, table) {
     // In all other cases print the row on current page
     return true;
 }
-function printFullRow(row, isLastRow) {
-    var table = state_1.default().table;
-    var remainingPageSpace = getRemainingPageSpace(isLastRow);
-    if (row.canEntireRowFit(remainingPageSpace)) {
-        printRow(row);
+function printFullRow(doc, table, row, isLastRow, startPos, cursor) {
+    var remainingSpace = getRemainingPageSpace(doc, table, isLastRow, cursor);
+    if (row.canEntireRowFit(remainingSpace, table.columns)) {
+        printRow(doc, table, row, cursor);
     }
     else {
-        if (shouldPrintOnCurrentPage(row, remainingPageSpace, table)) {
-            var remainderRow = modifyRowToFit(row, remainingPageSpace, table);
-            printRow(row);
-            addPage();
-            printFullRow(remainderRow, isLastRow);
+        if (shouldPrintOnCurrentPage(doc, row, remainingSpace, table)) {
+            var remainderRow = modifyRowToFit(row, remainingSpace, table, doc);
+            printRow(doc, table, row, cursor);
+            addPage(doc, table, startPos, cursor);
+            printFullRow(doc, table, remainderRow, isLastRow, startPos, cursor);
         }
         else {
-            addPage();
-            printFullRow(row, isLastRow);
+            addPage(doc, table, startPos, cursor);
+            printFullRow(doc, table, row, isLastRow, startPos, cursor);
         }
     }
 }
-function printRow(row) {
-    var table = state_1.default().table;
-    table.cursor.x = table.margin('left');
-    row.y = table.cursor.y;
-    row.x = table.cursor.x;
+function printRow(doc, table, row, cursor) {
+    cursor.x = table.settings.margin.left;
     for (var _i = 0, _a = table.columns; _i < _a.length; _i++) {
         var column = _a[_i];
         var cell = row.cells[column.index];
         if (!cell) {
-            table.cursor.x += column.width;
+            cursor.x += column.width;
             continue;
         }
-        common_1.applyStyles(cell.styles);
-        cell.x = table.cursor.x;
-        cell.y = row.y;
-        if (cell.styles.valign === 'top') {
-            cell.textPos.y = table.cursor.y + cell.padding('top');
-        }
-        else if (cell.styles.valign === 'bottom') {
-            cell.textPos.y = table.cursor.y + cell.height - cell.padding('bottom');
-        }
-        else {
-            cell.textPos.y = table.cursor.y + cell.height / 2;
-        }
-        if (cell.styles.halign === 'right') {
-            cell.textPos.x = cell.x + cell.width - cell.padding('right');
-        }
-        else if (cell.styles.halign === 'center') {
-            cell.textPos.x = cell.x + cell.width / 2;
-        }
-        else {
-            cell.textPos.x = cell.x + cell.padding('left');
-        }
-        if (table.callCellHooks(table.cellHooks.willDrawCell, cell, row, column) === false) {
-            table.cursor.x += column.width;
+        doc.applyStyles(cell.styles);
+        cell.x = cursor.x;
+        cell.y = cursor.y;
+        var result = table.callCellHooks(doc, table.hooks.willDrawCell, cell, row, column, cursor);
+        if (result === false) {
+            cursor.x += column.width;
             continue;
         }
-        var fillStyle = common_1.getFillStyle(cell.styles);
+        var cellStyles = cell.styles;
+        var fillStyle = common_1.getFillStyle(cellStyles.lineWidth, cellStyles.fillColor);
         if (fillStyle) {
-            state_1.default().doc.rect(cell.x, table.cursor.y, cell.width, cell.height, fillStyle);
+            doc.rect(cell.x, cursor.y, cell.width, cell.height, fillStyle);
         }
-        state_1.default().doc.autoTableText(cell.text, cell.textPos.x, cell.textPos.y, {
+        var textPos = cell.getTextPos();
+        autoTableText_1.default(cell.text, textPos.x, textPos.y, {
             halign: cell.styles.halign,
             valign: cell.styles.valign,
-            maxWidth: Math.ceil(cell.width - cell.padding('left') - cell.padding('right'))
-        });
-        table.callCellHooks(table.cellHooks.didDrawCell, cell, row, column);
-        table.cursor.x += column.width;
+            maxWidth: Math.ceil(cell.width - cell.padding('left') - cell.padding('right')),
+        }, doc.getDocument());
+        table.callCellHooks(doc, table.hooks.didDrawCell, cell, row, column, cursor);
+        cursor.x += column.width;
     }
-    table.cursor.y += row.height;
+    cursor.y += row.height;
 }
-function getRemainingPageSpace(isLastRow) {
-    var table = state_1.default().table;
-    var bottomContentHeight = table.margin('bottom');
+function getRemainingPageSpace(doc, table, isLastRow, cursor) {
+    var bottomContentHeight = table.settings.margin.bottom;
     var showFoot = table.settings.showFoot;
-    if (showFoot === true || showFoot === 'everyPage' || (showFoot === 'lastPage' && isLastRow)) {
-        bottomContentHeight += table.footHeight;
+    if (showFoot === 'everyPage' || (showFoot === 'lastPage' && isLastRow)) {
+        bottomContentHeight += table.getFootHeight(table.columns);
     }
-    return state_1.default().pageHeight() - table.cursor.y - bottomContentHeight;
+    return doc.pageSize().height - cursor.y - bottomContentHeight;
 }
-function addPage() {
-    var table = state_1.default().table;
-    common_1.applyUserStyles();
-    if (table.settings.showFoot === true || table.settings.showFoot === 'everyPage') {
-        table.foot.forEach(function (row) { return printRow(row); });
+function addPage(doc, table, startPos, cursor) {
+    doc.applyStyles(doc.userStyles);
+    if (table.settings.showFoot === 'everyPage') {
+        table.foot.forEach(function (row) { return printRow(doc, table, row, cursor); });
     }
-    table.finalY = table.cursor.y;
     // Add user content just before adding new page ensure it will
     // be drawn above other things on the page
-    table.callEndPageHooks();
-    common_1.addTableBorder();
-    nextPage(state_1.default().doc);
+    table.callEndPageHooks(doc, cursor);
+    var margin = table.settings.margin;
+    common_1.addTableBorder(doc, table, startPos, cursor);
+    nextPage(doc);
     table.pageNumber++;
-    table.cursor = { x: table.margin('left'), y: table.margin('top') };
-    table.pageStartX = table.cursor.x;
-    table.pageStartY = table.cursor.y;
-    if (table.settings.showHead === true || table.settings.showHead === 'everyPage') {
-        table.head.forEach(function (row) { return printRow(row); });
+    table.pageCount++;
+    cursor.x = margin.left;
+    cursor.y = margin.top;
+    if (table.settings.showHead === 'everyPage') {
+        table.head.forEach(function (row) { return printRow(doc, table, row, cursor); });
     }
 }
 exports.addPage = addPage;
 function nextPage(doc) {
-    var current = state_1.default().pageNumber();
+    var current = doc.pageNumber();
     doc.setPage(current + 1);
-    var newCurrent = state_1.default().pageNumber();
+    var newCurrent = doc.pageNumber();
     if (newCurrent === current) {
         doc.addPage();
     }
+}
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Column = exports.Cell = exports.Row = exports.Table = void 0;
+var config_1 = __webpack_require__(1);
+var HookData_1 = __webpack_require__(14);
+var common_1 = __webpack_require__(0);
+var Table = /** @class */ (function () {
+    function Table(input, content) {
+        this.pageNumber = 1;
+        // Deprecated, use pageNumber instead
+        // Not using getter since:
+        // https://github.com/simonbengtsson/jsPDF-AutoTable/issues/596
+        this.pageCount = 1;
+        this.id = input.id;
+        this.settings = input.settings;
+        this.styles = input.styles;
+        this.hooks = input.hooks;
+        this.columns = content.columns;
+        this.head = content.head;
+        this.body = content.body;
+        this.foot = content.foot;
+    }
+    Table.prototype.getHeadHeight = function (columns) {
+        return this.head.reduce(function (acc, row) { return acc + row.getMaxCellHeight(columns); }, 0);
+    };
+    Table.prototype.getFootHeight = function (columns) {
+        return this.foot.reduce(function (acc, row) { return acc + row.getMaxCellHeight(columns); }, 0);
+    };
+    Table.prototype.allRows = function () {
+        return this.head.concat(this.body).concat(this.foot);
+    };
+    Table.prototype.callCellHooks = function (doc, handlers, cell, row, column, cursor) {
+        for (var _i = 0, handlers_1 = handlers; _i < handlers_1.length; _i++) {
+            var handler = handlers_1[_i];
+            var data = new HookData_1.CellHookData(doc, this, cell, row, column, cursor);
+            var result = handler(data) === false;
+            // Make sure text is always string[] since user can assign string
+            cell.text = Array.isArray(cell.text) ? cell.text : [cell.text];
+            if (result) {
+                return false;
+            }
+        }
+        return true;
+    };
+    Table.prototype.callEndPageHooks = function (doc, cursor) {
+        doc.applyStyles(doc.userStyles);
+        for (var _i = 0, _a = this.hooks.didDrawPage; _i < _a.length; _i++) {
+            var handler = _a[_i];
+            handler(new HookData_1.HookData(doc, this, cursor));
+        }
+    };
+    Table.prototype.getWidth = function (pageWidth) {
+        if (typeof this.settings.tableWidth === 'number') {
+            return this.settings.tableWidth;
+        }
+        else if (this.settings.tableWidth === 'wrap') {
+            var wrappedWidth = this.columns.reduce(function (total, col) { return total + col.wrappedWidth; }, 0);
+            return wrappedWidth;
+        }
+        else {
+            var margin = this.settings.margin;
+            return pageWidth - margin.left - margin.right;
+        }
+    };
+    return Table;
+}());
+exports.Table = Table;
+var Row = /** @class */ (function () {
+    function Row(raw, index, section, cells, spansMultiplePages) {
+        if (spansMultiplePages === void 0) { spansMultiplePages = false; }
+        this.height = 0;
+        this.raw = raw;
+        if (raw instanceof config_1.HtmlRowInput) {
+            this.raw = raw._element;
+            this.element = raw._element;
+        }
+        this.index = index;
+        this.section = section;
+        this.cells = cells;
+        this.spansMultiplePages = spansMultiplePages;
+    }
+    Row.prototype.getMaxCellHeight = function (columns) {
+        var _this = this;
+        return columns.reduce(function (acc, column) { var _a; return Math.max(acc, ((_a = _this.cells[column.index]) === null || _a === void 0 ? void 0 : _a.height) || 0); }, 0);
+    };
+    Row.prototype.hasRowSpan = function (columns) {
+        var _this = this;
+        return (columns.filter(function (column) {
+            var cell = _this.cells[column.index];
+            if (!cell)
+                return false;
+            return cell.rowSpan > 1;
+        }).length > 0);
+    };
+    Row.prototype.canEntireRowFit = function (height, columns) {
+        return this.getMaxCellHeight(columns) <= height;
+    };
+    Row.prototype.getMinimumRowHeight = function (columns, doc) {
+        var _this = this;
+        return columns.reduce(function (acc, column) {
+            var cell = _this.cells[column.index];
+            if (!cell)
+                return 0;
+            var fontHeight = (cell.styles.fontSize / doc.scaleFactor()) * config_1.FONT_ROW_RATIO;
+            var vPadding = cell.padding('vertical');
+            var oneRowHeight = vPadding + fontHeight;
+            return oneRowHeight > acc ? oneRowHeight : acc;
+        }, 0);
+    };
+    return Row;
+}());
+exports.Row = Row;
+var Cell = /** @class */ (function () {
+    function Cell(raw, styles, section) {
+        var _a, _b;
+        this.contentHeight = 0;
+        this.contentWidth = 0;
+        this.wrappedWidth = 0;
+        this.minReadableWidth = 0;
+        this.minWidth = 0;
+        this.width = 0;
+        this.height = 0;
+        this.x = 0;
+        this.y = 0;
+        this.styles = styles;
+        this.section = section;
+        this.raw = raw;
+        var content = raw;
+        if (raw != null && typeof raw === 'object' && !Array.isArray(raw)) {
+            this.rowSpan = raw.rowSpan || 1;
+            this.colSpan = raw.colSpan || 1;
+            content = (_b = (_a = raw.content) !== null && _a !== void 0 ? _a : raw.title) !== null && _b !== void 0 ? _b : raw;
+            if (raw._element) {
+                this.raw = raw._element;
+            }
+        }
+        else {
+            this.rowSpan = 1;
+            this.colSpan = 1;
+        }
+        // Stringify 0 and false, but not undefined or null
+        var text = content != null ? '' + content : '';
+        var splitRegex = /\r\n|\r|\n/g;
+        this.text = text.split(splitRegex);
+    }
+    Cell.prototype.getTextPos = function () {
+        var y;
+        if (this.styles.valign === 'top') {
+            y = this.y + this.padding('top');
+        }
+        else if (this.styles.valign === 'bottom') {
+            y = this.y + this.height - this.padding('bottom');
+        }
+        else {
+            var netHeight = this.height - this.padding('vertical');
+            y = this.y + netHeight / 2 + this.padding('top');
+        }
+        var x;
+        if (this.styles.halign === 'right') {
+            x = this.x + this.width - this.padding('right');
+        }
+        else if (this.styles.halign === 'center') {
+            var netWidth = this.width - this.padding('horizontal');
+            x = this.x + netWidth / 2 + this.padding('left');
+        }
+        else {
+            x = this.x + this.padding('left');
+        }
+        return { x: x, y: y };
+    };
+    Cell.prototype.getContentHeight = function (scaleFactor) {
+        var lineCount = Array.isArray(this.text) ? this.text.length : 1;
+        var fontHeight = (this.styles.fontSize / scaleFactor) * config_1.FONT_ROW_RATIO;
+        var height = lineCount * fontHeight + this.padding('vertical');
+        return Math.max(height, this.styles.minCellHeight);
+    };
+    Cell.prototype.padding = function (name) {
+        var padding = common_1.parseSpacing(this.styles.cellPadding, 0);
+        if (name === 'vertical') {
+            return padding.top + padding.bottom;
+        }
+        else if (name === 'horizontal') {
+            return padding.left + padding.right;
+        }
+        else {
+            return padding[name];
+        }
+    };
+    return Cell;
+}());
+exports.Cell = Cell;
+var Column = /** @class */ (function () {
+    function Column(dataKey, raw, index) {
+        this.wrappedWidth = 0;
+        this.minReadableWidth = 0;
+        this.minWidth = 0;
+        this.width = 0;
+        this.dataKey = dataKey;
+        this.raw = raw;
+        this.index = index;
+    }
+    Column.prototype.getMaxCustomCellWidth = function (table) {
+        var max = 0;
+        for (var _i = 0, _a = table.allRows(); _i < _a.length; _i++) {
+            var row = _a[_i];
+            var cell = row.cells[this.index];
+            if (cell && typeof cell.styles.cellWidth === 'number') {
+                max = Math.max(max, cell.styles.cellWidth);
+            }
+        }
+        return max;
+    };
+    return Column;
+}());
+exports.Column = Column;
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createTable = void 0;
+var documentHandler_1 = __webpack_require__(2);
+var models_1 = __webpack_require__(8);
+var widthCalculator_1 = __webpack_require__(15);
+var config_1 = __webpack_require__(1);
+var polyfills_1 = __webpack_require__(3);
+function createTable(jsPDFDoc, input) {
+    var doc = new documentHandler_1.DocHandler(jsPDFDoc);
+    var content = parseContent(input, doc.scaleFactor());
+    var table = new models_1.Table(input, content);
+    widthCalculator_1.calculateWidths(doc, table);
+    doc.applyStyles(doc.userStyles);
+    return table;
+}
+exports.createTable = createTable;
+function parseContent(input, sf) {
+    var content = input.content;
+    var columns = createColumns(content.columns);
+    // If no head or foot is set, try generating it with content from columns
+    if (content.head.length === 0) {
+        var sectionRow = generateSectionRow(columns, 'head');
+        if (sectionRow)
+            content.head.push(sectionRow);
+    }
+    if (content.foot.length === 0) {
+        var sectionRow = generateSectionRow(columns, 'foot');
+        if (sectionRow)
+            content.foot.push(sectionRow);
+    }
+    var theme = input.settings.theme;
+    var styles = input.styles;
+    return {
+        columns: columns,
+        head: parseSection('head', content.head, columns, styles, theme, sf),
+        body: parseSection('body', content.body, columns, styles, theme, sf),
+        foot: parseSection('foot', content.foot, columns, styles, theme, sf),
+    };
+}
+function parseSection(sectionName, sectionRows, columns, styleProps, theme, scaleFactor) {
+    var rowSpansLeftForColumn = {};
+    var result = sectionRows.map(function (rawRow, rowIndex) {
+        var skippedRowForRowSpans = 0;
+        var cells = {};
+        var colSpansAdded = 0;
+        var columnSpansLeft = 0;
+        for (var _i = 0, columns_1 = columns; _i < columns_1.length; _i++) {
+            var column = columns_1[_i];
+            if (rowSpansLeftForColumn[column.index] == null ||
+                rowSpansLeftForColumn[column.index].left === 0) {
+                if (columnSpansLeft === 0) {
+                    var rawCell = void 0;
+                    if (Array.isArray(rawRow)) {
+                        rawCell =
+                            rawRow[column.index - colSpansAdded - skippedRowForRowSpans];
+                    }
+                    else {
+                        rawCell = rawRow[column.dataKey];
+                    }
+                    var cellInputStyles = {};
+                    if (typeof rawCell === 'object' && !Array.isArray(rawCell)) {
+                        cellInputStyles = (rawCell === null || rawCell === void 0 ? void 0 : rawCell.styles) || {};
+                    }
+                    var styles = cellStyles(sectionName, column, rowIndex, theme, styleProps, scaleFactor, cellInputStyles);
+                    var cell = new models_1.Cell(rawCell, styles, sectionName);
+                    // dataKey is not used internally no more but keep for
+                    // backwards compat in hooks
+                    cells[column.dataKey] = cell;
+                    cells[column.index] = cell;
+                    columnSpansLeft = cell.colSpan - 1;
+                    rowSpansLeftForColumn[column.index] = {
+                        left: cell.rowSpan - 1,
+                        times: columnSpansLeft,
+                    };
+                }
+                else {
+                    columnSpansLeft--;
+                    colSpansAdded++;
+                }
+            }
+            else {
+                rowSpansLeftForColumn[column.index].left--;
+                columnSpansLeft = rowSpansLeftForColumn[column.index].times;
+                skippedRowForRowSpans++;
+            }
+        }
+        return new models_1.Row(rawRow, rowIndex, sectionName, cells);
+    });
+    return result;
+}
+function generateSectionRow(columns, section) {
+    var sectionRow = {};
+    columns.forEach(function (col) {
+        if (col.raw != null) {
+            var title = getSectionTitle(section, col.raw);
+            if (title != null)
+                sectionRow[col.dataKey] = title;
+        }
+    });
+    return Object.keys(sectionRow).length > 0 ? sectionRow : null;
+}
+function getSectionTitle(section, column) {
+    if (section === 'head') {
+        if (typeof column === 'object') {
+            return column.header || column.title || null;
+        }
+        else if (typeof column === 'string' || typeof column === 'number') {
+            return column;
+        }
+    }
+    else if (section === 'foot' && typeof column === 'object') {
+        return column.footer;
+    }
+    return null;
+}
+function createColumns(columns) {
+    return columns.map(function (input, index) {
+        var _a, _b;
+        var key;
+        if (typeof input === 'object') {
+            key = (_b = (_a = input.dataKey) !== null && _a !== void 0 ? _a : input.key) !== null && _b !== void 0 ? _b : index;
+        }
+        else {
+            key = index;
+        }
+        return new models_1.Column(key, input, index);
+    });
+}
+function cellStyles(sectionName, column, rowIndex, themeName, styles, scaleFactor, cellInputStyles) {
+    var theme = config_1.getTheme(themeName);
+    var sectionStyles;
+    if (sectionName === 'head') {
+        sectionStyles = styles.headStyles;
+    }
+    else if (sectionName === 'body') {
+        sectionStyles = styles.bodyStyles;
+    }
+    else if (sectionName === 'foot') {
+        sectionStyles = styles.footStyles;
+    }
+    var otherStyles = polyfills_1.assign({}, theme.table, theme[sectionName], styles.styles, sectionStyles);
+    var columnStyles = styles.columnStyles[column.dataKey] ||
+        styles.columnStyles[column.index] ||
+        {};
+    var colStyles = sectionName === 'body' ? columnStyles : {};
+    var rowStyles = sectionName === 'body' && rowIndex % 2 === 0
+        ? polyfills_1.assign({}, theme.alternateRow, styles.alternateRowStyles)
+        : {};
+    var defaultStyle = config_1.defaultStyles(scaleFactor);
+    var themeStyles = polyfills_1.assign({}, defaultStyle, otherStyles, rowStyles, colStyles);
+    return polyfills_1.assign(themeStyles, cellInputStyles);
 }
 
 
@@ -1191,11 +1458,410 @@ function nextPage(doc) {
 
 "use strict";
 
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.__drawTable = exports.__createTable = exports.applyPlugin = void 0;
+var applyPlugin_1 = __webpack_require__(11);
+var inputParser_1 = __webpack_require__(6);
+var tableDrawer_1 = __webpack_require__(7);
+var tableCalculator_1 = __webpack_require__(9);
+// export { applyPlugin } didn't export applyPlugin
+// to index.d.ts for some reason
+function applyPlugin(jsPDF) {
+    applyPlugin_1.default(jsPDF);
+}
+exports.applyPlugin = applyPlugin;
+function autoTable(d, options) {
+    var input = inputParser_1.parseInput(d, options);
+    var table = tableCalculator_1.createTable(d, input);
+    tableDrawer_1.drawTable(d, table);
+}
+exports.default = autoTable;
+// Experimental export
+function __createTable(d, options) {
+    var input = inputParser_1.parseInput(d, options);
+    return tableCalculator_1.createTable(d, input);
+}
+exports.__createTable = __createTable;
+function __drawTable(d, table) {
+    tableDrawer_1.drawTable(d, table);
+}
+exports.__drawTable = __drawTable;
+try {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    var jsPDF = __webpack_require__(16);
+    // Webpack imported jspdf instead of jsPDF for some reason 
+    // while it seemed to work everywhere else.
+    if (jsPDF.jsPDF)
+        jsPDF = jsPDF.jsPDF;
+    applyPlugin(jsPDF);
+}
+catch (error) {
+    // Importing jspdf in nodejs environments does not work as of jspdf
+    // 1.5.3 so we need to silence potential errors to support using for example
+    // the nodejs jspdf dist files with the exported applyPlugin
+}
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var htmlParser_1 = __webpack_require__(4);
+var autoTableText_1 = __webpack_require__(5);
+var documentHandler_1 = __webpack_require__(2);
+var inputParser_1 = __webpack_require__(6);
+var tableDrawer_1 = __webpack_require__(7);
+var tableCalculator_1 = __webpack_require__(9);
+function default_1(jsPDF) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    jsPDF.API.autoTable = function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        var options;
+        if (args.length === 1) {
+            options = args[0];
+        }
+        else {
+            console.error('Use of deprecated autoTable initiation');
+            options = args[2] || {};
+            options.columns = args[0];
+            options.body = args[1];
+        }
+        var input = inputParser_1.parseInput(this, options);
+        var table = tableCalculator_1.createTable(this, input);
+        tableDrawer_1.drawTable(this, table);
+        return this;
+    };
+    // Assign false to enable `doc.lastAutoTable.finalY || 40` sugar
+    jsPDF.API.lastAutoTable = false;
+    jsPDF.API.previousAutoTable = false; // deprecated in v3
+    jsPDF.API.autoTable.previous = false; // deprecated in v3
+    jsPDF.API.autoTableText = function (text, x, y, styles) {
+        autoTableText_1.default(text, x, y, styles, this);
+    };
+    jsPDF.API.autoTableSetDefaults = function (defaults) {
+        documentHandler_1.DocHandler.setDefaults(defaults, this);
+        return this;
+    };
+    jsPDF.autoTableSetDefaults = function (defaults, doc) {
+        documentHandler_1.DocHandler.setDefaults(defaults, doc);
+    };
+    jsPDF.API.autoTableHtmlToJson = function (tableElem, includeHiddenElements) {
+        if (includeHiddenElements === void 0) { includeHiddenElements = false; }
+        if (typeof window === 'undefined') {
+            console.error('Cannot run autoTableHtmlToJson in non browser environment');
+            return null;
+        }
+        var doc = new documentHandler_1.DocHandler(this);
+        var _a = htmlParser_1.parseHtml(doc, tableElem, window, includeHiddenElements, false), head = _a.head, body = _a.body;
+        var columns = head[0].map(function (c) { return c.content; });
+        return { columns: columns, rows: body, data: body };
+    };
+    /**
+     * @deprecated
+     */
+    jsPDF.API.autoTableEndPosY = function () {
+        console.error('Use of deprecated function: autoTableEndPosY. Use doc.lastAutoTable.finalY instead.');
+        var prev = this.lastAutoTable;
+        if (prev && prev.finalY) {
+            return prev.finalY;
+        }
+        else {
+            return 0;
+        }
+    };
+    /**
+     * @deprecated
+     */
+    jsPDF.API.autoTableAddPageContent = function (hook) {
+        console.error('Use of deprecated function: autoTableAddPageContent. Use jsPDF.autoTableSetDefaults({didDrawPage: () => {}}) instead.');
+        if (!jsPDF.API.autoTable.globalDefaults) {
+            jsPDF.API.autoTable.globalDefaults = {};
+        }
+        jsPDF.API.autoTable.globalDefaults.addPageContent = hook;
+        return this;
+    };
+    /**
+     * @deprecated
+     */
+    jsPDF.API.autoTableAddPage = function () {
+        console.error('Use of deprecated function: autoTableAddPage. Use doc.addPage()');
+        this.addPage();
+        return this;
+    };
+}
+exports.default = default_1;
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.parseCss = void 0;
+// Limitations
+// - No support for border spacing
+// - No support for transparency
+var common_1 = __webpack_require__(0);
+function parseCss(supportedFonts, element, scaleFactor, style, window) {
+    var result = {};
+    var pxScaleFactor = 96 / 72;
+    var color = parseColor(element, function (elem) {
+        return window.getComputedStyle(elem)['backgroundColor'];
+    });
+    if (color != null)
+        result.fillColor = color;
+    color = parseColor(element, function (elem) {
+        return window.getComputedStyle(elem)['color'];
+    });
+    if (color != null)
+        result.textColor = color;
+    color = parseColor(element, function (elem) {
+        return window.getComputedStyle(elem)['borderTopColor'];
+    });
+    if (color != null)
+        result.lineColor = color;
+    var padding = parsePadding(style, scaleFactor);
+    if (padding)
+        result.cellPadding = padding;
+    // style.borderWidth only works in chrome (borderTopWidth etc works in firefox and ie as well)
+    var bw = parseInt(style.borderTopWidth || '');
+    bw = bw / pxScaleFactor / scaleFactor;
+    if (bw)
+        result.lineWidth = bw;
+    var accepted = ['left', 'right', 'center', 'justify'];
+    if (accepted.indexOf(style.textAlign) !== -1) {
+        result.halign = style.textAlign;
+    }
+    accepted = ['middle', 'bottom', 'top'];
+    if (accepted.indexOf(style.verticalAlign) !== -1) {
+        result.valign = style.verticalAlign;
+    }
+    var res = parseInt(style.fontSize || '');
+    if (!isNaN(res))
+        result.fontSize = res / pxScaleFactor;
+    var fontStyle = parseFontStyle(style);
+    if (fontStyle)
+        result.fontStyle = fontStyle;
+    var font = (style.fontFamily || '').toLowerCase();
+    if (supportedFonts.indexOf(font) !== -1) {
+        result.font = font;
+    }
+    return result;
+}
+exports.parseCss = parseCss;
+function parseFontStyle(style) {
+    var res = '';
+    if (style.fontWeight === 'bold' ||
+        style.fontWeight === 'bolder' ||
+        parseInt(style.fontWeight) >= 700) {
+        res = 'bold';
+    }
+    if (style.fontStyle === 'italic' || style.fontStyle === 'oblique') {
+        res += 'italic';
+    }
+    return res;
+}
+function parseColor(element, styleGetter) {
+    var cssColor = realColor(element, styleGetter);
+    if (!cssColor)
+        return null;
+    var rgba = cssColor.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d*\.?\d*))?\)$/);
+    if (!rgba || !Array.isArray(rgba)) {
+        return null;
+    }
+    var color = [
+        parseInt(rgba[1]),
+        parseInt(rgba[2]),
+        parseInt(rgba[3]),
+    ];
+    var alpha = parseInt(rgba[4]);
+    if (alpha === 0 || isNaN(color[0]) || isNaN(color[1]) || isNaN(color[2])) {
+        return null;
+    }
+    return color;
+}
+function realColor(elem, styleGetter) {
+    var bg = styleGetter(elem);
+    if (bg === 'rgba(0, 0, 0, 0)' ||
+        bg === 'transparent' ||
+        bg === 'initial' ||
+        bg === 'inherit') {
+        if (elem.parentElement == null) {
+            return null;
+        }
+        return realColor(elem.parentElement, styleGetter);
+    }
+    else {
+        return bg;
+    }
+}
+function parsePadding(style, scaleFactor) {
+    var val = [
+        style.paddingTop,
+        style.paddingRight,
+        style.paddingBottom,
+        style.paddingLeft,
+    ];
+    var pxScaleFactor = 96 / (72 / scaleFactor);
+    var linePadding = (parseInt(style.lineHeight) - parseInt(style.fontSize)) / scaleFactor / 2;
+    var inputPadding = val.map(function (n) {
+        return parseInt(n) / pxScaleFactor;
+    });
+    var padding = common_1.parseSpacing(inputPadding, 0);
+    if (linePadding > padding.top) {
+        padding.top = linePadding;
+    }
+    if (linePadding > padding.bottom) {
+        padding.bottom = linePadding;
+    }
+    return padding;
+}
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+function default_1(doc, global, document, current) {
+    var _loop_1 = function (options) {
+        if (options && typeof options !== 'object') {
+            console.error('The options parameter should be of type object, is: ' + typeof options);
+        }
+        if (typeof options.extendWidth !== 'undefined') {
+            options.tableWidth = options.extendWidth ? 'auto' : 'wrap';
+            console.error('Use of deprecated option: extendWidth, use tableWidth instead.');
+        }
+        if (typeof options.margins !== 'undefined') {
+            if (typeof options.margin === 'undefined')
+                options.margin = options.margins;
+            console.error('Use of deprecated option: margins, use margin instead.');
+        }
+        if (options.startY && typeof options.startY !== 'number') {
+            console.error('Invalid value for startY option', options.startY);
+            delete options.startY;
+        }
+        if (!options.didDrawPage &&
+            (options.afterPageContent ||
+                options.beforePageContent ||
+                options.afterPageAdd)) {
+            console.error('The afterPageContent, beforePageContent and afterPageAdd hooks are deprecated. Use didDrawPage instead');
+            options.didDrawPage = function (data) {
+                doc.applyStyles(doc.userStyles);
+                if (options.beforePageContent)
+                    options.beforePageContent(data);
+                doc.applyStyles(doc.userStyles);
+                if (options.afterPageContent)
+                    options.afterPageContent(data);
+                doc.applyStyles(doc.userStyles);
+                if (options.afterPageAdd && data.pageNumber > 1) {
+                    ;
+                    data.afterPageAdd(data);
+                }
+                doc.applyStyles(doc.userStyles);
+            };
+        }
+        ;
+        [
+            'createdHeaderCell',
+            'drawHeaderRow',
+            'drawRow',
+            'drawHeaderCell',
+        ].forEach(function (name) {
+            if (options[name]) {
+                console.error("The \"" + name + "\" hook has changed in version 3.0, check the changelog for how to migrate.");
+            }
+        });
+        [
+            ['showFoot', 'showFooter'],
+            ['showHead', 'showHeader'],
+            ['didDrawPage', 'addPageContent'],
+            ['didParseCell', 'createdCell'],
+            ['headStyles', 'headerStyles'],
+        ].forEach(function (_a) {
+            var current = _a[0], deprecated = _a[1];
+            if (options[deprecated]) {
+                console.error("Use of deprecated option " + deprecated + ". Use " + current + " instead");
+                options[current] = options[deprecated];
+            }
+        });
+        [
+            ['padding', 'cellPadding'],
+            ['lineHeight', 'rowHeight'],
+            'fontSize',
+            'overflow',
+        ].forEach(function (o) {
+            var deprecatedOption = typeof o === 'string' ? o : o[0];
+            var style = typeof o === 'string' ? o : o[1];
+            if (typeof options[deprecatedOption] !== 'undefined') {
+                if (typeof options.styles[style] === 'undefined') {
+                    options.styles[style] = options[deprecatedOption];
+                }
+                console.error('Use of deprecated option: ' +
+                    deprecatedOption +
+                    ', use the style ' +
+                    style +
+                    ' instead.');
+            }
+        });
+        for (var _i = 0, _a = [
+            'styles',
+            'bodyStyles',
+            'headStyles',
+            'footStyles',
+        ]; _i < _a.length; _i++) {
+            var styleProp = _a[_i];
+            checkStyles(options[styleProp] || {});
+        }
+        var columnStyles = options['columnStyles'] || {};
+        for (var _b = 0, _c = Object.keys(columnStyles); _b < _c.length; _b++) {
+            var key = _c[_b];
+            checkStyles(columnStyles[key] || {});
+        }
+    };
+    for (var _i = 0, _a = [global, document, current]; _i < _a.length; _i++) {
+        var options = _a[_i];
+        _loop_1(options);
+    }
+}
+exports.default = default_1;
+function checkStyles(styles) {
+    if (styles.rowHeight) {
+        console.error('Use of deprecated style rowHeight. It is renamed to minCellHeight.');
+        if (!styles.minCellHeight) {
+            styles.minCellHeight = styles.rowHeight;
+        }
+    }
+    else if (styles.columnWidth) {
+        console.error('Use of deprecated style columnWidth. It is renamed to cellWidth.');
+        if (!styles.cellWidth) {
+            styles.cellWidth = styles.columnWidth;
+        }
+    }
+}
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
@@ -1205,30 +1871,23 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var state_1 = __webpack_require__(0);
+exports.CellHookData = exports.HookData = void 0;
 var HookData = /** @class */ (function () {
-    function HookData() {
-        var table = state_1.default().table;
+    function HookData(doc, table, cursor) {
         this.table = table;
         this.pageNumber = table.pageNumber;
+        this.pageCount = this.pageNumber;
         this.settings = table.settings;
-        this.cursor = table.cursor;
-        this.doc = state_1.default().doc;
+        this.cursor = cursor;
+        this.doc = doc.getDocument();
     }
-    Object.defineProperty(HookData.prototype, "pageCount", {
-        get: function () {
-            return this.pageNumber;
-        },
-        enumerable: true,
-        configurable: true
-    });
     return HookData;
 }());
 exports.HookData = HookData;
 var CellHookData = /** @class */ (function (_super) {
     __extends(CellHookData, _super);
-    function CellHookData(cell, row, column) {
-        var _this = _super.call(this) || this;
+    function CellHookData(doc, table, cell, row, column, cursor) {
+        var _this = _super.call(this, doc, table, cursor) || this;
         _this.cell = cell;
         _this.row = row;
         _this.column = column;
@@ -1241,33 +1900,164 @@ exports.CellHookData = CellHookData;
 
 
 /***/ }),
-/* 11 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var common_1 = __webpack_require__(1);
-var state_1 = __webpack_require__(0);
+exports.ellipsize = exports.resizeColumns = exports.calculateWidths = void 0;
+var common_1 = __webpack_require__(0);
 /**
  * Calculate the column widths
  */
-function calculateWidths(table) {
-    var columnMinWidth = 10 / state_1.default().scaleFactor();
-    if (columnMinWidth * table.columns.length > table.width) {
-        console.error('Columns could not fit on page');
+function calculateWidths(doc, table) {
+    calculate(doc, table);
+    var resizableColumns = [];
+    var initialTableWidth = 0;
+    table.columns.forEach(function (column) {
+        var customWidth = column.getMaxCustomCellWidth(table);
+        if (customWidth) {
+            // final column width
+            column.width = customWidth;
+        }
+        else {
+            // initial column width (will be resized)
+            column.width = column.wrappedWidth;
+            resizableColumns.push(column);
+        }
+        initialTableWidth += column.width;
+    });
+    // width difference that needs to be distributed
+    var resizeWidth = table.getWidth(doc.pageSize().width) - initialTableWidth;
+    // first resize attempt: with respect to minReadableWidth and minWidth
+    if (resizeWidth) {
+        resizeWidth = resizeColumns(resizableColumns, resizeWidth, function (column) {
+            return Math.max(column.minReadableWidth, column.minWidth);
+        });
     }
-    else if (table.minWidth > table.width) {
-        // Would be nice to improve the user experience of this
-        console.error("Column widths too wide and can't fit page");
+    // second resize attempt: ignore minReadableWidth but respect minWidth
+    if (resizeWidth) {
+        resizeWidth = resizeColumns(resizableColumns, resizeWidth, function (column) { return column.minWidth; });
     }
-    var copy = table.columns.slice(0);
-    distributeWidth(copy, table.width, table.wrappedWidth);
+    resizeWidth = Math.abs(resizeWidth);
+    if (resizeWidth > 0.1 / doc.scaleFactor()) {
+        // Table can't get smaller due to custom-width or minWidth restrictions
+        // We can't really do much here. Up to user to for example
+        // reduce font size, increase page size or remove custom cell widths
+        // to allow more columns to be reduced in size
+        resizeWidth = resizeWidth < 1 ? resizeWidth : Math.round(resizeWidth);
+        console.error("Of the table content, " + resizeWidth + " units width could not fit page");
+    }
     applyColSpans(table);
-    fitContent(table);
+    fitContent(table, doc);
     applyRowSpans(table);
 }
 exports.calculateWidths = calculateWidths;
+function calculate(doc, table) {
+    var sf = doc.scaleFactor();
+    table.allRows().forEach(function (row) {
+        for (var _i = 0, _a = table.columns; _i < _a.length; _i++) {
+            var column = _a[_i];
+            var cell = row.cells[column.index];
+            if (!cell)
+                continue;
+            var hooks = table.hooks.didParseCell;
+            table.callCellHooks(doc, hooks, cell, row, column, null);
+            var padding = cell.padding('horizontal');
+            cell.contentWidth = common_1.getStringWidth(cell.text, cell.styles, doc) + padding;
+            var longestWordWidth = common_1.getStringWidth(cell.text.join(' ').split(/\s+/), cell.styles, doc);
+            cell.minReadableWidth = longestWordWidth + cell.padding('horizontal');
+            if (typeof cell.styles.cellWidth === 'number') {
+                cell.minWidth = cell.styles.cellWidth;
+                cell.wrappedWidth = cell.styles.cellWidth;
+            }
+            else if (cell.styles.cellWidth === 'wrap') {
+                cell.minWidth = cell.contentWidth;
+                cell.wrappedWidth = cell.contentWidth;
+            }
+            else {
+                // auto
+                var defaultMinWidth = 10 / sf;
+                cell.minWidth = cell.styles.minCellWidth || defaultMinWidth;
+                cell.wrappedWidth = cell.contentWidth;
+                if (cell.minWidth > cell.wrappedWidth) {
+                    cell.wrappedWidth = cell.minWidth;
+                }
+            }
+        }
+    });
+    table.allRows().forEach(function (row) {
+        for (var _i = 0, _a = table.columns; _i < _a.length; _i++) {
+            var column = _a[_i];
+            var cell = row.cells[column.index];
+            // For now we ignore the minWidth and wrappedWidth of colspan cells when calculating colspan widths.
+            // Could probably be improved upon however.
+            if (cell && cell.colSpan === 1) {
+                column.wrappedWidth = Math.max(column.wrappedWidth, cell.wrappedWidth);
+                column.minWidth = Math.max(column.minWidth, cell.minWidth);
+                column.minReadableWidth = Math.max(column.minReadableWidth, cell.minReadableWidth);
+            }
+            else {
+                // Respect cellWidth set in columnStyles even if there is no cells for this column
+                // or if the column only have colspan cells. Since the width of colspan cells
+                // does not affect the width of columns, setting columnStyles cellWidth enables the
+                // user to at least do it manually.
+                // Note that this is not perfect for now since for example row and table styles are
+                // not accounted for
+                var columnStyles = table.styles.columnStyles[column.dataKey] ||
+                    table.styles.columnStyles[column.index] ||
+                    {};
+                var cellWidth = columnStyles.cellWidth || columnStyles.minCellWidth;
+                if (cellWidth && typeof cellWidth === 'number') {
+                    column.minWidth = cellWidth;
+                    column.wrappedWidth = cellWidth;
+                }
+            }
+            if (cell) {
+                // Make sure all columns get at least min width even though width calculations are not based on them
+                if (cell.colSpan > 1 && !column.minWidth) {
+                    column.minWidth = cell.minWidth;
+                }
+                if (cell.colSpan > 1 && !column.wrappedWidth) {
+                    column.wrappedWidth = cell.minWidth;
+                }
+            }
+        }
+    });
+}
+/**
+ * Distribute resizeWidth on passed resizable columns
+ */
+function resizeColumns(columns, resizeWidth, getMinWidth) {
+    var initialResizeWidth = resizeWidth;
+    var sumWrappedWidth = columns.reduce(function (acc, column) { return acc + column.wrappedWidth; }, 0);
+    for (var i = 0; i < columns.length; i++) {
+        var column = columns[i];
+        var ratio = column.wrappedWidth / sumWrappedWidth;
+        var suggestedChange = initialResizeWidth * ratio;
+        var suggestedWidth = column.width + suggestedChange;
+        var minWidth = getMinWidth(column);
+        var newWidth = suggestedWidth < minWidth ? minWidth : suggestedWidth;
+        resizeWidth -= newWidth - column.width;
+        column.width = newWidth;
+    }
+    resizeWidth = Math.round(resizeWidth * 1e10) / 1e10;
+    // Run the resizer again if there's remaining width needs
+    // to be distributed and there're columns that can be resized
+    if (resizeWidth) {
+        var resizableColumns = columns.filter(function (column) {
+            return resizeWidth < 0
+                ? column.width > getMinWidth(column) // check if column can shrink
+                : true; // check if column can grow
+        });
+        if (resizableColumns.length) {
+            resizeWidth = resizeColumns(resizableColumns, resizeWidth, getMinWidth);
+        }
+    }
+    return resizeWidth;
+}
+exports.resizeColumns = resizeColumns;
 function applyRowSpans(table) {
     var rowSpanCells = {};
     var colRowSpansLeft = 1;
@@ -1283,9 +2073,6 @@ function applyRowSpans(table) {
             }
             else if (data) {
                 data.cell.height += row.height;
-                if (data.cell.height > row.maxCellHeight) {
-                    data.row.maxCellHeight = data.cell.height;
-                }
                 colRowSpansLeft = data.cell.colSpan;
                 delete row.cells[column.index];
                 data.left--;
@@ -1306,13 +2093,6 @@ function applyRowSpans(table) {
                 }
             }
         }
-        if (row.section === 'head') {
-            table.headHeight += row.maxCellHeight;
-        }
-        if (row.section === 'foot') {
-            table.footHeight += row.maxCellHeight;
-        }
-        table.height += row.height;
     }
 }
 function applyColSpans(table) {
@@ -1324,21 +2104,20 @@ function applyColSpans(table) {
         var colSpansLeft = 0;
         for (var columnIndex = 0; columnIndex < table.columns.length; columnIndex++) {
             var column = table.columns[columnIndex];
-            var cell = null;
             // Width and colspan
             colSpansLeft -= 1;
             if (colSpansLeft > 1 && table.columns[columnIndex + 1]) {
                 combinedColSpanWidth += column.width;
                 delete row.cells[column.index];
-                continue;
             }
             else if (colSpanCell) {
-                cell = colSpanCell;
+                var cell = colSpanCell;
                 delete row.cells[column.index];
                 colSpanCell = null;
+                cell.width = column.width + combinedColSpanWidth;
             }
             else {
-                cell = row.cells[column.index];
+                var cell = row.cells[column.index];
                 if (!cell)
                     continue;
                 colSpansLeft = cell.colSpan;
@@ -1348,12 +2127,12 @@ function applyColSpans(table) {
                     combinedColSpanWidth += column.width;
                     continue;
                 }
+                cell.width = column.width + combinedColSpanWidth;
             }
-            cell.width = column.width + combinedColSpanWidth;
         }
     }
 }
-function fitContent(table) {
+function fitContent(table, doc) {
     var rowSpanHeight = { count: 0, height: 0 };
     for (var _i = 0, _a = table.allRows(); _i < _a.length; _i++) {
         var row = _a[_i];
@@ -1362,27 +2141,26 @@ function fitContent(table) {
             var cell = row.cells[column.index];
             if (!cell)
                 continue;
-            common_1.applyStyles(cell.styles);
+            doc.applyStyles(cell.styles, true);
             var textSpace = cell.width - cell.padding('horizontal');
             if (cell.styles.overflow === 'linebreak') {
                 // Add one pt to textSpace to fix rounding error
-                cell.text = state_1.default().doc.splitTextToSize(cell.text, textSpace + 1 / (state_1.default().scaleFactor() || 1), { fontSize: cell.styles.fontSize });
+                cell.text = doc.splitTextToSize(cell.text, textSpace + 1 / doc.scaleFactor(), { fontSize: cell.styles.fontSize });
             }
             else if (cell.styles.overflow === 'ellipsize') {
-                cell.text = common_1.ellipsize(cell.text, textSpace, cell.styles);
+                cell.text = ellipsize(cell.text, textSpace, cell.styles, doc, '...');
             }
             else if (cell.styles.overflow === 'hidden') {
-                cell.text = common_1.ellipsize(cell.text, textSpace, cell.styles, '');
+                cell.text = ellipsize(cell.text, textSpace, cell.styles, doc, '');
             }
             else if (typeof cell.styles.overflow === 'function') {
                 cell.text = cell.styles.overflow(cell.text, textSpace);
             }
-            cell.contentHeight = cell.getContentHeight();
-            if (cell.styles.minCellHeight > cell.contentHeight) {
-                cell.contentHeight = cell.styles.minCellHeight;
-            }
+            cell.contentHeight = cell.getContentHeight(doc.scaleFactor());
             var realContentHeight = cell.contentHeight / cell.rowSpan;
-            if (cell.rowSpan > 1 && (rowSpanHeight.count * rowSpanHeight.height < realContentHeight * cell.rowSpan)) {
+            if (cell.rowSpan > 1 &&
+                rowSpanHeight.count * rowSpanHeight.height <
+                    realContentHeight * cell.rowSpan) {
                 rowSpanHeight = { height: realContentHeight, count: cell.rowSpan };
             }
             else if (rowSpanHeight && rowSpanHeight.count > 0) {
@@ -1392,580 +2170,37 @@ function fitContent(table) {
             }
             if (realContentHeight > row.height) {
                 row.height = realContentHeight;
-                row.maxCellHeight = realContentHeight;
             }
         }
         rowSpanHeight.count--;
     }
 }
-function distributeWidth(autoColumns, availableSpace, wrappedAutoColumnsWidth) {
-    var diffWidth = availableSpace - wrappedAutoColumnsWidth;
-    for (var i = 0; i < autoColumns.length; i++) {
-        var column = autoColumns[i];
-        var ratio = column.wrappedWidth / wrappedAutoColumnsWidth;
-        var suggestedChange = diffWidth * ratio;
-        var suggestedWidth = column.wrappedWidth + suggestedChange;
-        var hasCustomWidth = false;
-        for (var _i = 0, _a = state_1.default().table.allRows(); _i < _a.length; _i++) {
-            var row = _a[_i];
-            var cell = row.cells[column.index];
-            if (cell && typeof cell.styles.cellWidth === 'number') {
-                hasCustomWidth = true;
-                break;
-            }
-        }
-        if (suggestedWidth < column.minWidth || hasCustomWidth) {
-            // Add 1 to minWidth as linebreaks calc otherwise sometimes made two rows
-            column.width = column.minWidth + 1 / state_1.default().scaleFactor();
-            wrappedAutoColumnsWidth -= column.wrappedWidth;
-            availableSpace -= column.width;
-            autoColumns.splice(i, 1);
-            distributeWidth(autoColumns, availableSpace, wrappedAutoColumnsWidth);
+function ellipsize(text, width, styles, doc, overflow) {
+    return text.map(function (str) { return ellipsizeStr(str, width, styles, doc, overflow); });
+}
+exports.ellipsize = ellipsize;
+function ellipsizeStr(text, width, styles, doc, overflow) {
+    var precision = 10000 * doc.scaleFactor();
+    width = Math.ceil(width * precision) / precision;
+    if (width >= common_1.getStringWidth(text, styles, doc)) {
+        return text;
+    }
+    while (width < common_1.getStringWidth(text + overflow, styles, doc)) {
+        if (text.length <= 1) {
             break;
         }
-        column.width = suggestedWidth;
+        text = text.substring(0, text.length - 1);
     }
+    return text.trim() + overflow;
 }
 
 
 /***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 16 */
+/***/ (function(module, exports) {
 
-"use strict";
-
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var models_1 = __webpack_require__(4);
-var config_1 = __webpack_require__(2);
-var htmlParser_1 = __webpack_require__(6);
-var polyfills_1 = __webpack_require__(3);
-var common_1 = __webpack_require__(1);
-var state_1 = __webpack_require__(0);
-var inputValidator_1 = __webpack_require__(14);
-/**
- * Create models from the user input
- */
-function parseInput(args) {
-    var tableOptions = parseUserArguments(args);
-    var globalOptions = state_1.getGlobalOptions();
-    var documentOptions = state_1.getDocumentOptions();
-    var allOptions = [globalOptions, documentOptions, tableOptions];
-    inputValidator_1.default(allOptions);
-    var table = new models_1.Table();
-    state_1.default().table = table;
-    table.id = tableOptions.tableId;
-    var doc = state_1.default().doc;
-    table.userStyles = {
-        // Setting to black for versions of jspdf without getTextColor
-        textColor: doc.getTextColor ? doc.getTextColor() : 0,
-        fontSize: doc.internal.getFontSize(),
-        fontStyle: doc.internal.getFont().fontStyle,
-        font: doc.internal.getFont().fontName
-    };
-    var _loop_1 = function (styleProp) {
-        var styles = allOptions.map(function (opts) { return opts[styleProp] || {}; });
-        table.styles[styleProp] = polyfills_1.assign.apply(void 0, __spreadArrays([{}], styles));
-    };
-    // Merge styles one level deeper
-    for (var _i = 0, _a = Object.keys(table.styles); _i < _a.length; _i++) {
-        var styleProp = _a[_i];
-        _loop_1(styleProp);
-    }
-    // Append hooks
-    for (var _b = 0, allOptions_1 = allOptions; _b < allOptions_1.length; _b++) {
-        var opts = allOptions_1[_b];
-        for (var _c = 0, _d = Object.keys(table.cellHooks); _c < _d.length; _c++) {
-            var hookName = _d[_c];
-            if (opts && typeof opts[hookName] === 'function') {
-                table.cellHooks[hookName].push(opts[hookName]);
-            }
-        }
-    }
-    table.settings = polyfills_1.assign.apply(void 0, __spreadArrays([{}, config_1.defaultConfig()], allOptions));
-    table.settings.margin = common_1.marginOrPadding(table.settings.margin, config_1.defaultConfig().margin);
-    if (table.settings.theme === 'auto') {
-        table.settings.theme = table.settings.useCss ? 'plain' : 'striped';
-    }
-    if (table.settings.startY === false) {
-        delete table.settings.startY;
-    }
-    var previous = state_1.default().doc.previousAutoTable;
-    var isSamePageAsPrevious = previous && previous.startPageNumber + previous.pageNumber - 1 === state_1.default().pageNumber();
-    if (table.settings.startY == null && isSamePageAsPrevious) {
-        table.settings.startY = previous.finalY + 20 / state_1.default().scaleFactor();
-    }
-    var htmlContent = {};
-    if (table.settings.html) {
-        htmlContent = htmlParser_1.parseHtml(table.settings.html, table.settings.includeHiddenHtml, table.settings.useCss) || {};
-    }
-    table.settings.head = htmlContent.head || table.settings.head || [];
-    table.settings.body = htmlContent.body || table.settings.body || [];
-    table.settings.foot = htmlContent.foot || table.settings.foot || [];
-    parseContent(table);
-    table.minWidth = table.columns.reduce(function (total, col) { return (total + col.minWidth); }, 0);
-    table.wrappedWidth = table.columns.reduce(function (total, col) { return (total + col.wrappedWidth); }, 0);
-    if (typeof table.settings.tableWidth === 'number') {
-        table.width = table.settings.tableWidth;
-    }
-    else if (table.settings.tableWidth === 'wrap') {
-        table.width = table.wrappedWidth;
-    }
-    else {
-        table.width = state_1.default().pageWidth() - table.margin('left') - table.margin('right');
-    }
-    return table;
-}
-exports.parseInput = parseInput;
-function parseUserArguments(args) {
-    // Normal initialization on format doc.autoTable(options)
-    if (args.length === 1) {
-        return args[0];
-    }
-    else {
-        // Deprecated initialization on format doc.autoTable(columns, body, [options])
-        var opts = args[2] || {};
-        opts.body = args[1];
-        opts.columns = args[0];
-        opts.columns.forEach(function (col) {
-            // Support v2 title prop in v3
-            if (typeof col === 'object' && col.header == null) {
-                col.header = col.title;
-            }
-        });
-        return opts;
-    }
-}
-function parseContent(table) {
-    var settings = table.settings;
-    table.columns = getTableColumns(settings);
-    var _loop_2 = function (sectionName) {
-        var rowSpansLeftForColumn = {};
-        var sectionRows = settings[sectionName];
-        if (sectionRows.length === 0 && settings.columns && sectionName !== 'body') {
-            // If no head or foot is set, try generating one with content in columns
-            var sectionRow = generateSectionRowFromColumnData(table, sectionName);
-            if (sectionRow) {
-                sectionRows.push(sectionRow);
-            }
-        }
-        sectionRows.forEach(function (rawRow, rowIndex) {
-            var skippedRowForRowSpans = 0;
-            var row = new models_1.Row(rawRow, rowIndex, sectionName);
-            table[sectionName].push(row);
-            var colSpansAdded = 0;
-            var columnSpansLeft = 0;
-            for (var _i = 0, _a = table.columns; _i < _a.length; _i++) {
-                var column = _a[_i];
-                if (rowSpansLeftForColumn[column.index] == null || rowSpansLeftForColumn[column.index].left === 0) {
-                    if (columnSpansLeft === 0) {
-                        var rawCell = void 0;
-                        if (Array.isArray(rawRow)) {
-                            rawCell = rawRow[column.index - colSpansAdded - skippedRowForRowSpans];
-                        }
-                        else {
-                            rawCell = rawRow[column.dataKey];
-                        }
-                        var styles = cellStyles(sectionName, column, rowIndex);
-                        var cell = new models_1.Cell(rawCell, styles, sectionName);
-                        // dataKey is not used internally anymore but keep for backwards compat in hooks
-                        row.cells[column.dataKey] = cell;
-                        row.cells[column.index] = cell;
-                        columnSpansLeft = cell.colSpan - 1;
-                        rowSpansLeftForColumn[column.index] = { left: cell.rowSpan - 1, times: columnSpansLeft };
-                    }
-                    else {
-                        columnSpansLeft--;
-                        colSpansAdded++;
-                    }
-                }
-                else {
-                    rowSpansLeftForColumn[column.index].left--;
-                    columnSpansLeft = rowSpansLeftForColumn[column.index].times;
-                    skippedRowForRowSpans++;
-                }
-            }
-        });
-    };
-    for (var _i = 0, _a = ['head', 'body', 'foot']; _i < _a.length; _i++) {
-        var sectionName = _a[_i];
-        _loop_2(sectionName);
-    }
-    table.allRows().forEach(function (row) {
-        for (var _i = 0, _a = table.columns; _i < _a.length; _i++) {
-            var column = _a[_i];
-            var cell = row.cells[column.index];
-            if (!cell)
-                continue;
-            table.callCellHooks(table.cellHooks.didParseCell, cell, row, column);
-            cell.contentWidth = cell.padding('horizontal') + common_1.getStringWidth(cell.text, cell.styles);
-            if (typeof cell.styles.cellWidth === 'number') {
-                cell.minWidth = cell.styles.cellWidth;
-                cell.wrappedWidth = cell.styles.cellWidth;
-            }
-            else if (cell.styles.cellWidth === 'wrap') {
-                cell.minWidth = cell.contentWidth;
-                cell.wrappedWidth = cell.contentWidth;
-            }
-            else { // auto
-                var defaultMinWidth = 10 / state_1.default().scaleFactor();
-                cell.minWidth = cell.styles.minCellWidth || defaultMinWidth;
-                cell.wrappedWidth = cell.contentWidth;
-                if (cell.minWidth > cell.wrappedWidth) {
-                    cell.wrappedWidth = cell.minWidth;
-                }
-            }
-        }
-    });
-    table.allRows().forEach(function (row) {
-        for (var _i = 0, _a = table.columns; _i < _a.length; _i++) {
-            var column = _a[_i];
-            var cell = row.cells[column.index];
-            // For now we ignore the minWidth and wrappedWidth of colspan cells when calculating colspan widths.
-            // Could probably be improved upon however.
-            if (cell && cell.colSpan === 1) {
-                if (cell.wrappedWidth > column.wrappedWidth) {
-                    column.wrappedWidth = cell.wrappedWidth;
-                }
-                if (cell.minWidth > column.minWidth) {
-                    column.minWidth = cell.minWidth;
-                }
-            }
-            else {
-                // Respect cellWidth set in columnStyles even if there is no cells for this column
-                // or of it the column only have colspan cells. Since the width of colspan cells
-                // does not affect the width of columns, setting columnStyles cellWidth enables the
-                // user to at least do it manually.
-                // Note that this is not perfect for now since for example row and table styles are
-                // not accounted for
-                var columnStyles = table.styles.columnStyles[column.dataKey] || table.styles.columnStyles[column.index] || {};
-                var cellWidth = columnStyles.cellWidth;
-                if (cellWidth && typeof cellWidth === 'number') {
-                    column.minWidth = cellWidth;
-                    column.wrappedWidth = cellWidth;
-                }
-            }
-            if (cell) {
-                // Make sure all columns get at least min width even though width calculations are not based on them
-                if (cell.colSpan > 1 && !column.minWidth) {
-                    column.minWidth = cell.minWidth;
-                }
-                if (cell.colSpan > 1 && !column.wrappedWidth) {
-                    column.wrappedWidth = cell.minWidth;
-                }
-                table.callCellHooks(table.cellHooks.didParseCell, cell, row, column);
-            }
-        }
-    });
-}
-function generateSectionRowFromColumnData(table, sectionName) {
-    var sectionRow = {};
-    table.columns
-        .forEach(function (col) {
-        var columnData = col.raw;
-        if (sectionName === 'head') {
-            var val = columnData && columnData.header ? columnData.header : columnData;
-            if (val) {
-                sectionRow[col.dataKey] = val;
-            }
-        }
-        else if (sectionName === 'foot' && columnData.footer) {
-            sectionRow[col.dataKey] = columnData.footer;
-        }
-    });
-    return Object.keys(sectionRow).length > 0 ? sectionRow : null;
-}
-function getTableColumns(settings) {
-    if (settings.columns) {
-        var cols = settings.columns.map(function (input, index) {
-            var key = input.dataKey || input.key || index;
-            return new models_1.Column(key, input, index);
-        });
-        return cols;
-    }
-    else {
-        var firstRow_1 = settings.head[0] || settings.body[0] || settings.foot[0] || [];
-        var columns_1 = [];
-        Object.keys(firstRow_1)
-            .filter(function (key) { return key !== '_element'; })
-            .forEach(function (key) {
-            var colSpan = firstRow_1[key] && firstRow_1[key].colSpan ? firstRow_1[key].colSpan : 1;
-            for (var i = 0; i < colSpan; i++) {
-                var id = void 0;
-                if (Array.isArray(firstRow_1)) {
-                    id = columns_1.length;
-                }
-                else {
-                    id = key + (i > 0 ? "_" + i : '');
-                }
-                columns_1.push(new models_1.Column(id, id, columns_1.length));
-            }
-        });
-        return columns_1;
-    }
-}
-function cellStyles(sectionName, column, rowIndex) {
-    var table = state_1.default().table;
-    var theme = config_1.getTheme(table.settings.theme);
-    var otherStyles = [theme.table, theme[sectionName], table.styles.styles, table.styles[sectionName + "Styles"]];
-    var columnStyles = table.styles.columnStyles[column.dataKey] || table.styles.columnStyles[column.index] || {};
-    var colStyles = sectionName === 'body' ? columnStyles : {};
-    var rowStyles = sectionName === 'body' && rowIndex % 2 === 0 ? polyfills_1.assign({}, theme.alternateRow, table.styles.alternateRowStyles) : {};
-    return polyfills_1.assign.apply(void 0, __spreadArrays([config_1.defaultStyles()], __spreadArrays(otherStyles, [rowStyles, colStyles])));
-}
-
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-// Limitations
-// - No support for border spacing
-// - No support for transparency
-var common_1 = __webpack_require__(1);
-var state_1 = __webpack_require__(0);
-function parseCss(element, scaleFactor, ignored) {
-    if (ignored === void 0) { ignored = []; }
-    var result = {};
-    var style = window.getComputedStyle(element);
-    function assign(name, value, accepted) {
-        if (accepted === void 0) { accepted = []; }
-        if ((accepted.length === 0 || accepted.indexOf(value) !== -1) && ignored.indexOf(name) === -1) {
-            if (value === 0 || value) {
-                result[name] = value;
-            }
-        }
-    }
-    var pxScaleFactor = 96 / 72;
-    assign('fillColor', parseColor(element, 'backgroundColor'));
-    assign('fontStyle', parseFontStyle(style));
-    assign('textColor', parseColor(element, 'color'));
-    assign('halign', style.textAlign, ['left', 'right', 'center', 'justify']);
-    assign('valign', style.verticalAlign, ['middle', 'bottom', 'top']);
-    assign('fontSize', parseInt(style.fontSize || '') / pxScaleFactor);
-    assign('cellPadding', parsePadding(style.padding, style.fontSize, style.lineHeight, scaleFactor));
-    // style.borderWidth only works in chrome (borderTopWidth etc works in firefox and ie as well)
-    assign('lineWidth', parseInt(style.borderTopWidth || '') / pxScaleFactor / scaleFactor);
-    assign('lineColor', parseColor(element, 'borderTopColor'));
-    var font = (style.fontFamily || '').toLowerCase();
-    if (state_1.default().doc.getFontList()[font]) {
-        assign('font', font);
-    }
-    return result;
-}
-exports.parseCss = parseCss;
-function parseFontStyle(style) {
-    var res = '';
-    if (style.fontWeight === 'bold' || style.fontWeight === 'bolder' || parseInt(style.fontWeight) >= 700) {
-        res += 'bold';
-    }
-    if (style.fontStyle === 'italic' || style.fontStyle === 'oblique') {
-        res += 'italic';
-    }
-    return res;
-}
-function parseColor(element, colorProp) {
-    var cssColor = realColor(element, colorProp);
-    if (!cssColor)
-        return null;
-    var rgba = cssColor.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d*\.?\d*))?\)$/);
-    if (!rgba || !Array.isArray(rgba)) {
-        return null;
-    }
-    var color = [parseInt(rgba[1]), parseInt(rgba[2]), parseInt(rgba[3])];
-    var alpha = parseInt(rgba[4]);
-    if (alpha === 0 || isNaN(color[0]) || isNaN(color[1]) || isNaN(color[2])) {
-        return null;
-    }
-    return color;
-}
-function realColor(elem, colorProp) {
-    if (!elem)
-        return null;
-    var bg = window.getComputedStyle(elem)[colorProp];
-    if (bg === 'rgba(0, 0, 0, 0)' || bg === 'transparent' || bg === 'initial' || bg === 'inherit') {
-        return realColor(elem.parentElement, colorProp);
-    }
-    else {
-        return bg;
-    }
-}
-function parsePadding(val, fontSize, lineHeight, scaleFactor) {
-    if (!val)
-        return null;
-    var pxScaleFactor = (96 / (72 / scaleFactor));
-    var linePadding = (parseInt(lineHeight) - parseInt(fontSize)) / scaleFactor / 2;
-    var padding = val.split(' ').map(function (n) {
-        return parseInt(n) / pxScaleFactor;
-    });
-    padding = common_1.marginOrPadding(padding, 0);
-    if (linePadding > padding.top) {
-        padding.top = linePadding;
-    }
-    if (linePadding > padding.bottom) {
-        padding.bottom = linePadding;
-    }
-    return padding;
-}
-
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var common_1 = __webpack_require__(1);
-function default_1(allOptions) {
-    var _loop_1 = function (settings) {
-        if (settings && typeof settings !== 'object') {
-            console.error("The options parameter should be of type object, is: " + typeof settings);
-        }
-        if (typeof settings.extendWidth !== 'undefined') {
-            settings.tableWidth = settings.extendWidth ? 'auto' : 'wrap';
-            console.error("Use of deprecated option: extendWidth, use tableWidth instead.");
-        }
-        if (typeof settings.margins !== 'undefined') {
-            if (typeof settings.margin === 'undefined')
-                settings.margin = settings.margins;
-            console.error("Use of deprecated option: margins, use margin instead.");
-        }
-        if (settings.startY && typeof settings.startY !== 'number') {
-            console.error('Invalid value for startY option', settings.startY);
-            delete settings.startY;
-        }
-        if (!settings.didDrawPage && (settings.afterPageContent || settings.beforePageContent || settings.afterPageAdd)) {
-            console.error("The afterPageContent, beforePageContent and afterPageAdd hooks are deprecated. Use didDrawPage instead");
-            settings.didDrawPage = function (data) {
-                common_1.applyUserStyles();
-                if (settings.beforePageContent)
-                    settings.beforePageContent(data);
-                common_1.applyUserStyles();
-                if (settings.afterPageContent)
-                    settings.afterPageContent(data);
-                common_1.applyUserStyles();
-                if (settings.afterPageAdd && data.pageNumber > 1) {
-                    data.afterPageAdd(data);
-                }
-                common_1.applyUserStyles();
-            };
-        }
-        ["createdHeaderCell", "drawHeaderRow", "drawRow", "drawHeaderCell"].forEach(function (name) {
-            if (settings[name]) {
-                console.error("The \"" + name + "\" hook has changed in version 3.0, check the changelog for how to migrate.");
-            }
-        });
-        [['showFoot', 'showFooter'], ['showHead', 'showHeader'], ['didDrawPage', 'addPageContent'], ['didParseCell', 'createdCell'], ['headStyles', 'headerStyles']].forEach(function (_a) {
-            var current = _a[0], deprecated = _a[1];
-            if (settings[deprecated]) {
-                console.error("Use of deprecated option " + deprecated + ". Use " + current + " instead");
-                settings[current] = settings[deprecated];
-            }
-        });
-        [['padding', 'cellPadding'], ['lineHeight', 'rowHeight'], 'fontSize', 'overflow'].forEach(function (o) {
-            var deprecatedOption = typeof o === 'string' ? o : o[0];
-            var style = typeof o === 'string' ? o : o[1];
-            if (typeof settings[deprecatedOption] !== 'undefined') {
-                if (typeof settings.styles[style] === 'undefined') {
-                    settings.styles[style] = settings[deprecatedOption];
-                }
-                console.error("Use of deprecated option: " + deprecatedOption + ", use the style " + style + " instead.");
-            }
-        });
-        for (var _i = 0, _a = ['styles', 'bodyStyles', 'headStyles', 'footStyles']; _i < _a.length; _i++) {
-            var styleProp = _a[_i];
-            checkStyles(settings[styleProp] || {});
-        }
-        var columnStyles = settings['columnStyles'] || {};
-        for (var _b = 0, _c = Object.keys(columnStyles); _b < _c.length; _b++) {
-            var key = _c[_b];
-            checkStyles(columnStyles[key] || {});
-        }
-    };
-    for (var _i = 0, allOptions_1 = allOptions; _i < allOptions_1.length; _i++) {
-        var settings = allOptions_1[_i];
-        _loop_1(settings);
-    }
-}
-exports.default = default_1;
-function checkStyles(styles) {
-    if (styles.rowHeight) {
-        console.error("Use of deprecated style rowHeight. It is renamed to minCellHeight.");
-        if (!styles.minCellHeight) {
-            styles.minCellHeight = styles.rowHeight;
-        }
-    }
-    else if (styles.columnWidth) {
-        console.error("Use of deprecated style columnWidth. It is renamed to cellWidth.");
-        if (!styles.cellWidth) {
-            styles.cellWidth = styles.columnWidth;
-        }
-    }
-}
-
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var jsPDF = __webpack_require__(7);
-/**
- * Improved text function with halign and valign support
- * Inspiration from: http://stackoverflow.com/questions/28327510/align-text-right-using-jspdf/28433113#28433113
- */
-jsPDF.API.autoTableText = function (text, x, y, styles) {
-    styles = styles || {};
-    var FONT_ROW_RATIO = 1.15;
-    if (typeof x !== 'number' || typeof y !== 'number') {
-        console.error('The x and y parameters are required. Missing for text: ', text);
-    }
-    var k = this.internal.scaleFactor;
-    var fontSize = this.internal.getFontSize() / k;
-    var splitRegex = /\r\n|\r|\n/g;
-    var splitText = null;
-    var lineCount = 1;
-    if (styles.valign === 'middle' || styles.valign === 'bottom' || styles.halign === 'center' || styles.halign === 'right') {
-        splitText = typeof text === 'string' ? text.split(splitRegex) : text;
-        lineCount = splitText.length || 1;
-    }
-    // Align the top
-    y += fontSize * (2 - FONT_ROW_RATIO);
-    if (styles.valign === 'middle')
-        y -= (lineCount / 2) * fontSize * FONT_ROW_RATIO;
-    else if (styles.valign === 'bottom')
-        y -= lineCount * fontSize * FONT_ROW_RATIO;
-    if (styles.halign === 'center' || styles.halign === 'right') {
-        var alignSize = fontSize;
-        if (styles.halign === 'center')
-            alignSize *= 0.5;
-        if (lineCount >= 1) {
-            for (var iLine = 0; iLine < splitText.length; iLine++) {
-                this.text(splitText[iLine], x - this.getStringUnitWidth(splitText[iLine]) * alignSize, y);
-                y += fontSize * FONT_ROW_RATIO;
-            }
-            return this;
-        }
-        x -= this.getStringUnitWidth(text) * alignSize;
-    }
-    if (styles.halign === 'justify') {
-        this.text(text, x, y, { maxWidth: styles.maxWidth || 100, align: 'justify' });
-    }
-    else {
-        this.text(text, x, y);
-    }
-    return this;
-};
-
+if(typeof __WEBPACK_EXTERNAL_MODULE__16__ === 'undefined') {var e = new Error("Cannot find module 'undefined'"); e.code = 'MODULE_NOT_FOUND'; throw e;}
+module.exports = __WEBPACK_EXTERNAL_MODULE__16__;
 
 /***/ })
 /******/ ]);
